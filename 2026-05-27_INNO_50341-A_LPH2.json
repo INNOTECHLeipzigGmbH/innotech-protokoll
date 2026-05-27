@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "nr": "01",
+    "proj": "Kaufland Döbeln 1940 – Abschluss LPH 2",
+    "datum": "2026-05-12",
+    "next": "2026-08-19",
+    "autor": "Henryk Fehst, INNOTECH Leipzig GmbH",
+    "savedAt": "2026-05-27T13:26:46.951255"
+  },
+  "sections": [
+    {
+      "key": "s00",
+      "label": "00 – Protokollinformation"
+    },
+    {
+      "key": "s01",
+      "label": "01 – Termine"
+    },
+    {
+      "key": "s02",
+      "label": "02 – Grundlagen"
+    },
+    {
+      "key": "s03",
+      "label": "03 – Heizungsanlagen"
+    },
+    {
+      "key": "s04",
+      "label": "04 – Lüftungsanlagen"
+    },
+    {
+      "key": "s05",
+      "label": "05 – Raumklimaanlagen"
+    },
+    {
+      "key": "s06",
+      "label": "06 – Elektrotechnik"
+    },
+    {
+      "key": "s07",
+      "label": "07 – MSR"
+    },
+    {
+      "key": "s08",
+      "label": "08 – Sanitär"
+    },
+    {
+      "key": "s09",
+      "label": "09 – Sprinkler"
+    },
+    {
+      "key": "anlagen",
+      "label": "Anlagen"
+    }
+  ],
+  "data": {
+    "s00": [
+      {
+        "id": 1,
+        "titel": "Projekt",
+        "inhalt": "Kaufland Döbeln 1940, Schillerstraße 6, 04720 Döbeln",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      },
+      {
+        "id": 2,
+        "titel": "Besprechungsart",
+        "inhalt": "Zwischentermin LPH 2",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      },
+      {
+        "id": 3,
+        "titel": "Datum",
+        "inhalt": "12.05.2026",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      },
+      {
+        "id": 4,
+        "titel": "Protokollführer",
+        "inhalt": "Henryk Fehst, INNOTECH Leipzig GmbH",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      },
+      {
+        "id": 5,
+        "titel": "Teilnehmer",
+        "inhalt": "Frau Rauschenbach – Kaufland\nFrau Skura – Kaufland\nHerr Lyko – Kugler & Franke\nHerr Grammbauer – INNOTECH Leipzig, Planung FLA\nHerr Herfurth – INNOTECH Leipzig (REMES), Planung ELT\nHerr Fehst, M. – INNOTECH Leipzig, Planung HLS\nHerr Riedel, M. – INNOTECH Leipzig, Planung HLS\nHerr Riedel, S. – INNOTECH Leipzig, Planung HLS\nHerr Fehst, H. – INNOTECH Leipzig, Planung HLS",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      },
+      {
+        "id": 6,
+        "titel": "Verteiler",
+        "inhalt": "Frau Skura – Kaufland\nHerr Lyko – Kugler & Franke\nHr. Herfurth – INNOTECH Leipzig (REMES Elektroplanung)\nINNOTECH intern",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "s01": [
+      {
+        "id": 7,
+        "titel": "Abschluss LPH 2",
+        "inhalt": "",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "27.05.2026",
+        "status": "offen",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      },
+      {
+        "id": 8,
+        "titel": "Zwischentermin LPH 3",
+        "inhalt": "",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "19.08.2026",
+        "status": "offen",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      },
+      {
+        "id": 9,
+        "titel": "Abschluss LPH 3",
+        "inhalt": "",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "28.08.2026",
+        "status": "offen",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      },
+      {
+        "id": 10,
+        "titel": "Einrichtungsplan Kaufland",
+        "inhalt": "",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "vorauss. Juni 2026",
+        "status": "offen",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "s02": [
+      {
+        "id": 11,
+        "titel": "Grundlagen",
+        "inhalt": "Markt ist ein Neubau von Kaufland aus 2008.\nBestandsunterlagen TGA werden auf C4P eingestellt.\nAufgabenstellung Kaufland: 1940 Döbeln Objektidee 16.03.2026.\nDokumente: Checkliste TGA QS KDE1940 Döbeln, KL Leistungsliste 1940 Döbeln FiMa.",
+        "inhalt_add": "",
+        "verantwortlich": "Kaufland",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      },
+      {
+        "id": 12,
+        "titel": "Generelle Maßnahmen",
+        "inhalt": "Marktmodernisierung in Teilbereichen.\nErneuerung Gewerbekälte, Kältemittel R744 (CO2).\nIntegration Wärmerückgewinnung.\nErweiterung Backshop: Nicht möglich, da für den PuMa-Raum keine Ausweichfläche gibt.\nErgänzung 12.05.2026: Die Schließung der Bedientheke erfolgt vor der FIMA.",
+        "inhalt_add": "",
+        "verantwortlich": "Planer",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "s03": [
+      {
+        "id": 13,
+        "titel": "Heizungsanlagen",
+        "inhalt": "Kesselanlage 1 × 640 kW, Baujahr 2019. Anpassung Leistung an neuen Bedarf.\nErneuerung Kälteanlage bzw. Tausch gegen Wärmepumpe mit Einbindung WRG aus der Gewerbekälte.\nZiel: Gas nur noch als Spitzenkessel.\nZählung WRG/Wärmepumpe.\nWärmepumpe Heizen/Kühlen für LÜA1 Verkauf.\nAufstellort Wärmepumpe abstimmen.\nPumpentausch teilweise.\nPersonalräume Zwischengeschoss: HK-Tausch.\nSozialräume Zwischengeschoss: HK-Tausch.\nKassenbüro: HK-Tausch.\n\nErgänzung 17.04.2026:\nLeistungsbilanz des Kessels in der weiteren Planungsphase prüfen.\nIn Bereichen mit HK-Tausch: Auslegung auf Systemtemperaturen der Wärmepumpe.\nKünftig alle neuen Geräte auf Systemtemperaturen der Wärmepumpe auslegen.\n\nErgänzung 12.05.2026:\nHeizkörper Aufenthalt Raucher in Sonderfarbe.\nVorschlag Standort Wärmepumpe: Aufstellung auf der Stahlbühne (aktuell luftgekühlter Kaltwassersatz).\nPlanausschnitt wird an die Statik versendet.\nAufstellung WRG und Speicher in der Kältezentrale UG.",
+        "inhalt_add": "",
+        "verantwortlich": "Planer",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "s04": [
+      {
+        "id": 14,
+        "titel": "Lüftungsanlagen",
+        "inhalt": "LÜA 1, 25.100 m³/h, Baujahr 2008. Ausgelegt auf 6 m³/h·m².\nKühlung vorhanden über luftgekühlten Kaltwassersatz, R407C, 210 kW.\nPrüfen ob Austausch gegen Wärmepumpe, Einbindung in WRG-Kälte.\nEntrauchung über Zu- und Abluftsystem Marktanlage.\nEntfall Bedieninsel wird noch geprüft → Entscheidung Kaufland.\nLuftverteilung Zuluft im Bereich Kühlmöbel nicht vorhanden → Anpassung im Rahmen der FiMa.\n4 Stück Entfeuchtungsgeräte Kaut im Bereich Kühlmöbel → bleiben im Bestand.\nFläche Konzessionäre → keine Maßnahmen geplant.\nNeubau Lüftung KMR nach Vorgaben Volumenstrom Gewerbekälte.\nTausch Luftauslässe in Bereichen mit Tausch Abhangdecken.\n\nErgänzung 17.04.2026:\nErsatz luftgekühlter Kaltwassersatz durch Wärmepumpe Heizen/Kühlen bestätigt.\nErfahrungen Wartungsfirma Oehler zum Zustand des Lüftungsgerätes einbeziehen.\nLüftung Abluft KMR mit Umschaltung Decke/Fußboden über motorbet. Jalousieklappen bestätigt.\nAbluft Normalbetrieb über Decke, Abluft Fußboden im Alarmfall / Not-Aus.\n\nErgänzung 12.05.2026:\nBei Erhalt LÜA Verkauf: Verzicht auf Steuerung mit Entfeuchtung und Nachheizung.\nEntfeuchtung über 4 Bestandsgeräte Kaut.\nAbschaltung RLT-Anlage bei Alarm Wärmepumpe.\n4 Konzessionäre (36 kW Kälteleistung über luftgekühlten KWS) auch über Wärmepumpe versorgen.\nKälteleistung Wärmepumpe ca. 166 kW.",
+        "inhalt_add": "",
+        "verantwortlich": "Planer",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "s05": [
+      {
+        "id": 15,
+        "titel": "Raumklimaanlagen",
+        "inhalt": "Nachrüstung Klima in der Leergutannahme per Automat.\nSonst keine weiteren Maßnahmen geplant.\n\nErgänzung 17.04.2026:\nVerriegelung der Klimaanlage bei Betrieb der Abluftanlage.",
+        "inhalt_add": "",
+        "verantwortlich": "Planer",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "s06": [
+      {
+        "id": 16,
+        "titel": "Elektrotechnik",
+        "inhalt": "Anpassung Leitungsnetz FiMa.\nAnpassung Unterverteilungen an FiMa und neuen Einrichtungsplan.\nELA-Prüfung beim Anlagenbetreiber: Variante 1 – nur Zentralentausch mit Abbruch alter Detektivraum; Variante 2 – Kompletttausch ELA samt Leitungsnetz und Beschallungsanlage. Entscheidung: Kaufland.\nZusätzliche Ladesäule prüfen.\nBeleuchtungstausch auf KABA 2025.\nSicherheitsbeleuchtung Zentrale + autarke Leuchten Neu.\nMall neu, Info neu.\nTausch Gewerbekälte.\nAnpassung MSR-Kabelzug auf neue bauliche Gegebenheiten FiMa – WRG etc.\nKunden-WC – Deckeninstallation erneuern.\nPersonalbereich – Deckeninstallation neu / Anpassung FiMa.\n\nErgänzung 17.04.2026:\nPrüfung BMA im Rahmen LPH 2 auf notwendige Kompletterneuerung.\nBeleuchtungstausch auf KaBa 2025.\nUmstellung Beleuchtung auf LED in Nebenbereichen.\n\nErgänzung 12.05.2026:\nBMA Notifier NF300 von 2008 grundsätzlich in Ordnung. Keine komplette Erneuerung der Zentralentechnik.\nNur Melder älter als 8 Jahre werden getauscht.\nTausch SAA nicht unbedingt erforderlich – Kosten dennoch in 400er-Liste erfassen.\nElektrischer Bedarf für zweite E-Ladesäule gedeckt, reicht nicht für dritte.\nBeleuchtung überdachte Parkfläche auf Retrofit LED umstellen.",
+        "inhalt_add": "",
+        "verantwortlich": "Planer",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "s07": [
+      {
+        "id": 17,
+        "titel": "MSR",
+        "inhalt": "Siemens PXC100, Baujahr 2008.\nMarktsteuerung neue DDC mit Wago, Baujahr 2024.\nL-Box vorhanden. M-Bus Zähler vorhanden.\nKaufland klärt: Zählung Trinkwasser und Sprinkler aufgeschalten?\nAnpassung MSR und Aufschaltungen neuer Verbraucher an neue Heizungsanlage und WRG Gewerbekälte.\nAufschaltung neuer Zähler.\n\nErgänzung 12.05.2026:\nNeuer ISP für WRG Gewerbekälte und Wärmepumpe.\nSonst MSR im Bestand. Nur Anpassungen an neue Gerätetechnik.",
+        "inhalt_add": "",
+        "verantwortlich": "Planer",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "s08": [
+      {
+        "id": 18,
+        "titel": "Sanitär",
+        "inhalt": "Kunden-WC: 1:1 Tausch Keramik.\nEntfall Bedieninsel wird noch geprüft → Entscheidung Kaufland.\nLeergutannahme: Bodeneinlauf und Rinne für PET-Presse. Tauwasseranschluss Klimageräte.\nBereich Kühlmöbel: Tauwasseranschlüsse Kühlung nach neuer Planung.\nSozialräume Zwischengeschoss: 1:1 Tausch Keramik, Silikon neu.\nLager-WC: gehört nicht zu Kaufland → keine Leistungen.\nKältemaschinenraum: Ausstattung gem. KABA.\nAnpassung Tauwasseranschlüsse / Grundleitungen an neue TIKO / MOPRO Planung.\nTW-Zähler: Aufschaltung Kaufland prüfen, siehe auch MSR.\n\nErgänzung 12.05.2026:\nWarmwasserbereitung Sozialbereich bleibt im Bestand – keine Maßnahmen im Rahmen der FIMA.\nZähler Trinkwasser und Sprinkler mit Zählung über MSR-Technik.",
+        "inhalt_add": "",
+        "verantwortlich": "Planer",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "s09": [
+      {
+        "id": 19,
+        "titel": "Sprinkler",
+        "inhalt": "Hydranten am Sprinklernetz.\nAnpassung Sprinkler an Umbaubereiche im VKF und bei Erneuerung Unterhangdecken.\nGem. Lageplan Sprinklerzentrale. Lagerbereiche Bestand WBA 12,5 mm.\nAuswertung AA-Prüfung Trockenanlage und VdS-Bericht 2025.\n\nErgänzung 12.05.2026:\nSystem trocken Anlieferung (Rampe) 5 mm Wasserbeaufschlagung.\nPrüfung im Zusammenhang mit Altanlagenprüfbericht.",
+        "inhalt_add": "",
+        "verantwortlich": "Planer",
+        "termin": "",
+        "status": "Info",
+        "anlage": "",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ],
+    "anlagen": [
+      {
+        "id": 20,
+        "titel": "2026-05-27_INNO_50341_KL_Döbeln_1940_Abschluss_LPH2.docx",
+        "inhalt": "Ursprungsdokument – Protokoll Zwischentermin LPH 2, Kaufland Döbeln 1940, 12.05.2026",
+        "inhalt_add": "",
+        "verantwortlich": "",
+        "termin": "",
+        "status": "Info",
+        "anlage": "2026-05-27_INNO_50341_KL_Döbeln_1940_Abschluss_LPH2.docx",
+        "files": [],
+        "createdDate": "",
+        "fromPrev": true
+      }
+    ]
+  }
+}
