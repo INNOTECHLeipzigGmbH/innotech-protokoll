@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><title>Protokoll Nr. 00 – TGA KickOff</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.5pt;color:#1a1a1a;background:#fff;padding:10mm 12mm}
+@page{size:A4 portrait;margin:10mm 12mm}
+@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{padding:0;margin:0}}
+
+/* HEADER */
+.hdr1{display:flex;align-items:stretch;border-bottom:0.5pt solid #e0e0e0;margin-bottom:0}
+.hdr1-blue{background:#009fe3;padding:7pt 14pt;flex:0 0 54%;display:flex;align-items:center}
+.hdr1-blue span{color:#fff;font-size:7.5pt;font-weight:600;letter-spacing:.8pt;text-transform:uppercase;line-height:1.5}
+.hdr1-logo{flex:1;display:flex;align-items:center;justify-content:flex-end;padding:4pt 14pt;background:#fff}
+.hdr1-logo img{height:32pt;object-fit:contain}
+.absender{padding:3pt 14pt 0;font-size:7.5pt;color:#009fe3;border-bottom:0.5pt solid #eee}
+
+/* BODY GRID */
+.body-wrap{display:flex;padding:8pt 14pt 6pt;gap:12pt;border-bottom:0.5pt solid #e0e0e0}
+.firma-box{flex:1;border:0.5pt dashed #ccc;padding:6pt 8pt;font-size:8pt;color:#aaa;line-height:1.7;min-height:58pt}
+.contact-box{flex:1;font-size:8pt;line-height:1.7}
+.cb-blue{color:#009fe3;font-weight:700;font-size:8.5pt;margin-bottom:2pt}
+.cb-name{font-weight:700;font-size:9pt;color:#1a1a1a}
+.cb-sub{font-size:8pt;color:#333;margin-bottom:3pt}
+.cb-detail{font-size:7.5pt;color:#555}
+
+/* REF ROW */
+.ref-row{display:flex;border-bottom:0.5pt solid #ddd}
+.ref-cell{flex:1;padding:4pt 14pt;border-right:0.5pt solid #ddd}
+.ref-cell:last-child{border-right:none}
+.ref-lbl{font-size:6.5pt;color:#999;margin-bottom:1pt;text-transform:uppercase;letter-spacing:.4pt}
+.ref-val{font-size:8.5pt;color:#1a1a1a;font-weight:500;line-height:1.35}
+
+/* BETREFF */
+.betreff{padding:7pt 14pt 5pt}
+.bt-r{display:flex;gap:8pt;margin-bottom:2pt;align-items:baseline}
+.bt-l{font-weight:700;font-size:9pt;min-width:65pt}
+.bt-v{font-weight:700;font-size:9pt}
+.pj-l{font-size:8pt;color:#555;min-width:65pt}
+.pj-v{font-size:8pt;font-weight:600;color:#333}
+
+/* TOC */
+.toc-wrap{padding:5pt 14pt 6pt;background:#f7fbff;border-bottom:0.5pt solid #d0e8f8;border-top:0.5pt solid #d0e8f8}
+.toc-lbl{font-size:6.5pt;text-transform:uppercase;letter-spacing:.8pt;color:#009fe3;font-weight:700;margin-bottom:4pt}
+.toc-items{display:flex;flex-wrap:wrap;gap:3pt 5pt}
+.toc-tag{font-size:8pt;color:#1a1a1a;padding:2pt 8pt;background:#fff;border:0.5pt solid #b8d8f0;border-radius:3px;font-weight:600;display:inline-flex;align-items:center;gap:4pt}
+.toc-cnt{color:#009fe3;font-weight:400;font-size:7.5pt}
+
+/* SECTION */
+.sec-hdr{background:#009fe3;color:#fff;padding:4pt 14pt;font-size:8.5pt;font-weight:700;letter-spacing:.5pt;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;margin-top:4pt}
+.sec-cnt{font-weight:400;font-size:7.5pt;opacity:.85;text-transform:none;letter-spacing:0}
+.col-hdr{display:flex;background:#f0f0ee;border-bottom:0.5pt solid #ccc}
+.ch{padding:3pt 8pt;font-size:6.5pt;text-transform:uppercase;letter-spacing:.4pt;color:#777;font-weight:700}
+.ch-nr{min-width:36pt;max-width:36pt}
+.ch-t{min-width:55pt;max-width:55pt}
+.ch-v{min-width:68pt;max-width:68pt}
+.ch-s{min-width:48pt;max-width:48pt}
+.ch-bp{flex:1}
+
+/* GROUP HEADER (Zwischenüberschrift) */
+.grp{background:#e8f4fb;border-left:3pt solid #009fe3;padding:4pt 14pt;font-size:8.5pt;font-weight:700;color:#005f8a}
+
+/* ROWS */
+.pt-row{display:flex;border-bottom:0.5pt solid #eee;break-inside:avoid;min-height:18pt}
+.pt-row.alt{background:#fafaf8}
+.pt-row.nw{border-left:2.5pt solid #009fe3}
+.ptc{padding:4pt 8pt;font-size:8.5pt;vertical-align:top}
+.ptc-nr{min-width:36pt;max-width:36pt;color:#888;font-size:7.5pt;font-weight:600;padding-top:5pt}
+.ptc-body{flex:1}
+.ptc-t{min-width:55pt;max-width:55pt;color:#333;font-size:8pt;padding-top:5pt}
+.ptc-v{min-width:68pt;max-width:68pt;color:#555;font-size:7.5pt;line-height:1.35;padding-top:5pt}
+.ptc-s{min-width:48pt;max-width:48pt;padding-top:4pt}
+.pt-inhalt{font-size:8.5pt;color:#333;line-height:1.45;white-space:pre-wrap;padding-top:4pt}
+.pt-add{margin-top:4pt;padding:3pt 6pt;background:#EBF5FC;border-left:2pt solid #009fe3;font-size:7.5pt;color:#0a4f7a;line-height:1.35}
+.pt-add-lbl{font-size:6pt;font-weight:700;text-transform:uppercase;letter-spacing:.4pt;color:#009fe3;margin-bottom:1pt}
+.badge{display:inline-block;padding:1pt 5pt;border-radius:3px;font-size:7.5pt;font-weight:700;white-space:nowrap}
+.b-o{background:#fff3cd;color:#7a5800}
+.b-e{background:#d4edda;color:#155724}
+.b-i{background:#d1ecf1;color:#0c5460}
+.b-l{background:#e2d9f3;color:#432874}
+.b-f{background:#fde8d8;color:#7a2e0a}
+.new-bdg{display:inline-block;background:#009fe3;color:#fff;font-size:7pt;font-weight:700;padding:1pt 4pt;border-radius:2px;margin-right:3pt;vertical-align:middle}
+
+/* FOOTER */
+.ftr{border-top:1pt solid #009fe3;padding:5pt 14pt;display:flex;justify-content:space-between;align-items:center;background:#f7fbff;margin-top:6pt}
+.ftr-l{font-size:7pt;color:#888;line-height:1.5}
+.ftr-logo{font-size:9pt;font-weight:700;color:#009fe3;letter-spacing:1pt;text-align:right}
+.ftr-page{font-size:7pt;color:#888;text-align:right}
+</style></head><body>
+
+<!-- KOPFZEILE -->
+<div class="hdr1">
+  <div class="hdr1-blue"><span>Heizung &nbsp;·&nbsp; Lüftung &nbsp;·&nbsp; Sanitär &nbsp;·&nbsp; Klima &nbsp;·&nbsp; Kälte<br>&nbsp;·&nbsp; Energiesysteme</span></div>
+  <div class="hdr1-logo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAuQAAACWCAYAAACW0Z2GAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4NjM4REIzNkE1MEUxMUU3OTczQ0E3QTJGMjlFRDVGNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4NjM4REIzN0E1MEUxMUU3OTczQ0E3QTJGMjlFRDVGNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg2MzhEQjM0QTUwRTExRTc5NzNDQTdBMkYyOUVENUY3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjg2MzhEQjM1QTUwRTExRTc5NzNDQTdBMkYyOUVENUY3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+K/Ny7gAALG9JREFUeNrsnf1x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" alt="INNOTECH"></div>
+</div>
+<div class="absender">INNOTECH LEIPZIG GmbH &nbsp;·&nbsp; Poetenweg 9 &nbsp;·&nbsp; 04155 Leipzig</div>
+
+<div class="body-wrap">
+  <div class="firma-box">&nbsp;</div>
+  <div class="contact-box">
+    <div class="cb-blue">Beratung &nbsp;·&nbsp; Planung &nbsp;·&nbsp; Bauüberwachung</div>
+    <div class="cb-name">INNOTECH Ingenieurleistungen</div>
+    <div class="cb-sub">Leipzig GmbH</div>
+    <div class="cb-detail">Poetenweg 9 &nbsp;·&nbsp; 04155 Leipzig<br>Tel. +49 341 589 47-0 &nbsp;·&nbsp; Fax +49 341 589 47-33<br>info@innotech-leipzig.de &nbsp;·&nbsp; www.innotech-leipzig.de</div>
+  </div>
+</div>
+
+<div class="ref-row">
+  <div class="ref-cell"><div class="ref-lbl">Ihr Zeichen</div><div class="ref-val">–</div></div>
+  <div class="ref-cell"><div class="ref-lbl">Ihre Nachricht</div><div class="ref-val">–</div></div>
+  <div class="ref-cell"><div class="ref-lbl">Unser Zeichen</div><div class="ref-val">Maximilian Fehst,<br>INNOTECH Leipzig GmbH</div></div>
+  <div class="ref-cell"><div class="ref-lbl">Durchwahl</div><div class="ref-val">–</div></div>
+  <div class="ref-cell"><div class="ref-lbl">Datum</div><div class="ref-val">Leipzig, 19.6.2026</div></div>
+</div>
+
+<div class="betreff">
+  <div class="bt-r"><div class="bt-l">Betreff:</div><div class="bt-v">Protokoll Nr. 00 – TGA Protokoll KickOff Planer 19.6.2026</div></div>
+  <div class="bt-r"><div class="pj-l">Unsere Projekt-Nr.:</div><div class="pj-v">50347 KL Taucha</div></div>
+</div>
+
+<div class="toc-wrap">
+  <div class="toc-lbl">Inhaltsverzeichnis</div>
+  <div class="toc-items">
+    <div class="toc-tag">0 – Grundlagen <span class="toc-cnt">6 Pkt.</span></div>
+    <div class="toc-tag">1 – Termine <span class="toc-cnt">1 Pkt.</span></div>
+    <div class="toc-tag">2.1 – Heizungsanlagen <span class="toc-cnt">1 Pkt.</span></div>
+    <div class="toc-tag">2.5 – MSR <span class="toc-cnt">1 Pkt.</span></div>
+    <div class="toc-tag">2.6 – Sanitär <span class="toc-cnt">1 Pkt.</span></div>
+    <div class="toc-tag">2.7 – Sprinkler <span class="toc-cnt">2 Pkt.</span></div>
+    <div class="toc-tag">Bedientheke <span class="toc-cnt">1 Pkt.</span></div>
+    <div class="toc-tag">Lager <span class="toc-cnt">1 Pkt.</span></div>
+    <div class="toc-tag">Sozialbereiche <span class="toc-cnt">1 Pkt.</span></div>
+    <div class="toc-tag">Dachsanierung <span class="toc-cnt">2 Pkt.</span></div>
+    <div class="toc-tag">Eingangsbereich <span class="toc-cnt">1 Pkt.</span></div>
+  </div>
+</div>
+
+<!-- 0 GRUNDLAGEN -->
+<div class="sec-hdr">0 – Grundlagen <span class="sec-cnt">6 Punkte</span></div>
+<div class="col-hdr">
+  <span class="ch ch-nr">Nr.</span>
+  <span class="ch ch-bp">Besprechungspunkt</span>
+  <span class="ch ch-t">Termin</span>
+  <span class="ch ch-v">Verantwortlich</span>
+  <span class="ch ch-s">Status</span>
+</div>
+
+<div class="grp">Kaufobjekt</div>
+<div class="pt-row">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Markt gehört Kaufland</div></div>
+  <div class="ptc ptc-t"></div>
+  <div class="ptc ptc-v">Kaufland</div>
+  <div class="ptc ptc-s"><span class="badge b-i">Info</span></div>
+</div>
+
+<div class="grp">Leistungsliste</div>
+<div class="pt-row alt">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Leistungsliste ist fortzuschreiben</div></div>
+  <div class="ptc ptc-t"></div>
+  <div class="ptc ptc-v">Kaufland</div>
+  <div class="ptc ptc-s"><span class="badge b-f">Festlegung</span></div>
+</div>
+
+<div class="grp">Bestandsunterlagen</div>
+<div class="pt-row">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Prüfen</div></div>
+  <div class="ptc ptc-t"></div>
+  <div class="ptc ptc-v">Innotech</div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+
+<div class="grp">Einrichtungs Plan</div>
+<div class="pt-row alt">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Übermittlung Einrichtungsplan August</div></div>
+  <div class="ptc ptc-t">August</div>
+  <div class="ptc ptc-v">Kaufland</div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+
+<div class="grp">Lph2</div>
+<div class="pt-row">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Übergabe Lph2 Anfang September</div></div>
+  <div class="ptc ptc-t">Sept.</div>
+  <div class="ptc ptc-v">Innotech</div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+
+<div class="grp">Lph3</div>
+<div class="pt-row alt">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Übergabe Lph3 Mitte Oktober</div></div>
+  <div class="ptc ptc-t">Okt.</div>
+  <div class="ptc ptc-v">Innotech</div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+
+<!-- 1 TERMINE -->
+<div class="sec-hdr">1 – Termine <span class="sec-cnt">1 Punkt</span></div>
+<div class="col-hdr">
+  <span class="ch ch-nr">Nr.</span>
+  <span class="ch ch-bp">Besprechungspunkt</span>
+  <span class="ch ch-t">Termin</span>
+  <span class="ch ch-v">Verantwortlich</span>
+  <span class="ch ch-s">Status</span>
+</div>
+<div class="grp">Bauantrag</div>
+<div class="pt-row">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Oktober</div></div>
+  <div class="ptc ptc-t">Oktober</div>
+  <div class="ptc ptc-v"></div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+
+<!-- 2.1 HEIZUNG -->
+<div class="sec-hdr">2.1 – Heizungsanlagen <span class="sec-cnt">1 Punkt</span></div>
+<div class="col-hdr">
+  <span class="ch ch-nr">Nr.</span><span class="ch ch-bp">Besprechungspunkt</span>
+  <span class="ch ch-t">Termin</span><span class="ch ch-v">Verantwortlich</span><span class="ch ch-s">Status</span>
+</div>
+<div class="grp">Wärmepumpe</div>
+<div class="pt-row">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Bewertung Wärmepumpe gewünscht</div></div>
+  <div class="ptc ptc-t"></div>
+  <div class="ptc ptc-v">Innotech</div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+
+<!-- 2.5 MSR -->
+<div class="sec-hdr">2.5 – MSR <span class="sec-cnt">1 Punkt</span></div>
+<div class="col-hdr">
+  <span class="ch ch-nr">Nr.</span><span class="ch ch-bp">Besprechungspunkt</span>
+  <span class="ch ch-t">Termin</span><span class="ch ch-v">Verantwortlich</span><span class="ch ch-s">Status</span>
+</div>
+<div class="grp">Nachrüstung Zähler</div>
+<div class="pt-row">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Wärmemengenzähler INNOTECH</div></div>
+  <div class="ptc ptc-t"></div>
+  <div class="ptc ptc-v">Innotech</div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+
+<!-- 2.6 SANITÄR -->
+<div class="sec-hdr">2.6 – Sanitär <span class="sec-cnt">1 Punkt</span></div>
+<div class="col-hdr">
+  <span class="ch ch-nr">Nr.</span><span class="ch ch-bp">Besprechungspunkt</span>
+  <span class="ch ch-t">Termin</span><span class="ch ch-v">Verantwortlich</span><span class="ch ch-s">Status</span>
+</div>
+<div class="grp">Fettabscheider</div>
+<div class="pt-row">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Erneuern und versetzen</div></div>
+  <div class="ptc ptc-t"></div>
+  <div class="ptc ptc-v">Innotech</div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+
+<!-- 2.7 SPRINKLER -->
+<div class="sec-hdr">2.7 – Sprinkler <span class="sec-cnt">2 Punkte</span></div>
+<div class="col-hdr">
+  <span class="ch ch-nr">Nr.</span><span class="ch ch-bp">Besprechungspunkt</span>
+  <span class="ch ch-t">Termin</span><span class="ch ch-v">Verantwortlich</span><span class="ch ch-s">Status</span>
+</div>
+<div class="grp">Allgemein</div>
+<div class="pt-row">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Keine Sprinkleranlage vorhanden</div></div>
+  <div class="ptc ptc-t"></div>
+  <div class="ptc ptc-v"></div>
+  <div class="ptc ptc-s"><span class="badge b-i">Info</span></div>
+</div>
+<div class="grp">Wandhydranten</div>
+<div class="pt-row alt">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Prüfung ob diese entfallen</div></div>
+  <div class="ptc ptc-t"></div>
+  <div class="ptc ptc-v">Brandschutz</div>
+  <div class="ptc ptc-s"><span class="badge b-i">Info</span></div>
+</div>
+
+<!-- DACHSANIERUNG -->
+<div class="sec-hdr">Dachsanierung <span class="sec-cnt">2 Punkte</span></div>
+<div class="col-hdr">
+  <span class="ch ch-nr">Nr.</span><span class="ch ch-bp">Besprechungspunkt</span>
+  <span class="ch ch-t">Termin</span><span class="ch ch-v">Verantwortlich</span><span class="ch ch-s">Status</span>
+</div>
+<div class="grp">Ablauf</div>
+<div class="pt-row">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Erfolgt während der FIMA mit</div></div>
+  <div class="ptc ptc-t"></div>
+  <div class="ptc ptc-v">Kaufland</div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+<div class="grp">Dachgutachten</div>
+<div class="pt-row alt">
+  <div class="ptc ptc-nr"></div>
+  <div class="ptc ptc-body"><div class="pt-inhalt">Gutachten wird Ende des Monats verteilt</div></div>
+  <div class="ptc ptc-t">Ende Monat</div>
+  <div class="ptc ptc-v">Kaufland</div>
+  <div class="ptc ptc-s"><span class="badge b-o">offen</span></div>
+</div>
+
+<!-- FOOTER -->
+<div class="ftr">
+  <div class="ftr-l">Widersprüche spätestens zur nächsten BB anmelden · Festlegungen gelten als anerkannt.<br>aufgestellt: Maximilian Fehst, INNOTECH Leipzig GmbH · INNOTECH Leipzig GmbH</div>
+  <div>
+    <div class="ftr-logo">INNOTECH</div>
+    <div class="ftr-page">Protokoll Nr. 00 · 19.6.2026</div>
+  </div>
+</div>
+
+</body></html>
