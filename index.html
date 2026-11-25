@@ -14,19 +14,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blue:#0BA1E2;--blue-dark:#0886BD;--blue-light:#f0f7ff;--blue-mid:#dbeafe;
-  --green:#059669;--red:#dc2626;--orange:#d97706;--purple:#7c3aed;
-  --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;
-  --gray-400:#9ca3af;--gray-600:#4b5563;--gray-700:#374151;--gray-900:#111827;
+  --blue:#0BA1E2;--blue-dark:#0079A3;--blue-light:#E6F5FC;--blue-mid:#CCECF9;
+  --green:#2E8B4F;--red:#C1443B;--orange:#C98A12;--purple:#7c3aed;
+  --gray-50:#F7F8F8;--gray-100:#F0F2F3;--gray-200:#E1E1E1;--gray-300:#D3D7DA;
+  --gray-400:#8C969E;--gray-600:#4F5961;--gray-700:#3A4349;--gray-900:#232728;
+  /* INNOTECH-Design (siehe ../INNOTECH-Design.md) */
+  --it-anthrazit:#2C353D;--it-blau:#0BA1E2;--it-blau-dunkel:#0079A3;--it-blau-hell:#E6F5FC;
+  --it-linie:#E1E1E1;--it-flaeche:#F0F2F3;--it-text:#232728;--it-text-2:#6B7680;
 }
-body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gray-900);font-size:14px;height:100vh;overflow:hidden}
+body{font-family:'Open Sans',Helvetica,Arial,sans-serif;background:#F0F2F3;color:var(--gray-900);font-size:14px;height:100vh;overflow:hidden}
 
 /* ── SETUP SCREEN ── */
 #setup-screen{
   position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#f0f7ff 0%,#f9fafb 60%,#e0f2fe 100%);z-index:1000;padding:24px;
+  background:#F0F2F3;z-index:1000;padding:24px;
 }
-.setup-card{background:#fff;border-radius:14px;box-shadow:0 4px 32px rgba(0,159,227,.12);padding:36px 44px;max-width:520px;width:100%}
+.setup-card{background:#fff;border-radius:10px;box-shadow:0 4px 32px rgba(11,161,226,.12);padding:36px 44px;max-width:520px;width:100%}
 .setup-card h2{font-size:18px;font-weight:700;margin-bottom:6px}
 .setup-card p{font-size:13px;color:var(--gray-600);margin-bottom:20px;line-height:1.6}
 .setup-field{margin-bottom:14px}
@@ -46,15 +49,15 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 /* ── START SCREEN ── */
 #start-screen{
   position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#f0f7ff 0%,#f9fafb 60%,#e0f2fe 100%);z-index:999;padding:24px;
+  background:#F0F2F3;z-index:999;padding:24px;
 }
 .start-logo{height:48px;margin-bottom:20px}
-.start-card{background:#fff;border-radius:14px;box-shadow:0 4px 32px rgba(0,159,227,.12);padding:32px 40px;max-width:620px;width:100%}
+.start-card{background:#fff;border-radius:10px;box-shadow:0 4px 32px rgba(11,161,226,.12);padding:32px 40px;max-width:620px;width:100%}
 .start-card h2{font-size:19px;font-weight:700;margin-bottom:6px}
 .start-card p{font-size:13px;color:var(--gray-600);margin-bottom:18px;line-height:1.6}
 .start-options{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:18px}
 .start-btn{display:flex;flex-direction:column;align-items:center;gap:7px;padding:16px 12px;background:var(--blue-light);border:1.5px solid var(--blue);border-radius:10px;cursor:pointer;font-family:inherit;transition:all .15s}
-.start-btn:hover{background:#dbeafe;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,159,227,.15)}
+.start-btn:hover{background:#CCECF9;transform:translateY(-1px);box-shadow:0 4px 12px rgba(11,161,226,.15)}
 .start-btn .sb-icon{font-size:24px}
 .start-btn .sb-label{font-size:12px;font-weight:700;color:var(--blue)}
 .start-btn .sb-sub{font-size:10px;color:var(--gray-600);text-align:center;line-height:1.4}
@@ -78,7 +81,13 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 .reset-link:hover{color:var(--gray-600)}
 
 /* ── HEADER ── */
-#header{background:#fff;border-bottom:2px solid var(--blue);padding:8px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;box-shadow:0 1px 3px rgba(0,0,0,.07);position:sticky;top:0;z-index:200}
+.it-logobar{background:#fff;border-bottom:1px solid var(--it-linie);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.it-logo{height:26px;width:auto;display:block}
+.it-navbar{background:var(--it-anthrazit);padding:0 20px;display:flex;gap:2px;flex-shrink:0}
+.it-nav-item{color:#A9B2B9;padding:10px 16px;font-size:12.5px;font-weight:600;letter-spacing:.02em;position:relative}
+.it-nav-item.active{color:#fff}
+.it-nav-item.active::after{content:"";position:absolute;left:16px;right:16px;bottom:0;height:3px;background:var(--it-blau)}
+#header{background:#fff;border-bottom:1px solid var(--it-linie);padding:8px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;box-shadow:0 1px 3px rgba(0,0,0,.07);position:sticky;top:0;z-index:200}
 #header h1{font-size:15px;font-weight:700}
 #header .sub{font-size:10px;color:var(--gray-400);letter-spacing:2px;text-transform:uppercase;margin-bottom:1px}
 .meta-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
@@ -135,7 +144,7 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
     padding-top:54px;box-shadow:4px 0 20px rgba(0,0,0,.18);
   }
   #sidebar.open{transform:translateX(0)}
-  .sidebar-backdrop.open{display:block;position:fixed;inset:0;background:rgba(17,24,39,.4);z-index:70}
+  .sidebar-backdrop.open{display:block;position:fixed;inset:0;background:rgba(35,39,40,.4);z-index:70}
   #main{padding:52px 14px 14px}
 
   /* Eigene ToDos: auf schmalen Screens als ausklappbares Panel von rechts statt fester Spalte */
@@ -152,7 +161,7 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
     padding-top:54px;box-shadow:-4px 0 20px rgba(0,0,0,.18);
   }
   #todo-sidebar.open{transform:translateX(0)}
-  #todo-sidebar-backdrop.open{display:block;position:fixed;inset:0;background:rgba(17,24,39,.4);z-index:70}
+  #todo-sidebar-backdrop.open{display:block;position:fixed;inset:0;background:rgba(35,39,40,.4);z-index:70}
   .grid-2{grid-template-columns:1fr}
   #folder-protocol-grid{grid-template-columns:1fr !important}
 
@@ -253,8 +262,8 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 .card-group-heading::before{content:'';display:block;width:4px;height:14px;background:var(--blue);border-radius:2px;flex-shrink:0}
 .card-group-heading span{font-size:11px;font-weight:700;color:var(--blue)}
 .card{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--gray-300);border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04);transition:border-color .15s}
-.card:hover{border-color:var(--blue);box-shadow:0 1px 4px rgba(0,159,227,.1)}
-.card.new-today{border:1px solid #93c5fd!important;border-left:4px solid var(--blue)!important;box-shadow:0 0 0 2px var(--blue-mid)!important}
+.card:hover{border-color:var(--blue);box-shadow:0 1px 4px rgba(11,161,226,.1)}
+.card.new-today{border:1px solid #85D0F0!important;border-left:4px solid var(--blue)!important;box-shadow:0 0 0 2px var(--blue-mid)!important}
 .card.expanded .card-header{background:var(--gray-50)}
 .card-header{padding:9px 12px;cursor:pointer;display:flex;align-items:flex-start;gap:8px;transition:background .1s}
 .card-header:hover{background:var(--gray-50)}
@@ -264,11 +273,11 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 .s-Aufgabe{color:#0e7490;background:#ecfeff;border:1px solid #67e8f9}
 .s-offen{color:var(--red);background:#fff1f1;border:1px solid #fca5a5}
 .s-erledigt{color:var(--green);background:#f0fdf4;border:1px solid #86efac}
-.s-Info{color:#2563eb;background:#eff6ff;border:1px solid #93c5fd}
+.s-Info{color:#0079A3;background:#E6F5FC;border:1px solid #85D0F0}
 .s-läuft{color:var(--orange);background:#fffbeb;border:1px solid #fcd34d}
 .s-Festlegung{color:var(--purple);background:#f5f3ff;border:1px solid #c4b5fd}
 .bl-Aufgabe{border-left-color:#0e7490!important}.bl-offen{border-left-color:var(--red)!important}.bl-erledigt{border-left-color:var(--green)!important}
-.bl-Info{border-left-color:#2563eb!important}.bl-läuft{border-left-color:var(--orange)!important}.bl-Festlegung{border-left-color:var(--purple)!important}
+.bl-Info{border-left-color:#0079A3!important}.bl-läuft{border-left-color:var(--orange)!important}.bl-Festlegung{border-left-color:var(--purple)!important}
 .card-preview{flex:1;font-size:11px;color:var(--gray-900);line-height:1.5;min-width:0}
 .card-preview.empty{color:var(--gray-400);font-style:italic}
 .card-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
@@ -277,7 +286,7 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 .nf-badge.late{color:#b91c1c;background:#fff1f1;border-color:#fca5a5}
 .nf-badge.done{color:#15803d;background:#f0fdf4;border-color:#86efac}
 .termin-badge{font-size:10px;color:var(--gray-700);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:2px 6px;white-space:nowrap}
-.file-badge{background:var(--blue-light);border:1px solid #93c5fd;color:#1d4ed8;border-radius:4px;padding:2px 6px;font-size:9px;font-weight:600}
+.file-badge{background:var(--blue-light);border:1px solid #85D0F0;color:#0079A3;border-radius:4px;padding:2px 6px;font-size:9px;font-weight:600}
 .chevron{font-size:12px;color:var(--gray-400);transition:transform .2s;display:inline-block}
 .card.expanded .chevron{transform:rotate(180deg)}
 .card-body{display:none;padding:12px 14px 14px;border-top:1px solid var(--gray-100);background:var(--gray-50)}
@@ -303,11 +312,11 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 .inhalt-add-label{padding:2px 9px 0;font-size:9px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;display:none}
 .inhalt-add-label.visible{display:block}
 .inhalt-add{width:100%;border:none;outline:none;resize:none;padding:3px 9px 6px;font-size:12px;color:var(--blue);font-family:inherit;line-height:1.6;background:#fff;display:block}
-.inhalt-add::placeholder{color:#93c5fd;font-style:italic}
+.inhalt-add::placeholder{color:#85D0F0;font-style:italic}
 .btn-delete{background:#fff;border:1px solid #fca5a5;color:var(--red);border-radius:5px;padding:4px 12px;font-size:11px;cursor:pointer;float:right;margin-top:8px}
 .btn-delete:hover{background:#fef2f2}
-.btn-bestand{background:#fff;border:1px solid #d1d5db;color:var(--gray-600);border-radius:5px;padding:4px 12px;font-size:11px;cursor:pointer}
-.btn-bestand:hover{background:#f9fafb;border-color:var(--gray-400)}
+.btn-bestand{background:#fff;border:1px solid #D3D7DA;color:var(--gray-600);border-radius:5px;padding:4px 12px;font-size:11px;cursor:pointer}
+.btn-bestand:hover{background:#F7F8F8;border-color:var(--gray-400)}
 .file-upload-area{border:1.5px dashed var(--gray-300);border-radius:6px;padding:9px 12px;background:var(--gray-50);cursor:pointer;text-align:center;font-size:11px;color:var(--gray-600);position:relative}
 .file-upload-area:hover{border-color:var(--blue);color:var(--blue)}
 .file-upload-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
@@ -321,11 +330,11 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 #btn-add-bottom:hover{border-color:var(--blue);color:var(--blue)}
 .prev-banner{background:#fffbeb;border:1px solid #fcd34d;border-radius:6px;padding:8px 12px;margin-bottom:10px;font-size:11px;color:#92400e;display:flex;align-items:center;gap:8px}
 .prev-banner strong{font-weight:700}
-#toast{position:fixed;bottom:24px;right:24px;background:#111827;color:#fff;border-radius:8px;padding:10px 16px;font-size:12px;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:9999;transform:translateY(100px);opacity:0;transition:all .3s;pointer-events:none}
+#toast{position:fixed;bottom:24px;right:24px;background:#232728;color:#fff;border-radius:8px;padding:10px 16px;font-size:12px;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:9999;transform:translateY(100px);opacity:0;transition:all .3s;pointer-events:none}
 #toast.show{transform:translateY(0);opacity:1}
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  #setup-screen,#start-screen,#header,#sidebar,#btn-add-top,#btn-add-bottom,.btn-delete,.chevron,.main-actions,#sidebar-footer,#todo-sidebar,#todo-sidebar-toggle{display:none!important}
+  #setup-screen,#start-screen,#header,.it-navbar,#sidebar,#btn-add-top,#btn-add-bottom,.btn-delete,.chevron,.main-actions,#sidebar-footer,#todo-sidebar,#todo-sidebar-toggle{display:none!important}
   #app{height:auto!important;overflow:visible!important}
   #main{overflow:visible!important}
   .card-body{display:block!important}
@@ -340,14 +349,14 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 <body>
 
 <!-- ═══ SETUP SCREEN (nur beim ersten Start) ═══ -->
-<div id="setup-screen" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f0f7ff 0%,#f9fafb 60%,#e0f2fe 100%);z-index:1000;padding:24px">
+<div id="setup-screen" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#F0F2F3;z-index:1000;padding:24px">
   <div class="setup-card">
     <h2>⚙️ Supabase einrichten</h2>
     <p>Einmalige Konfiguration — danach ist die App per Link für alle Kollegen zugänglich.</p>
     <div class="setup-steps">
       <h3>3 Schritte in Supabase:</h3>
       <div class="step"><div class="step-num">1</div><div>Gehen Sie zu <a href="https://supabase.com" target="_blank">supabase.com</a> → Kostenlos registrieren → Neues Projekt anlegen</div></div>
-      <div class="step"><div class="step-num">2</div><div>Im Projekt: <strong>SQL Editor</strong> öffnen und diesen Befehl ausführen:<br><code style="background:#f3f4f6;padding:4px 8px;border-radius:4px;font-size:11px;display:block;margin-top:4px">CREATE TABLE protokolle (id text PRIMARY KEY, data jsonb, updated_at timestamptz DEFAULT now());<br>CREATE TABLE ordner (id text PRIMARY KEY, name text, farbe text, pos integer DEFAULT 0);</code></div></div>
+      <div class="step"><div class="step-num">2</div><div>Im Projekt: <strong>SQL Editor</strong> öffnen und diesen Befehl ausführen:<br><code style="background:#F0F2F3;padding:4px 8px;border-radius:4px;font-size:11px;display:block;margin-top:4px">CREATE TABLE protokolle (id text PRIMARY KEY, data jsonb, updated_at timestamptz DEFAULT now());<br>CREATE TABLE ordner (id text PRIMARY KEY, name text, farbe text, pos integer DEFAULT 0);</code></div></div>
       <div class="step"><div class="step-num">3</div><div>Unter <strong>Project Settings → API</strong>: Project URL und anon public Key kopieren und unten einfügen</div></div>
     </div>
     <div class="setup-field">
@@ -361,41 +370,41 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
       <small>Aus: Project Settings → API → anon public</small>
     </div>
     <button class="setup-btn" onclick="saveConfig()">Verbindung speichern &amp; starten →</button>
-    <div class="setup-err" id="setup-err" style="display:none;margin-top:10px;padding:8px 12px;background:#fef2f2;border:1px solid #fca5a5;color:#dc2626;border-radius:6px;font-size:12px"></div>
+    <div class="setup-err" id="setup-err" style="display:none;margin-top:10px;padding:8px 12px;background:#fef2f2;border:1px solid #fca5a5;color:#C1443B;border-radius:6px;font-size:12px"></div>
   </div>
 </div>
 
 <!-- ═══ START SCREEN ═══ -->
-<div id="start-screen" style="display:none;position:fixed;inset:0;background:#f3f4f6;z-index:999;overflow-y:auto">
-  <div style="max-width:720px;margin:0 auto;padding:24px 20px">
-
-    <!-- Logo + Header -->
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
-      <div style="display:flex;align-items:center;gap:12px">
-        <img data-logo src="innotech-logo.png" alt="INNOTECH Leipzig GmbH" style="height:28px;width:auto;display:block" />
-        <span class="conn-badge">☁ Verbunden</span>
-      </div>
-      <span class="reset-link" style="margin:0" onclick="resetConfig()">Verbindung ändern</span>
+<div id="start-screen" style="display:none;position:fixed;inset:0;background:#F0F2F3;z-index:999;overflow-y:auto">
+  <!-- Kopfbereich im INNOTECH-Design: weiße Logo-Leiste + Anthrazit-Leiste -->
+  <div class="it-logobar">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img data-logo src="innotech-logo.png" alt="INNOTECH Leipzig GmbH" class="it-logo" />
+      <span class="conn-badge">☁ Verbunden</span>
     </div>
+    <span class="reset-link" style="margin:0" onclick="resetConfig()">Verbindung ändern</span>
+  </div>
+  <div class="it-navbar"><span class="it-nav-item active">Protokolle &amp; Aktennotizen</span></div>
+  <div style="max-width:720px;margin:0 auto;padding:20px 20px 24px">
 
     <!-- Action buttons row -->
     <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center">
-      <span style="font-size:13px;font-weight:600;color:#374151">Neues Protokoll:</span>
-      <button onclick="startNew('profi')" style="display:flex;align-items:center;gap:6px;padding:9px 14px;background:#0BA1E2;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600" onmouseover="this.style.background='#0886BD'" onmouseout="this.style.background='#0BA1E2'">
+      <span style="font-size:13px;font-weight:600;color:#3A4349">Neues Protokoll:</span>
+      <button onclick="startNew('profi')" style="display:flex;align-items:center;gap:6px;padding:9px 14px;background:#0BA1E2;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600" onmouseover="this.style.background='#0079A3'" onmouseout="this.style.background='#0BA1E2'">
         🗂 Profivorlage
       </button>
-      <button onclick="startNew('standard')" style="display:flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;color:#0BA1E2;border:1.5px solid #0BA1E2;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600" onmouseover="this.style.background='#f0f7ff'" onmouseout="this.style.background='#fff'">
+      <button onclick="startNew('standard')" style="display:flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;color:#0BA1E2;border:1.5px solid #0BA1E2;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600" onmouseover="this.style.background='#E6F5FC'" onmouseout="this.style.background='#fff'">
         📝 Standardvorlage
       </button>
-      <div style="width:1px;height:28px;background:#e5e7eb;margin:0 4px"></div>
+      <div style="width:1px;height:28px;background:#E1E1E1;margin:0 4px"></div>
       <div style="position:relative;display:inline-block">
-        <label style="display:flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;color:#374151;border:1.5px solid #d1d5db;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600">
+        <label style="display:flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;color:#3A4349;border:1.5px solid #D3D7DA;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600">
           ✏️ Weiterbearbeiten
           <input type="file" id="json-edit-input" accept=".json" onchange="editJSON(this.files[0])" style="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%">
         </label>
       </div>
       <div style="position:relative;display:inline-block">
-        <label style="display:flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;color:#374151;border:1.5px solid #d1d5db;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600">
+        <label style="display:flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;color:#3A4349;border:1.5px solid #D3D7DA;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600">
           📂 Fortsetzen
           <input type="file" id="json-input" accept=".json" onchange="loadJSON(this.files[0])" style="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%">
         </label>
@@ -403,42 +412,42 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
     </div>
     <!-- Vorlage Beschreibung -->
     <div style="display:flex;gap:8px;margin-bottom:16px">
-      <div style="flex:1;background:#f0f7ff;border:1px solid #bfdbfe;border-radius:8px;padding:8px 12px;font-size:11px;color:#374151;line-height:1.5">
+      <div style="flex:1;background:#E6F5FC;border:1px solid #B5E2F6;border-radius:8px;padding:8px 12px;font-size:11px;color:#3A4349;line-height:1.5">
         <strong style="color:#0BA1E2">🗂 Profivorlage:</strong> Karten-Ansicht mit Status, Anlagen & Zwischenüberschriften
       </div>
-      <div style="flex:1;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:11px;color:#374151;line-height:1.5">
-        <strong style="color:#374151">📝 Standardvorlage:</strong> Tabelle wie im Word-Protokoll – Lfd. Nr. | Besprechungspunkt | Termin | Verantwortlich
+      <div style="flex:1;background:#F7F8F8;border:1px solid #E1E1E1;border-radius:8px;padding:8px 12px;font-size:11px;color:#3A4349;line-height:1.5">
+        <strong style="color:#3A4349">📝 Standardvorlage:</strong> Tabelle wie im Word-Protokoll – Lfd. Nr. | Besprechungspunkt | Termin | Verantwortlich
       </div>
     </div>
 
     <!-- GF-Bereich: kompakte An-/Abmeldung. Kein eigener Bereich mehr - schaltet nur "Nur GF"-Punkte
          in den normalen Projekten/Protokollen sichtbar/bearbeitbar. -->
     <div style="display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-bottom:12px">
-      <button id="gf-toggle-btn" class="gf-toggle-btn-el" onclick="gfToggle()" style="background:#fff;border:1.5px solid #d1d5db;color:#374151;border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px">🔒 GF-Anmeldung</button>
+      <button id="gf-toggle-btn" class="gf-toggle-btn-el" onclick="gfToggle()" style="background:#fff;border:1.5px solid #D3D7DA;color:#3A4349;border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px">🔒 GF-Anmeldung</button>
     </div>
 
     <!-- Folder + Protocol layout -->
     <div id="folder-protocol-grid" style="display:grid;grid-template-columns:220px 1fr;gap:14px;align-items:start">
 
       <!-- LEFT: Folder sidebar -->
-      <div style="background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:hidden">
+      <div style="background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:hidden">
         <div style="background:#0BA1E2;padding:10px 14px;display:flex;align-items:center;justify-content:space-between">
           <span style="color:#fff;font-weight:700;font-size:12px" id="ordner-panel-title">📁 Projekte</span>
           <button onclick="addOrdner()" style="background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:4px;padding:2px 8px;font-size:18px;cursor:pointer;font-family:inherit;line-height:1" title="Neuer Ordner">+</button>
         </div>
         <div id="ordner-list" style="min-height:80px">
-          <div style="padding:20px;text-align:center;font-size:12px;color:#9ca3af">Lädt …</div>
+          <div style="padding:20px;text-align:center;font-size:12px;color:#8C969E">Lädt …</div>
         </div>
         <!-- Alle anzeigen -->
-        <div style="border-top:1px solid #f3f4f6">
-          <div id="ordner-alle" onclick="filterByOrdner(null)" style="padding:9px 14px;cursor:pointer;display:flex;align-items:center;gap:8px;font-size:12px;color:#6b7280;transition:background .1s" onmouseover="this.style.background='#f9fafb'" onmouseout="this.style.background=''">
+        <div style="border-top:1px solid #F0F2F3">
+          <div id="ordner-alle" onclick="filterByOrdner(null)" style="padding:9px 14px;cursor:pointer;display:flex;align-items:center;gap:8px;font-size:12px;color:#6B7680;transition:background .1s" onmouseover="this.style.background='#F7F8F8'" onmouseout="this.style.background=''">
             <span style="font-size:14px">🗂</span> Alle Protokolle
           </div>
         </div>
       </div>
 
       <!-- RIGHT: Protocol list -->
-      <div style="background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:hidden">
+      <div style="background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:hidden">
         <div style="background:#0BA1E2;padding:12px 18px;display:flex;align-items:center;justify-content:space-between">
           <div style="color:#fff;font-weight:700;font-size:13px" id="cloud-list-title">☁️ Alle Protokolle</div>
           <button onclick="loadCloudList()" style="background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:5px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:inherit">↻ Aktualisieren</button>
@@ -454,7 +463,7 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 <div id="app-screen">
   <div id="header">
     <div style="display:flex;align-items:center;gap:12px">
-      <img data-logo src="innotech-logo.png" alt="INNOTECH Leipzig GmbH" style="height:20px;width:auto;display:block;flex-shrink:0" />
+      <img data-logo src="innotech-logo.png" alt="INNOTECH Leipzig GmbH" style="height:24px;width:auto;display:block;flex-shrink:0" />
       <div>
         <div class="sub" id="proj-display">INNOTECH Leipzig GmbH</div>
         <h1 id="proto-title">Protokoll-Erfassung</h1>
@@ -481,6 +490,7 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
       <button class="hbtn hbtn-outline" id="btn-ablage" onclick="openAblage()" title="Protokoll als Ordner ablegen: Export, PDF, Terminauszug, ZIP, Excel – ältere Protokolle ins Archiv">📁 Ablegen</button>
     </div>
   </div>
+  <div class="it-navbar"><span class="it-nav-item active">Protokoll</span></div>
   <div id="app">
     <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Abschnitte">☰ Abschnitte</button>
     <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleSidebar(false)"></div>
@@ -525,7 +535,7 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 </div>
 <div id="toast"></div>
 
-<div id="tp-claim-modal" style="display:none;position:fixed;inset:0;background:rgba(17,24,39,.45);z-index:3000;align-items:center;justify-content:center">
+<div id="tp-claim-modal" style="display:none;position:fixed;inset:0;background:rgba(35,39,40,.45);z-index:3000;align-items:center;justify-content:center">
   <div style="background:#fff;border-radius:10px;width:460px;max-width:92vw;padding:18px;box-shadow:0 10px 40px rgba(0,0,0,.25)">
     <div style="font-size:13px;font-weight:700;margin-bottom:4px" id="tp-claim-title">📅 Terminplan-Vorgang ins Protokoll übernehmen</div>
     <div style="font-size:11px;color:var(--gray-600);margin-bottom:10px" id="tp-claim-sub"></div>
@@ -540,27 +550,27 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
     </div>
   </div>
 </div>
-<div id="ab-modal" style="display:none;position:fixed;inset:0;background:rgba(17,24,39,.45);z-index:3100;align-items:center;justify-content:center">
+<div id="ab-modal" style="display:none;position:fixed;inset:0;background:rgba(35,39,40,.45);z-index:3100;align-items:center;justify-content:center">
   <div style="background:#fff;border-radius:10px;width:560px;max-width:94vw;max-height:92vh;overflow:auto;padding:18px;box-shadow:0 10px 40px rgba(0,0,0,.25);font-size:12.5px">
     <div style="font-size:14px;font-weight:700;margin-bottom:2px">📁 Protokoll ablegen</div>
-    <div style="font-size:11px;color:#6b7280;margin-bottom:12px">Legt alle Dateien in einem Ordner ab. Ältere Protokolle dieses Typs wandern ins Archiv.</div>
-    <div style="border:1px solid #e5e7eb;border-radius:8px;padding:9px 11px;background:#f9fafb;margin-bottom:10px">
-      <div style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px">Zielordner</div>
+    <div style="font-size:11px;color:#6B7680;margin-bottom:12px">Legt alle Dateien in einem Ordner ab. Ältere Protokolle dieses Typs wandern ins Archiv.</div>
+    <div style="border:1px solid #E1E1E1;border-radius:8px;padding:9px 11px;background:#F7F8F8;margin-bottom:10px">
+      <div style="font-size:10px;font-weight:700;color:#6B7680;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px">Zielordner</div>
       <div id="ab-pfad" style="font-family:Consolas,monospace;font-size:11.5px;word-break:break-all"></div>
-      <div style="display:flex;align-items:center;gap:8px;margin-top:6px;font-size:11px;color:#6b7280"><span id="ab-root">–</span><button id="ab-pick" onclick="abPick()" style="border:1px solid #d1d5db;background:#fff;border-radius:4px;font-size:10.5px;padding:2px 8px;cursor:pointer">Ablage-Ordner wählen …</button></div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:6px;font-size:11px;color:#6B7680"><span id="ab-root">–</span><button id="ab-pick" onclick="abPick()" style="border:1px solid #D3D7DA;background:#fff;border-radius:4px;font-size:10.5px;padding:2px 8px;cursor:pointer">Ablage-Ordner wählen …</button></div>
     </div>
-    <div style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px">Dateien im Ordner</div>
+    <div style="font-size:10px;font-weight:700;color:#6B7680;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px">Dateien im Ordner</div>
     <div id="ab-files" style="margin-bottom:10px"></div>
     <label id="ab-arch-row" style="display:flex;gap:7px;align-items:flex-start;margin-bottom:8px;cursor:pointer"><input type="checkbox" id="ab-arch" style="margin-top:2px"><span id="ab-arch-txt"></span></label>
     <div id="ab-warn" style="display:none;margin-bottom:8px"></div>
-    <div id="ab-log" style="display:none;border:1px solid #e5e7eb;border-radius:6px;padding:7px 10px;font-size:11.5px;line-height:1.55;max-height:170px;overflow:auto;margin-bottom:8px;background:#fff"></div>
+    <div id="ab-log" style="display:none;border:1px solid #E1E1E1;border-radius:6px;padding:7px 10px;font-size:11.5px;line-height:1.55;max-height:170px;overflow:auto;margin-bottom:8px;background:#fff"></div>
     <div style="display:flex;justify-content:flex-end;gap:8px">
-      <button onclick="abClose()" id="ab-close" style="border:1px solid #d1d5db;background:#fff;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">Abbrechen</button>
+      <button onclick="abClose()" id="ab-close" style="border:1px solid #D3D7DA;background:#fff;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">Abbrechen</button>
       <button onclick="abGo()" id="ab-go" style="border:0;background:#0BA1E2;color:#fff;border-radius:6px;padding:6px 16px;cursor:pointer;font-size:12px;font-weight:700">Jetzt ablegen</button>
     </div>
   </div>
 </div>
-<div id="tp-opt-modal" style="display:none;position:fixed;inset:0;background:rgba(17,24,39,.45);z-index:3000;align-items:center;justify-content:center">
+<div id="tp-opt-modal" style="display:none;position:fixed;inset:0;background:rgba(35,39,40,.45);z-index:3000;align-items:center;justify-content:center">
   <div style="background:#fff;border-radius:10px;width:400px;max-width:92vw;padding:18px;box-shadow:0 10px 40px rgba(0,0,0,.25);font-size:12.5px">
     <div style="font-size:13px;font-weight:700;margin-bottom:2px">📅 Terminplan-Auszug in PDF und Excel</div>
     <div style="font-size:11px;color:var(--gray-600);margin-bottom:12px" id="tp-opt-info"></div>
@@ -577,7 +587,7 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
 </div>
 <style>.tpo-g{margin-bottom:10px}.tpo-g>b{display:block;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-400);margin-bottom:4px}.tpo-g label{display:flex;gap:7px;align-items:center;margin-bottom:3px;cursor:pointer}</style>
 
-<div id="todo-claim-modal" style="display:none;position:fixed;inset:0;background:rgba(17,24,39,.45);z-index:3000;align-items:center;justify-content:center">
+<div id="todo-claim-modal" style="display:none;position:fixed;inset:0;background:rgba(35,39,40,.45);z-index:3000;align-items:center;justify-content:center">
   <div style="background:#fff;border-radius:10px;width:420px;max-width:92vw;padding:18px;box-shadow:0 10px 40px rgba(0,0,0,.25)">
     <div style="font-size:13px;font-weight:700;margin-bottom:10px">📝 ToDo ins Protokoll übernehmen</div>
     <div style="font-size:12px;color:var(--gray-700);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:6px;padding:8px 10px;margin-bottom:12px;white-space:pre-wrap;max-height:120px;overflow-y:auto" id="todo-claim-text"></div>
@@ -590,19 +600,19 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
   </div>
 </div>
 
-<div id="teilnehmer-modal" style="display:none;position:fixed;inset:0;background:rgba(17,24,39,.45);z-index:3000;align-items:center;justify-content:center">
+<div id="teilnehmer-modal" style="display:none;position:fixed;inset:0;background:rgba(35,39,40,.45);z-index:3000;align-items:center;justify-content:center">
   <div style="background:#fff;border-radius:10px;width:640px;max-width:92vw;max-height:80vh;display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.25)">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #e5e7eb">
-      <div style="font-size:14px;font-weight:700;color:#111827">👥 Teilnehmer <span id="tn-modal-proj" style="color:#9ca3af;font-weight:400;font-size:12px"></span></div>
-      <button onclick="closeTeilnehmerModal()" style="background:none;border:none;cursor:pointer;font-size:16px;color:#9ca3af">✕</button>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #E1E1E1">
+      <div style="font-size:14px;font-weight:700;color:#232728">👥 Teilnehmer <span id="tn-modal-proj" style="color:#8C969E;font-weight:400;font-size:12px"></span></div>
+      <button onclick="closeTeilnehmerModal()" style="background:none;border:none;cursor:pointer;font-size:16px;color:#8C969E">✕</button>
     </div>
-    <div style="padding:14px 18px;border-bottom:1px solid #f3f4f6;display:flex;gap:6px;flex-wrap:wrap">
-      <input id="tn-new-name" placeholder="Name …" style="flex:1;min-width:110px;border:1px solid #d1d5db;border-radius:5px;padding:6px 8px;font-size:12px;font-family:inherit;outline:none">
-      <input id="tn-new-firma" placeholder="Firma …" style="flex:1;min-width:110px;border:1px solid #d1d5db;border-radius:5px;padding:6px 8px;font-size:12px;font-family:inherit;outline:none">
-      <input id="tn-new-mail" type="email" placeholder="E-Mail …" style="flex:1;min-width:140px;border:1px solid #d1d5db;border-radius:5px;padding:6px 8px;font-size:12px;font-family:inherit;outline:none">
+    <div style="padding:14px 18px;border-bottom:1px solid #F0F2F3;display:flex;gap:6px;flex-wrap:wrap">
+      <input id="tn-new-name" placeholder="Name …" style="flex:1;min-width:110px;border:1px solid #D3D7DA;border-radius:5px;padding:6px 8px;font-size:12px;font-family:inherit;outline:none">
+      <input id="tn-new-firma" placeholder="Firma …" style="flex:1;min-width:110px;border:1px solid #D3D7DA;border-radius:5px;padding:6px 8px;font-size:12px;font-family:inherit;outline:none">
+      <input id="tn-new-mail" type="email" placeholder="E-Mail …" style="flex:1;min-width:140px;border:1px solid #D3D7DA;border-radius:5px;padding:6px 8px;font-size:12px;font-family:inherit;outline:none">
       <button onclick="addTeilnehmer()" style="background:#0BA1E2;border:none;color:#fff;border-radius:5px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer">+ Hinzufügen</button>
     </div>
-    <div style="padding:10px 18px 12px;border-bottom:1px solid #f3f4f6">
+    <div style="padding:10px 18px 12px;border-bottom:1px solid #F0F2F3">
       <div class="file-upload-area" style="padding:7px 10px;font-size:11px">
         📇 Outlook-Kontakt (.vcf) hierher ziehen oder klicken zum Hochladen
         <input type="file" id="tn-vcard-input" accept=".vcf,text/vcard,text/x-vcard" multiple onchange="handleVCardImport(this.files)">
@@ -610,49 +620,49 @@ body{font-family:'Open Sans',Arial,sans-serif;background:#f3f4f6;color:var(--gra
       <div id="tn-vcard-preview"></div>
     </div>
     <div id="tn-list" style="flex:1;overflow-y:auto;padding:6px 10px"></div>
-    <label style="display:flex;align-items:center;gap:6px;padding:8px 18px;font-size:11px;color:#374151;border-top:1px solid #f3f4f6;cursor:pointer"><input type="checkbox" id="tn-hide-print" onchange="setHideTnPrint(this.checked)" style="cursor:pointer">Teilnehmer in Druckversion / PDF / HTML-Export ausblenden (Teilnehmerkreis siehe Hauptprotokoll)</label>
-    <div style="padding:10px 18px;font-size:10px;color:#9ca3af;border-top:1px solid #f3f4f6">Diese Liste gilt projektweit (alle Protokolle im selben Ordner) und wird bei „Verantwortlich“ zur Auswahl angeboten. „Anwesend“ gilt nur für dieses Protokoll, „Verteiler“ bleibt fest im Projekt gespeichert. Über „📇 Kontakt“ lässt sich ein Teilnehmer als vCard herunterladen und z.B. in Outlook importieren.</div>
+    <label style="display:flex;align-items:center;gap:6px;padding:8px 18px;font-size:11px;color:#3A4349;border-top:1px solid #F0F2F3;cursor:pointer"><input type="checkbox" id="tn-hide-print" onchange="setHideTnPrint(this.checked)" style="cursor:pointer">Teilnehmer in Druckversion / PDF / HTML-Export ausblenden (Teilnehmerkreis siehe Hauptprotokoll)</label>
+    <div style="padding:10px 18px;font-size:10px;color:#8C969E;border-top:1px solid #F0F2F3">Diese Liste gilt projektweit (alle Protokolle im selben Ordner) und wird bei „Verantwortlich“ zur Auswahl angeboten. „Anwesend“ gilt nur für dieses Protokoll, „Verteiler“ bleibt fest im Projekt gespeichert. Über „📇 Kontakt“ lässt sich ein Teilnehmer als vCard herunterladen und z.B. in Outlook importieren.</div>
   </div>
 </div>
 
 <div id="sperre-modal" onclick="if(event.target===this)closeSperreModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:3500;align-items:center;justify-content:center;padding:16px">
   <div style="background:#fff;border-radius:12px;width:100%;max-width:520px;max-height:92vh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);font-family:inherit">
-    <div style="padding:14px 18px;border-bottom:1px solid #f3f4f6;display:flex;justify-content:space-between;align-items:center"><div style="font-size:15px;font-weight:700">🔒 Interner Sperrvermerk</div><button onclick="closeSperreModal()" style="background:none;border:none;font-size:18px;cursor:pointer;color:#9ca3af">✕</button></div>
-    <div style="padding:14px 18px;display:flex;flex-direction:column;gap:10px;font-size:12px;color:#374151">
+    <div style="padding:14px 18px;border-bottom:1px solid #F0F2F3;display:flex;justify-content:space-between;align-items:center"><div style="font-size:15px;font-weight:700">🔒 Interner Sperrvermerk</div><button onclick="closeSperreModal()" style="background:none;border:none;font-size:18px;cursor:pointer;color:#8C969E">✕</button></div>
+    <div style="padding:14px 18px;display:flex;flex-direction:column;gap:10px;font-size:12px;color:#3A4349">
       <label style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;cursor:pointer"><input type="checkbox" id="sp-aktiv" onchange="spUpdateWarn()" style="width:16px;height:16px;cursor:pointer">Protokoll intern sperren</label>
-      <div style="font-size:11px;color:#6b7280">Der Vermerk erscheint in PDF/Druck auf <b>jeder Seite</b> (roter Randstreifen „INTERN“ + Hinweiszeile mit Aufhebungsperson unten).</div>
-      <label>Aufhebung nur durch (Person)<input id="sp-name" list="sp-tn-list" oninput="spPickName()" onchange="spPickName()" placeholder="Name – aus Teilnehmerliste wählen oder frei eintragen" style="width:100%;margin-top:3px;border:1px solid #d1d5db;border-radius:6px;padding:7px 9px;font-size:12px;font-family:inherit"></label>
+      <div style="font-size:11px;color:#6B7680">Der Vermerk erscheint in PDF/Druck auf <b>jeder Seite</b> (roter Randstreifen „INTERN“ + Hinweiszeile mit Aufhebungsperson unten).</div>
+      <label>Aufhebung nur durch (Person)<input id="sp-name" list="sp-tn-list" oninput="spPickName()" onchange="spPickName()" placeholder="Name – aus Teilnehmerliste wählen oder frei eintragen" style="width:100%;margin-top:3px;border:1px solid #D3D7DA;border-radius:6px;padding:7px 9px;font-size:12px;font-family:inherit"></label>
       <datalist id="sp-tn-list"></datalist>
-      <label>Firma / Kontakt<input id="sp-kontakt" placeholder="z. B. INNOTECH Leipzig GmbH · name@firma.de" style="width:100%;margin-top:3px;border:1px solid #d1d5db;border-radius:6px;padding:7px 9px;font-size:12px;font-family:inherit"></label>
-      <label>Hinweistext<textarea id="sp-text" rows="3" style="width:100%;margin-top:3px;border:1px solid #d1d5db;border-radius:6px;padding:7px 9px;font-size:12px;font-family:inherit;resize:vertical"></textarea></label>
+      <label>Firma / Kontakt<input id="sp-kontakt" placeholder="z. B. INNOTECH Leipzig GmbH · name@firma.de" style="width:100%;margin-top:3px;border:1px solid #D3D7DA;border-radius:6px;padding:7px 9px;font-size:12px;font-family:inherit"></label>
+      <label>Hinweistext<textarea id="sp-text" rows="3" style="width:100%;margin-top:3px;border:1px solid #D3D7DA;border-radius:6px;padding:7px 9px;font-size:12px;font-family:inherit;resize:vertical"></textarea></label>
       <div id="sp-warn" style="display:none;background:#fff1f1;border:1px solid #fca5a5;color:#b3261e;border-radius:6px;padding:6px 9px;font-size:11px">Bitte eine Person eintragen, die den Sperrvermerk aufheben darf.</div>
     </div>
-    <div style="padding:12px 18px;border-top:1px solid #f3f4f6;display:flex;justify-content:flex-end;gap:8px"><button onclick="closeSperreModal()" style="background:#fff;border:1px solid #d1d5db;border-radius:6px;padding:7px 14px;font-size:12px;cursor:pointer">Abbrechen</button><button id="sp-save" onclick="spSave()" style="background:#b3261e;border:none;color:#fff;border-radius:6px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer">Übernehmen</button></div>
+    <div style="padding:12px 18px;border-top:1px solid #F0F2F3;display:flex;justify-content:flex-end;gap:8px"><button onclick="closeSperreModal()" style="background:#fff;border:1px solid #D3D7DA;border-radius:6px;padding:7px 14px;font-size:12px;cursor:pointer">Abbrechen</button><button id="sp-save" onclick="spSave()" style="background:#b3261e;border:none;color:#fff;border-radius:6px;padding:7px 16px;font-size:12px;font-weight:700;cursor:pointer">Übernehmen</button></div>
   </div>
 </div>
 
-<div id="termin-picker" onclick="event.stopPropagation()" style="display:none;position:fixed;background:#fff;border:1px solid #d1d5db;border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,.18);z-index:4000;padding:10px;width:230px;font-family:inherit"></div>
+<div id="termin-picker" onclick="event.stopPropagation()" style="display:none;position:fixed;background:#fff;border:1px solid #D3D7DA;border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,.18);z-index:4000;padding:10px;width:230px;font-family:inherit"></div>
 
-<div id="verantwortlich-picker" onclick="event.stopPropagation()" style="display:none;position:fixed;background:#fff;border:1px solid #d1d5db;border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,.18);z-index:4000;padding:8px;width:240px;font-family:inherit"></div>
+<div id="verantwortlich-picker" onclick="event.stopPropagation()" style="display:none;position:fixed;background:#fff;border:1px solid #D3D7DA;border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,.18);z-index:4000;padding:8px;width:240px;font-family:inherit"></div>
 
-<div id="gf-login-modal" style="display:none;position:fixed;inset:0;background:rgba(17,24,39,.45);z-index:3000;align-items:center;justify-content:center">
+<div id="gf-login-modal" style="display:none;position:fixed;inset:0;background:rgba(35,39,40,.45);z-index:3000;align-items:center;justify-content:center">
   <div style="background:#fff;border-radius:10px;width:360px;max-width:92vw;box-shadow:0 10px 40px rgba(0,0,0,.25)">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #e5e7eb">
-      <div style="font-size:14px;font-weight:700;color:#111827">🔒 Geschäftsführung – Anmeldung</div>
-      <button onclick="closeGFLoginModal()" style="background:none;border:none;cursor:pointer;font-size:16px;color:#9ca3af">✕</button>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #E1E1E1">
+      <div style="font-size:14px;font-weight:700;color:#232728">🔒 Geschäftsführung – Anmeldung</div>
+      <button onclick="closeGFLoginModal()" style="background:none;border:none;cursor:pointer;font-size:16px;color:#8C969E">✕</button>
     </div>
     <form id="gf-login-form" onsubmit="return gfLogin(event)" style="padding:16px 18px;display:flex;flex-direction:column;gap:10px">
       <div>
-        <div style="font-size:11px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px">E-Mail</div>
-        <input id="gf-email" type="email" autocomplete="username" required style="width:100%;border:1px solid #d1d5db;border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;outline:none">
+        <div style="font-size:11px;font-weight:700;color:#4F5961;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px">E-Mail</div>
+        <input id="gf-email" type="email" autocomplete="username" required style="width:100%;border:1px solid #D3D7DA;border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;outline:none">
       </div>
       <div>
-        <div style="font-size:11px;font-weight:700;color:#4b5563;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px">Passwort</div>
-        <input id="gf-password" type="password" autocomplete="current-password" required style="width:100%;border:1px solid #d1d5db;border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;outline:none">
+        <div style="font-size:11px;font-weight:700;color:#4F5961;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px">Passwort</div>
+        <input id="gf-password" type="password" autocomplete="current-password" required style="width:100%;border:1px solid #D3D7DA;border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;outline:none">
       </div>
       <button type="submit" id="gf-login-submit" style="margin-top:4px;background:#7c3aed;border:none;color:#fff;border-radius:6px;padding:9px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">Anmelden</button>
-      <div id="gf-login-error" style="color:#dc2626;font-size:11px;min-height:14px"></div>
-      <div style="font-size:10px;color:#9ca3af;line-height:1.5">Dieser Bereich ist ausschließlich für die Geschäftsführung. Ohne gültigen Login sind die Daten auch über die Datenbank nicht einsehbar.</div>
+      <div id="gf-login-error" style="color:#C1443B;font-size:11px;min-height:14px"></div>
+      <div style="font-size:10px;color:#8C969E;line-height:1.5">Dieser Bereich ist ausschließlich für die Geschäftsführung. Ohne gültigen Login sind die Daten auch über die Datenbank nicht einsehbar.</div>
     </form>
   </div>
 </div>
@@ -753,11 +763,11 @@ function sperrWrap(html){
   const who=`Aufhebung nur durch <b>${SPERRE.aufhebung?nm:"die Projektleitung"}</b>${SPERRE.aufhebung&&SPERRE.kontakt?`, ${e(SPERRE.kontakt)}`:""}`;
   const css=`<style>
 .sp-side{position:fixed;right:0;top:0;bottom:0;width:6mm;background:#b3261e;display:flex;align-items:center;justify-content:center;z-index:5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.sp-side div{writing-mode:vertical-rl;transform:rotate(180deg);color:#fff;font:700 7pt/1 'Segoe UI',Arial,sans-serif;letter-spacing:.6pt;white-space:nowrap}
+.sp-side div{writing-mode:vertical-rl;transform:rotate(180deg);color:#fff;font:700 7pt/1 'Open Sans',Helvetica,Arial,sans-serif;letter-spacing:.6pt;white-space:nowrap}
 table.sp-pw{width:calc(100% - 9mm);border-collapse:collapse;border:0}
 table.sp-pw>tbody>tr>td,table.sp-pw>tfoot>tr>td{padding:0;border:0;font-weight:400;vertical-align:top}
 table.sp-pw>tbody>tr,table.sp-pw>tbody>tr>td{page-break-inside:auto!important;break-inside:auto!important}
-.sp-foot{margin-top:8pt;display:flex;gap:7pt;align-items:center;color:#b3261e;font:8pt/1.4 'Segoe UI',Arial,sans-serif;break-inside:avoid}
+.sp-foot{margin-top:8pt;display:flex;gap:7pt;align-items:center;color:#b3261e;font:8pt/1.4 'Open Sans',Helvetica,Arial,sans-serif;break-inside:avoid}
 .sp-foot .chip{flex:0 0 auto;border:1pt solid #b3261e;border-radius:3pt;padding:2pt 6pt;font-weight:700;letter-spacing:.3pt}
 </style>`;
   const side=`<div class="sp-side"><div>INTERN &middot; GESPERRT &middot; AUFHEBUNG NUR DURCH ${SPERRE.aufhebung?nm.toUpperCase():"DIE PROJEKTLEITUNG"}</div></div>`;
@@ -876,8 +886,8 @@ async function sbListFull(ids){
   }catch(e){return[];}
 }
 const OFFEN_FIRMEN=[
-  {label:"INNOTECH",match:"innotech",bg:"#fff1f1",fg:"#dc2626",bc:"#fca5a5"},
-  {label:"B-Plan",match:"b-plan",bg:"#eff6ff",fg:"#2563eb",bc:"#93c5fd"},
+  {label:"INNOTECH",match:"innotech",bg:"#fff1f1",fg:"#C1443B",bc:"#fca5a5"},
+  {label:"B-Plan",match:"b-plan",bg:"#E6F5FC",fg:"#0079A3",bc:"#85D0F0"},
   {label:"Remes",match:"remes",bg:"#fefce8",fg:"#a16207",bc:"#fde68a"}
 ];
 function countOffenByFirma(docData,matchStr){
@@ -961,19 +971,19 @@ async function toggleHistory(key){
 function renderHistoryPanel(secLabel,titel){
   const hist=getHistoryFor(secLabel,titel);
   const panel=document.createElement("div");
-  panel.style.cssText="background:#f9fafb;border:1px solid #e5e7eb;border-top:none;border-left:3px solid #d1d5db;padding:6px 12px 8px";
+  panel.style.cssText="background:#F7F8F8;border:1px solid #E1E1E1;border-top:none;border-left:3px solid #D3D7DA;padding:6px 12px 8px";
   if(!_historyErledigt){
-    panel.innerHTML=`<div style="font-size:11px;color:#9ca3af;font-style:italic">Lädt Verlauf …</div>`;
+    panel.innerHTML=`<div style="font-size:11px;color:#8C969E;font-style:italic">Lädt Verlauf …</div>`;
   } else if(!hist.length){
-    panel.innerHTML=`<div style="font-size:11px;color:#9ca3af;font-style:italic">Keine erledigten Punkte zu diesem Thema in früheren Protokollen</div>`;
+    panel.innerHTML=`<div style="font-size:11px;color:#8C969E;font-style:italic">Keine erledigten Punkte zu diesem Thema in früheren Protokollen</div>`;
   } else {
-    panel.innerHTML=hist.map(h=>`<div style="padding:5px 0;border-bottom:1px solid #e5e7eb;font-size:11px">
+    panel.innerHTML=hist.map(h=>`<div style="padding:5px 0;border-bottom:1px solid #E1E1E1;font-size:11px">
       <div style="display:flex;gap:6px;align-items:center;margin-bottom:2px;flex-wrap:wrap">
-        <span style="background:#e5e7eb;color:#374151;border-radius:3px;padding:1px 5px;font-size:9px;font-weight:700">Protokoll ${escHtml(h.protoNr)}${h.protoDatum?` · ${escHtml(h.protoDatum)}`:""}</span>
+        <span style="background:#E1E1E1;color:#3A4349;border-radius:3px;padding:1px 5px;font-size:9px;font-weight:700">Protokoll ${escHtml(h.protoNr)}${h.protoDatum?` · ${escHtml(h.protoDatum)}`:""}</span>
         <span class="badge-status s-erledigt">erledigt</span>
       </div>
-      <div style="color:#374151;white-space:pre-wrap">${escHtml(h.inhalt)||'<span style="color:#d1d5db;font-style:italic">kein Inhalt</span>'}</div>
-      ${h.verantwortlich?`<div style="color:#9ca3af;margin-top:2px">&#128100; ${escHtml(h.verantwortlich)}</div>`:""}
+      <div style="color:#3A4349;white-space:pre-wrap">${escHtml(h.inhalt)||'<span style="color:#D3D7DA;font-style:italic">kein Inhalt</span>'}</div>
+      ${h.verantwortlich?`<div style="color:#8C969E;margin-top:2px">&#128100; ${escHtml(h.verantwortlich)}</div>`:""}
     </div>`).join("");
   }
   return panel;
@@ -1046,7 +1056,7 @@ function updateGfUI(){
       btn.style.background="#7c3aed"; btn.style.color="#fff"; btn.style.borderColor="#7c3aed";
     }else{
       btn.textContent="🔒 GF-Anmeldung";
-      btn.style.background="#fff"; btn.style.color="#374151"; btn.style.borderColor="#d1d5db";
+      btn.style.background="#fff"; btn.style.color="#3A4349"; btn.style.borderColor="#D3D7DA";
     }
   });
   updateProtoGfUI();
@@ -1065,7 +1075,7 @@ function updateProtoGfUI(){
     btn.style.background="#7c3aed";btn.style.color="#fff";btn.style.borderColor="#7c3aed";
   }else{
     btn.textContent="🔒 Nur GF sichtbar";
-    btn.style.background="#fff";btn.style.color="#374151";btn.style.borderColor="#d1d5db";
+    btn.style.background="#fff";btn.style.color="#3A4349";btn.style.borderColor="#D3D7DA";
   }
 }
 async function toggleProtoGF(){
@@ -1263,23 +1273,23 @@ function unterEl(row){
   if(!u||(!u.items.length&&!u.note))return null;
   const d=document.createElement("div");
   d.className="unter";
-  d.style.cssText="border-top:1px dashed #bae6fd;background:#f6fbfe;padding:6px 12px 8px 44px;font-size:12px";
+  d.style.cssText="border-top:1px dashed #B5E2F6;background:#f6fbfe;padding:6px 12px 8px 44px;font-size:12px";
   d.onclick=e=>e.stopPropagation();
   const tid=escHtml(row.themaId);
   let h="";
-  if(u.note)h+=`<div style="font-style:italic;color:#475569;margin-bottom:4px">${escHtml(u.note)}</div>`;
+  if(u.note)h+=`<div style="font-style:italic;color:#4F5961;margin-bottom:4px">${escHtml(u.note)}</div>`;
   u.items.forEach(it=>{
     const key=unterOpenKey(row.themaId,it.k),open=unterNoteOpen.has(key);
     const dis=u.live?"":" disabled";
-    h+=`<div style="display:flex;gap:8px;align-items:flex-start;padding:2px 0${it.done?";color:#6b7280":""}">
-      <input type="checkbox"${it.done?" checked":""}${dis} onchange="toggleUnter('${tid}','${escHtml(it.k)}',this.checked)" style="margin-top:2px;width:15px;height:15px;accent-color:#059669;flex:none">
-      <div style="flex:1;min-width:0"><span${it.done?' style="text-decoration:line-through"':""}>${it.type==="step"?"<b>Nächster Schritt:</b> ":(it.nr?`<b>${escHtml(it.nr)}</b> `:"")}${escHtml(it.text)}</span>${it.wer?` <span style="color:#6b7280">· ${escHtml(it.wer)}${it.termin?", bis "+escHtml(it.termin):""}</span>`:(it.termin?` <span style="color:#6b7280">· bis ${escHtml(it.termin)}</span>`:"")}
-      ${it.note?`<div style="font-style:italic;color:#475569">Notiz: ${escHtml(it.note)}</div>`:""}
-      ${open&&u.live?`<textarea rows="2" style="width:100%;margin-top:3px;border:1px solid #bae6fd;border-radius:4px;padding:4px 6px;font:inherit;font-size:12px" placeholder="Notiz, die im Protokoll steht" onchange="saveUnterNote('${tid}','${escHtml(it.k)}',this.value)">${escHtml(it.note)}</textarea>`:""}</div>
-      ${u.live?`<button title="Notiz ergänzen" onclick="toggleUnterNote('${tid}','${escHtml(it.k)}')" style="border:0;background:none;cursor:pointer;color:#6b7280;font-size:13px;padding:0 2px">&#128221;</button>`:""}
+    h+=`<div style="display:flex;gap:8px;align-items:flex-start;padding:2px 0${it.done?";color:#6B7680":""}">
+      <input type="checkbox"${it.done?" checked":""}${dis} onchange="toggleUnter('${tid}','${escHtml(it.k)}',this.checked)" style="margin-top:2px;width:15px;height:15px;accent-color:#2E8B4F;flex:none">
+      <div style="flex:1;min-width:0"><span${it.done?' style="text-decoration:line-through"':""}>${it.type==="step"?"<b>Nächster Schritt:</b> ":(it.nr?`<b>${escHtml(it.nr)}</b> `:"")}${escHtml(it.text)}</span>${it.wer?` <span style="color:#6B7680">· ${escHtml(it.wer)}${it.termin?", bis "+escHtml(it.termin):""}</span>`:(it.termin?` <span style="color:#6B7680">· bis ${escHtml(it.termin)}</span>`:"")}
+      ${it.note?`<div style="font-style:italic;color:#4F5961">Notiz: ${escHtml(it.note)}</div>`:""}
+      ${open&&u.live?`<textarea rows="2" style="width:100%;margin-top:3px;border:1px solid #B5E2F6;border-radius:4px;padding:4px 6px;font:inherit;font-size:12px" placeholder="Notiz, die im Protokoll steht" onchange="saveUnterNote('${tid}','${escHtml(it.k)}',this.value)">${escHtml(it.note)}</textarea>`:""}</div>
+      ${u.live?`<button title="Notiz ergänzen" onclick="toggleUnterNote('${tid}','${escHtml(it.k)}')" style="border:0;background:none;cursor:pointer;color:#6B7680;font-size:13px;padding:0 2px">&#128221;</button>`:""}
     </div>`;
   });
-  if(!u.live)h+=`<div style="font-size:10px;color:#9ca3af;margin-top:3px">Stand zum Zeitpunkt dieses Protokolls</div>`;
+  if(!u.live)h+=`<div style="font-size:10px;color:#8C969E;margin-top:3px">Stand zum Zeitpunkt dieses Protokolls</div>`;
   d.innerHTML=h;
   return d;
 }
@@ -1326,7 +1336,7 @@ function vorschlagEl(sec){
   d.innerHTML=`<div style="font-size:11px;font-weight:700;color:#0e7490;margin-bottom:6px">&#129517; Vorschläge aus dem Themenboard · ${list.length} Thema${list.length===1?"":"en"} noch nicht im Protokoll</div>`+
     show.map(t=>{
       const info=[t.handlungsfeld,t.naechster_schritt?"Schritt: "+t.naechster_schritt+(t.naechster_wer?" ("+t.naechster_wer+")":""):"kein nächster Schritt"].filter(Boolean).join(" · ");
-      return `<div style="display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #e5e7eb;border-radius:6px;padding:5px 9px;margin-bottom:4px"><div style="flex:1;min-width:0"><b style="font-size:12.5px">${escHtml(t.titel)}</b> <span style="font-size:10px;font-weight:700;border:1px solid #d1d5db;border-radius:99px;padding:0 6px;color:#6b7280">${escHtml(t.prio||"")}</span><div style="font-size:11px;color:#6b7280;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escHtml(info)}</div></div><button onclick="adoptThema('${escHtml(t.id)}','${jsStr(sec.key)}')" style="background:#0BA1E2;color:#fff;border:0;border-radius:6px;padding:4px 10px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap">+ ins Protokoll</button></div>`;
+      return `<div style="display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #E1E1E1;border-radius:6px;padding:5px 9px;margin-bottom:4px"><div style="flex:1;min-width:0"><b style="font-size:12.5px">${escHtml(t.titel)}</b> <span style="font-size:10px;font-weight:700;border:1px solid #D3D7DA;border-radius:99px;padding:0 6px;color:#6B7680">${escHtml(t.prio||"")}</span><div style="font-size:11px;color:#6B7680;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escHtml(info)}</div></div><button onclick="adoptThema('${escHtml(t.id)}','${jsStr(sec.key)}')" style="background:#0BA1E2;color:#fff;border:0;border-radius:6px;padding:4px 10px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap">+ ins Protokoll</button></div>`;
     }).join("")+
     (list.length>3?`<a href="#" onclick="event.preventDefault();toggleVorschlagAlle('${jsStr(sec.key)}')" style="font-size:11px;color:#0e7490">${all?"weniger anzeigen":"alle "+list.length+" anzeigen"}</a>`:"");
   return d;
@@ -1574,12 +1584,12 @@ function tpAuszugHtml(){
   const o=TP_OPT,list=tpAuszugListe(),today=tpToday(),w0=tpWeekStart(today),weeks=o.weeks;
   const span=weeks*7*86400000,pct=x=>Math.max(0,Math.min(100,(x-w0)/span*100));
   const e2=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-  const css=`<style>.tpx{margin:8pt 14pt 6pt;font-family:'Segoe UI',Arial,sans-serif;break-inside:avoid}.tpx h4{font-size:8.5pt;text-transform:uppercase;letter-spacing:.5pt;color:#0886BD;margin:0 0 4pt}.tpx h4 small{font-size:7pt;text-transform:none;letter-spacing:0;font-weight:400;color:#888;margin-left:6pt}
+  const css=`<style>.tpx{margin:8pt 14pt 6pt;font-family:'Open Sans',Helvetica,Arial,sans-serif;break-inside:avoid}.tpx h4{font-size:8.5pt;text-transform:uppercase;letter-spacing:.5pt;color:#0079A3;margin:0 0 4pt}.tpx h4 small{font-size:7pt;text-transform:none;letter-spacing:0;font-weight:400;color:#888;margin-left:6pt}
 .tpx .g{border:.5pt solid #ddd;font-size:7.5pt}.tpx .r{display:grid;grid-template-columns:150pt 46pt 46pt minmax(0,1fr);border-bottom:.5pt solid #eee}.tpx .r>div{padding:2pt 4pt;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tpx .h{background:#0BA1E2;color:#fff;font-weight:700}.tpx .wk{display:grid;padding:0!important}.tpx .wk span{text-align:center;border-left:.5pt solid rgba(255,255,255,.4);font-size:6.5pt;padding:2pt 0}
-.tpx .tr{position:relative;padding:0!important}.tpx .bar{position:absolute;top:3pt;height:6pt;border-radius:1pt;background:#0BA1E2}.tpx .bar i{position:absolute;left:0;top:0;bottom:0;background:#059669;border-radius:1pt}.tpx .bar.late{background:#dc2626}
-.tpx .ms{position:absolute;top:2pt;width:7pt;height:7pt;background:#7c3aed;transform:rotate(45deg)}.tpx .td{position:absolute;top:0;bottom:0;width:1.2pt;background:#dc2626;opacity:.7}.tpx .late .nm{color:#dc2626;font-weight:700}
-.tpx table{width:100%;border-collapse:collapse;font-size:7.5pt}.tpx th{background:#0BA1E2;color:#fff;text-align:left;padding:2pt 4pt;font-size:7pt;text-transform:uppercase}.tpx td{border-bottom:.5pt solid #e5e7eb;padding:2pt 4pt}.tpx .lg{font-size:6.5pt;color:#888;margin-top:3pt}</style>`;
+.tpx .tr{position:relative;padding:0!important}.tpx .bar{position:absolute;top:3pt;height:6pt;border-radius:1pt;background:#0BA1E2}.tpx .bar i{position:absolute;left:0;top:0;bottom:0;background:#2E8B4F;border-radius:1pt}.tpx .bar.late{background:#C1443B}
+.tpx .ms{position:absolute;top:2pt;width:7pt;height:7pt;background:#7c3aed;transform:rotate(45deg)}.tpx .td{position:absolute;top:0;bottom:0;width:1.2pt;background:#C1443B;opacity:.7}.tpx .late .nm{color:#C1443B;font-weight:700}
+.tpx table{width:100%;border-collapse:collapse;font-size:7.5pt}.tpx th{background:#0BA1E2;color:#fff;text-align:left;padding:2pt 4pt;font-size:7pt;text-transform:uppercase}.tpx td{border-bottom:.5pt solid #E1E1E1;padding:2pt 4pt}.tpx .lg{font-size:6.5pt;color:#888;margin-top:3pt}</style>`;
   let b=`<div class="tpx"><h4>📅 Terminplan-Auszug<small>Stand ${e2(tpFmt(new Date(terminplan.updated_at)))} · nächste ${weeks} Wochen · Quelle: ${e2(terminplan.filename)}</small></h4>`;
   if(!list.length)b+=`<div style="font-size:8pt;color:#888">Keine Vorgänge im gewählten Zeitraum.</div>`;
   else if(o.dar==="gantt"){
@@ -1592,7 +1602,7 @@ function tpAuszugHtml(){
     }).join("")+`</div><div class="lg">◆ Meilenstein · grün = Fertigstellungsgrad · rot = überfällig · rote Linie = heute</div>`;
   }else{
     b+=`<table><thead><tr><th>Vorgang</th><th>Anfang</th><th>Ende</th><th>KW</th><th>Stand</th></tr></thead><tbody>`+
-    list.map(t=>`<tr><td>${t.ms?"◆ ":""}${e2(t.name)}</td><td>${e2(tpFmt(t.S))}</td><td>${e2(tpFmt(t.F))}</td><td>${isoWeekNumber(t.F)}</td><td style="${tpLate(t)?"color:#dc2626;font-weight:700":""}">${tpLate(t)?"überfällig":(t.ms?"–":t.pc+" %")}</td></tr>`).join("")+`</tbody></table>`;
+    list.map(t=>`<tr><td>${t.ms?"◆ ":""}${e2(t.name)}</td><td>${e2(tpFmt(t.S))}</td><td>${e2(tpFmt(t.F))}</td><td>${isoWeekNumber(t.F)}</td><td style="${tpLate(t)?"color:#C1443B;font-weight:700":""}">${tpLate(t)?"überfällig":(t.ms?"–":t.pc+" %")}</td></tr>`).join("")+`</tbody></table>`;
   }
   return css+b+`</div>`;
 }
@@ -1816,27 +1826,27 @@ function filterByOrdner(id){activeOrdner=id;renderOrdnerList();renderCloudList(w
 
 function renderOrdnerList(){
   const list=document.getElementById("ordner-list");if(!list)return;
-  if(!ORDNER.length){list.innerHTML='<div style="padding:14px;text-align:center;font-size:12px;color:#9ca3af">Noch keine Ordner</div>';return;}
+  if(!ORDNER.length){list.innerHTML='<div style="padding:14px;text-align:center;font-size:12px;color:#8C969E">Noch keine Ordner</div>';return;}
   list.innerHTML="";
   ORDNER.forEach(o=>{
     const isActive=activeOrdner===o.id;
     const count=(window._cloudRows||[]).filter(r=>r.data?.meta?.ordner_id===o.id).length;
     const div=document.createElement("div");
-    div.style.cssText=`padding:9px 14px;cursor:pointer;display:flex;align-items:center;gap:8px;border-left:3px solid ${isActive?o.farbe:"transparent"};background:${isActive?"#f0f7ff":""};transition:background .1s`;
-    div.onmouseover=()=>{if(!isActive)div.style.background="#f9fafb";};
+    div.style.cssText=`padding:9px 14px;cursor:pointer;display:flex;align-items:center;gap:8px;border-left:3px solid ${isActive?o.farbe:"transparent"};background:${isActive?"#E6F5FC":""};transition:background .1s`;
+    div.onmouseover=()=>{if(!isActive)div.style.background="#F7F8F8";};
     div.onmouseout=()=>{if(!isActive)div.style.background="";};
     div.innerHTML=`<span style="width:10px;height:10px;border-radius:50%;background:${o.farbe};flex-shrink:0"></span>
       ${o.gf_only?'<span title="Nur für Geschäftsführung sichtbar" style="font-size:10px">🔒</span>':""}
-      <span style="flex:1;font-size:12px;font-weight:${isActive?"700":"400"};color:${isActive?o.farbe:"#374151"};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml(o.name)}</span>
-      ${count?`<span style="font-size:10px;background:${isActive?o.farbe:"#e5e7eb"};color:${isActive?"#fff":"#6b7280"};border-radius:10px;padding:1px 6px;font-weight:600">${count}</span>`:""}
-      ${gfSession?`<button onclick="event.stopPropagation();toggleOrdnerGF('${o.id}')" title="${o.gf_only?"Für alle Mitarbeiter freigeben":"Nur für Geschäftsführung sichtbar machen"}" style="background:none;border:none;cursor:pointer;font-size:11px;color:${o.gf_only?"#7c3aed":"#d1d5db"}" onmouseover="this.style.color='#7c3aed'" onmouseout="this.style.color='${o.gf_only?"#7c3aed":"#d1d5db"}'">🔒</button>`:""}
-      <button onclick="event.stopPropagation();renameOrdner('${o.id}',\`${o.name.replace(/`/g,"\`")}\`)" title="Umbenennen" style="background:none;border:none;cursor:pointer;font-size:11px;color:#d1d5db" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#d1d5db'">✏️</button>
-      <button onclick="event.stopPropagation();delOrdner('${o.id}')" title="Löschen" style="background:none;border:none;cursor:pointer;font-size:11px;color:#d1d5db" onmouseover="this.style.color='#dc2626'" onmouseout="this.style.color='#d1d5db'">🗑</button>`;
+      <span style="flex:1;font-size:12px;font-weight:${isActive?"700":"400"};color:${isActive?o.farbe:"#3A4349"};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml(o.name)}</span>
+      ${count?`<span style="font-size:10px;background:${isActive?o.farbe:"#E1E1E1"};color:${isActive?"#fff":"#6B7680"};border-radius:10px;padding:1px 6px;font-weight:600">${count}</span>`:""}
+      ${gfSession?`<button onclick="event.stopPropagation();toggleOrdnerGF('${o.id}')" title="${o.gf_only?"Für alle Mitarbeiter freigeben":"Nur für Geschäftsführung sichtbar machen"}" style="background:none;border:none;cursor:pointer;font-size:11px;color:${o.gf_only?"#7c3aed":"#D3D7DA"}" onmouseover="this.style.color='#7c3aed'" onmouseout="this.style.color='${o.gf_only?"#7c3aed":"#D3D7DA"}'">🔒</button>`:""}
+      <button onclick="event.stopPropagation();renameOrdner('${o.id}',\`${o.name.replace(/`/g,"\`")}\`)" title="Umbenennen" style="background:none;border:none;cursor:pointer;font-size:11px;color:#D3D7DA" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#D3D7DA'">✏️</button>
+      <button onclick="event.stopPropagation();delOrdner('${o.id}')" title="Löschen" style="background:none;border:none;cursor:pointer;font-size:11px;color:#D3D7DA" onmouseover="this.style.color='#C1443B'" onmouseout="this.style.color='#D3D7DA'">🗑</button>`;
     div.onclick=()=>filterByOrdner(o.id);
     list.appendChild(div);
   });
   const alle=document.getElementById("ordner-alle");
-  if(alle){alle.style.fontWeight=activeOrdner===null?"700":"400";alle.style.color=activeOrdner===null?"#0BA1E2":"#6b7280";}
+  if(alle){alle.style.fontWeight=activeOrdner===null?"700":"400";alle.style.color=activeOrdner===null?"#0BA1E2":"#6B7680";}
 }
 
 /* ── TEILNEHMER (projektweit, an Ordner gebunden) ── */
@@ -1921,20 +1931,20 @@ function buildVerantwortlichPicker(){
   const {selected}=_vwPickerCtx;
   const extra=[...selected].filter(s=>s!=="Alle"&&!firmen.includes(s));
   let html=`<div style="max-height:260px;overflow-y:auto">`;
-  html+=`<label style="display:flex;align-items:center;gap:6px;padding:4px 3px;font-size:12px;font-weight:700;color:#111827;cursor:pointer;border-bottom:1px solid #f3f4f6;margin-bottom:3px;border-radius:4px">
+  html+=`<label style="display:flex;align-items:center;gap:6px;padding:4px 3px;font-size:12px;font-weight:700;color:#232728;cursor:pointer;border-bottom:1px solid #F0F2F3;margin-bottom:3px;border-radius:4px">
     <input type="checkbox" data-vw-alle onchange="toggleVwAlle(this.checked)" style="cursor:pointer">👥 Alle</label>`;
   if(!firmen.length){
-    html+=`<div style="font-size:11px;color:#9ca3af;padding:4px 3px;font-style:italic">Keine Firmen erfasst – bitte zuerst Teilnehmer mit Firma anlegen</div>`;
+    html+=`<div style="font-size:11px;color:#8C969E;padding:4px 3px;font-style:italic">Keine Firmen erfasst – bitte zuerst Teilnehmer mit Firma anlegen</div>`;
   }
   firmen.forEach(label=>{
-    html+=`<label style="display:flex;align-items:center;gap:6px;padding:3px 3px;font-size:12px;color:#111827;cursor:pointer;border-radius:4px">
+    html+=`<label style="display:flex;align-items:center;gap:6px;padding:3px 3px;font-size:12px;color:#232728;cursor:pointer;border-radius:4px">
       <input type="checkbox" data-vw-person="${escHtml(label)}" onchange="toggleVwPerson('${jsStr(label)}',this.checked)" style="cursor:pointer">${escHtml(label)}</label>`;
   });
   extra.forEach(label=>{
-    html+=`<label style="display:flex;align-items:center;gap:6px;padding:3px 3px;font-size:12px;color:#6b7280;cursor:pointer;border-radius:4px">
-      <input type="checkbox" data-vw-person="${escHtml(label)}" onchange="toggleVwPerson('${jsStr(label)}',this.checked)" style="cursor:pointer">${escHtml(label)} <span style="font-size:9px;color:#d1d5db">(nicht in Liste)</span></label>`;
+    html+=`<label style="display:flex;align-items:center;gap:6px;padding:3px 3px;font-size:12px;color:#6B7680;cursor:pointer;border-radius:4px">
+      <input type="checkbox" data-vw-person="${escHtml(label)}" onchange="toggleVwPerson('${jsStr(label)}',this.checked)" style="cursor:pointer">${escHtml(label)} <span style="font-size:9px;color:#D3D7DA">(nicht in Liste)</span></label>`;
   });
-  html+=`</div><div style="display:flex;justify-content:flex-end;margin-top:6px;padding-top:6px;border-top:1px solid #f3f4f6">
+  html+=`</div><div style="display:flex;justify-content:flex-end;margin-top:6px;padding-top:6px;border-top:1px solid #F0F2F3">
     <button type="button" onclick="closeVerantwortlichPicker()" style="background:#0BA1E2;border:none;color:#fff;border-radius:5px;padding:4px 12px;font-size:11px;font-weight:700;cursor:pointer">Fertig</button>
   </div>`;
   pk.innerHTML=html;
@@ -1991,21 +2001,21 @@ function closeTeilnehmerModal(){document.getElementById("teilnehmer-modal").styl
 function renderTeilnehmerList(){
   const list=document.getElementById("tn-list");
   const tn=getTeilnehmer();
-  if(!tn.length){list.innerHTML='<div style="padding:16px;text-align:center;font-size:12px;color:#9ca3af">Noch keine Teilnehmer erfasst</div>';return;}
+  if(!tn.length){list.innerHTML='<div style="padding:16px;text-align:center;font-size:12px;color:#8C969E">Noch keine Teilnehmer erfasst</div>';return;}
   list.innerHTML=tn.map((t,i)=>{
     const tid=t.id||"";
     const isAnwesend=!!(tid&&TN_ANWESEND[tid]);
-    return `<div style="padding:8px 4px;border-bottom:1px solid #f3f4f6">
+    return `<div style="padding:8px 4px;border-bottom:1px solid #F0F2F3">
     <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <input value="${escHtml(t.name)}" placeholder="Name …" onchange="editTeilnehmerField(${i},'name',this.value)" style="flex:1;min-width:110px;border:1px solid transparent;background:transparent;font-size:12px;color:#111827;padding:3px 4px;border-radius:4px;font-family:inherit" onfocus="this.style.border='1px solid #d1d5db';this.style.background='#fff'" onblur="this.style.border='1px solid transparent';this.style.background='transparent'">
-      <input value="${escHtml(t.firma||"")}" placeholder="Firma …" onchange="editTeilnehmerField(${i},'firma',this.value)" style="flex:1;min-width:110px;border:1px solid transparent;background:transparent;font-size:12px;color:#6b7280;padding:3px 4px;border-radius:4px;font-family:inherit" onfocus="this.style.border='1px solid #d1d5db';this.style.background='#fff'" onblur="this.style.border='1px solid transparent';this.style.background='transparent'">
-      <input value="${escHtml(t.mail||"")}" type="email" placeholder="E-Mail …" onchange="editTeilnehmerField(${i},'mail',this.value)" style="flex:1;min-width:140px;border:1px solid transparent;background:transparent;font-size:12px;color:#6b7280;padding:3px 4px;border-radius:4px;font-family:inherit" onfocus="this.style.border='1px solid #d1d5db';this.style.background='#fff'" onblur="this.style.border='1px solid transparent';this.style.background='transparent'">
+      <input value="${escHtml(t.name)}" placeholder="Name …" onchange="editTeilnehmerField(${i},'name',this.value)" style="flex:1;min-width:110px;border:1px solid transparent;background:transparent;font-size:12px;color:#232728;padding:3px 4px;border-radius:4px;font-family:inherit" onfocus="this.style.border='1px solid #D3D7DA';this.style.background='#fff'" onblur="this.style.border='1px solid transparent';this.style.background='transparent'">
+      <input value="${escHtml(t.firma||"")}" placeholder="Firma …" onchange="editTeilnehmerField(${i},'firma',this.value)" style="flex:1;min-width:110px;border:1px solid transparent;background:transparent;font-size:12px;color:#6B7680;padding:3px 4px;border-radius:4px;font-family:inherit" onfocus="this.style.border='1px solid #D3D7DA';this.style.background='#fff'" onblur="this.style.border='1px solid transparent';this.style.background='transparent'">
+      <input value="${escHtml(t.mail||"")}" type="email" placeholder="E-Mail …" onchange="editTeilnehmerField(${i},'mail',this.value)" style="flex:1;min-width:140px;border:1px solid transparent;background:transparent;font-size:12px;color:#6B7680;padding:3px 4px;border-radius:4px;font-family:inherit" onfocus="this.style.border='1px solid #D3D7DA';this.style.background='#fff'" onblur="this.style.border='1px solid transparent';this.style.background='transparent'">
     </div>
-    <div style="display:flex;align-items:center;gap:12px;margin-top:4px;font-size:10px;color:#6b7280">
+    <div style="display:flex;align-items:center;gap:12px;margin-top:4px;font-size:10px;color:#6B7680">
       <label style="display:flex;align-items:center;gap:4px;cursor:pointer" title="Anwesend bei diesem Protokoll"><input type="checkbox" ${isAnwesend?"checked":""} onchange="setAnwesend('${tid}',this.checked)" style="cursor:pointer;width:13px;height:13px">Anwesend</label>
       <label style="display:flex;align-items:center;gap:4px;cursor:pointer" title="Fest im Projekt-Verteiler"><input type="checkbox" ${t.verteiler?"checked":""} onchange="setVerteiler(${i},this.checked)" style="cursor:pointer;width:13px;height:13px">Verteiler</label>
-      <button onclick="downloadVCard(${i})" title="Als vCard herunterladen und z.B. in Outlook importieren" style="margin-left:auto;background:none;border:1px solid #d1d5db;color:#374151;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:10px;font-family:inherit">📇 Kontakt</button>
-      <button onclick="removeTeilnehmer(${i})" style="background:none;border:none;cursor:pointer;color:#d1d5db;font-size:13px" onmouseover="this.style.color='#dc2626'" onmouseout="this.style.color='#d1d5db'">🗑</button>
+      <button onclick="downloadVCard(${i})" title="Als vCard herunterladen und z.B. in Outlook importieren" style="margin-left:auto;background:none;border:1px solid #D3D7DA;color:#3A4349;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:10px;font-family:inherit">📇 Kontakt</button>
+      <button onclick="removeTeilnehmer(${i})" style="background:none;border:none;cursor:pointer;color:#D3D7DA;font-size:13px" onmouseover="this.style.color='#C1443B'" onmouseout="this.style.color='#D3D7DA'">🗑</button>
     </div>
   </div>`;
   }).join("");
@@ -2091,15 +2101,15 @@ function openVCardTargetPicker(card){
   _vcardPending=card;
   const tn=getTeilnehmer();
   const box=document.getElementById("tn-vcard-preview");
-  box.innerHTML=`<div style="margin-top:8px;border:1px solid #bae6fd;background:#f0f9ff;border-radius:6px;padding:10px">
-    <div style="font-size:11px;color:#111827"><strong>${escHtml(card.name||"(ohne Namen)")}</strong>${card.firma?` · ${escHtml(card.firma)}`:""}${card.mail?`<br>${escHtml(card.mail)}`:""}</div>
+  box.innerHTML=`<div style="margin-top:8px;border:1px solid #B5E2F6;background:#E6F5FC;border-radius:6px;padding:10px">
+    <div style="font-size:11px;color:#232728"><strong>${escHtml(card.name||"(ohne Namen)")}</strong>${card.firma?` · ${escHtml(card.firma)}`:""}${card.mail?`<br>${escHtml(card.mail)}`:""}</div>
     <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;align-items:center">
-      <select id="tn-vcard-target" style="flex:1;min-width:170px;border:1px solid #d1d5db;border-radius:5px;padding:5px 7px;font-size:11px;font-family:inherit">
+      <select id="tn-vcard-target" style="flex:1;min-width:170px;border:1px solid #D3D7DA;border-radius:5px;padding:5px 7px;font-size:11px;font-family:inherit">
         <option value="">+ Als neuer Teilnehmer anlegen</option>
         ${tn.map((t,i)=>`<option value="${i}">Überschreiben: ${escHtml(teilnehmerLabel(t))}</option>`).join("")}
       </select>
       <button onclick="confirmVCardImport()" style="background:#0BA1E2;border:none;color:#fff;border-radius:5px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer">Übernehmen</button>
-      <button onclick="cancelVCardImport()" style="background:none;border:1px solid #d1d5db;color:#374151;border-radius:5px;padding:5px 10px;font-size:11px;cursor:pointer">Abbrechen</button>
+      <button onclick="cancelVCardImport()" style="background:none;border:1px solid #D3D7DA;color:#3A4349;border-radius:5px;padding:5px 10px;font-size:11px;cursor:pointer">Abbrechen</button>
     </div>
   </div>`;
 }
@@ -2212,11 +2222,11 @@ async function loadCloudList(){
     if(cfg.url&&cfg.key){SB_URL=cfg.url.replace(/\/rest\/v1\/?$/,"").replace(/\/+$/,"");SB_KEY=cfg.key;window._sbCfg={url:SB_URL,key:SB_KEY};}
   }
   if(!SB_URL||!SB_KEY){
-    list.innerHTML='<div style="padding:20px;text-align:center;font-size:12px;color:#dc2626">Keine Verbindungsdaten – bitte neu einrichten.</div>';return;
+    list.innerHTML='<div style="padding:20px;text-align:center;font-size:12px;color:#C1443B">Keine Verbindungsdaten – bitte neu einrichten.</div>';return;
   }
   // Show cached list immediately while loading
   if(window._cloudRows&&window._cloudRows.length){renderCloudList(window._cloudRows);}
-  else{list.innerHTML='<div style="padding:20px;text-align:center;font-size:12px;color:#9ca3af">Lädt …</div>';}
+  else{list.innerHTML='<div style="padding:20px;text-align:center;font-size:12px;color:#8C969E">Lädt …</div>';}
   try{
     const [rows,ordner]=await Promise.all([sbList(),sbGetOrdner()]);
     ORDNER=ordner.slice().sort((a,b)=>(a.name||"").localeCompare((b.name||""),"de",{numeric:true,sensitivity:"base"}));
@@ -2235,7 +2245,7 @@ async function loadCloudList(){
   }catch(e){
     // Keep existing list visible, just show small error
     const err=document.createElement("div");
-    err.style.cssText="padding:8px 18px;font-size:11px;color:#dc2626;background:#fff1f1;border-bottom:1px solid #fca5a5";
+    err.style.cssText="padding:8px 18px;font-size:11px;color:#C1443B;background:#fff1f1;border-bottom:1px solid #fca5a5";
     err.textContent="⚠️ Verbindungsfehler: "+e.message+" – zeige zuletzt geladene Liste.";
     if(list.firstChild)list.insertBefore(err,list.firstChild);else list.appendChild(err);
   }
@@ -2250,7 +2260,7 @@ function renderCloudList(rows){
   const filtered=activeOrdner===null?rows:rows.filter(r=>r.data?.meta?.ordner_id===activeOrdner);
   if(title){const o=ORDNER.find(x=>x.id===activeOrdner);title.textContent=o?`📁 ${o.name}`:"☁️ Alle Protokolle";}
   if(!filtered.length){
-    list.innerHTML=`<div style="padding:24px;text-align:center;font-size:12px;color:#9ca3af">${activeOrdner?"Keine Protokolle in diesem Ordner":"Noch keine Protokolle vorhanden"}</div>`;return;
+    list.innerHTML=`<div style="padding:24px;text-align:center;font-size:12px;color:#8C969E">${activeOrdner?"Keine Protokolle in diesem Ordner":"Noch keine Protokolle vorhanden"}</div>`;return;
   }
   // Gruppierung: primär nach Ordner-Zuweisung (ordner_id), NICHT nach Freitext "Projekt" –
   // sonst werden Protokolle desselben Projekts bei abweichender Schreibweise ("50327 Kaufland Borna" vs.
@@ -2277,10 +2287,10 @@ function renderCloudList(rows){
     const groupLbl=groupLabel[gkey];
     if(sortedProjs.length>1||activeOrdner===null){
       const ph=document.createElement("div");
-      ph.style.cssText="padding:6px 18px;background:#f8fafc;border-bottom:1px solid #f3f4f6;border-top:1px solid #e5e7eb;font-size:11px;font-weight:700;color:#374151;display:flex;align-items:center;gap:6px";
+      ph.style.cssText="padding:6px 18px;background:#F7F8F8;border-bottom:1px solid #F0F2F3;border-top:1px solid #E1E1E1;font-size:11px;font-weight:700;color:#3A4349;display:flex;align-items:center;gap:6px";
       const oid=groupOrdnerId[gkey];
       const o=oid?ORDNER.find(x=>x.id===oid):null;
-      ph.innerHTML=`<span style="width:8px;height:8px;border-radius:50%;background:${o?.farbe||"#d1d5db"};flex-shrink:0"></span>${escHtml(groupLbl)}`;
+      ph.innerHTML=`<span style="width:8px;height:8px;border-radius:50%;background:${o?.farbe||"#D3D7DA"};flex-shrink:0"></span>${escHtml(groupLbl)}`;
       list.appendChild(ph);
     }
     const typGroups={};
@@ -2295,24 +2305,24 @@ function renderCloudList(rows){
       const nrCount={};typRows.forEach(r=>{const k=String(r.data?.meta?.nr||"").trim();nrCount[k]=(nrCount[k]||0)+1;});
       const olderN=Math.max(0,typRows.length-1);
       const th=document.createElement("div");
-      th.style.cssText="padding:4px 18px 4px 28px;background:#f0f7ff;border-bottom:1px solid #e0efff;font-size:10px;font-weight:700;color:#0BA1E2;letter-spacing:.4px;text-transform:uppercase;display:flex;align-items:center;gap:5px";
-      th.innerHTML=`<span style="font-size:12px">📋</span>${escHtml(typ)}<span style="margin-left:auto;display:flex;align-items:center;gap:10px;text-transform:none;letter-spacing:0;font-weight:600;color:#6b7280">${olderN>0?`<button onclick="abArchiveOlder(${gi})" title="Alle Protokolle außer dem neuesten ins Archiv verschieben" style="border:1px solid #fcd34d;background:#fffbeb;color:#b45309;border-radius:4px;font-size:10px;font-weight:700;padding:1px 7px;cursor:pointer">🗄 ${olderN} ältere archivieren</button>`:""}<label title="Beim Ablegen werden ältere Protokolle dieses Typs automatisch archiviert" style="display:flex;align-items:center;gap:4px;cursor:pointer"><input type="checkbox" ${abSetting(abKeyStr)===true?"checked":""} onchange="abToggleAktuell(${gi},this)"> Nur aktuelles behalten</label></span>`;
+      th.style.cssText="padding:4px 18px 4px 28px;background:#E6F5FC;border-bottom:1px solid #E6F5FC;font-size:10px;font-weight:700;color:#0BA1E2;letter-spacing:.4px;text-transform:uppercase;display:flex;align-items:center;gap:5px";
+      th.innerHTML=`<span style="font-size:12px">📋</span>${escHtml(typ)}<span style="margin-left:auto;display:flex;align-items:center;gap:10px;text-transform:none;letter-spacing:0;font-weight:600;color:#6B7680">${olderN>0?`<button onclick="abArchiveOlder(${gi})" title="Alle Protokolle außer dem neuesten ins Archiv verschieben" style="border:1px solid #fcd34d;background:#fffbeb;color:#b45309;border-radius:4px;font-size:10px;font-weight:700;padding:1px 7px;cursor:pointer">🗄 ${olderN} ältere archivieren</button>`:""}<label title="Beim Ablegen werden ältere Protokolle dieses Typs automatisch archiviert" style="display:flex;align-items:center;gap:4px;cursor:pointer"><input type="checkbox" ${abSetting(abKeyStr)===true?"checked":""} onchange="abToggleAktuell(${gi},this)"> Nur aktuelles behalten</label></span>`;
       list.appendChild(th);
       const buildRow=(row,i,arch)=>{
       const meta=row.data?.meta||{};
       const nr=meta.nr||"—";const datum=meta.datum||"";const autor=meta.autor||"";const typ=meta.typ||"";
       const protoType=row.data?.protoType||"profi";
       const typeLabel=protoType==="standard"?"📝 Standard":"🗂 Profi";
-      const typeBg=protoType==="standard"?"#f0fdf4":"#f0f7ff";
-      const typeColor=protoType==="standard"?"#16a34a":"#0BA1E2";
+      const typeBg=protoType==="standard"?"#f0fdf4":"#E6F5FC";
+      const typeColor=protoType==="standard"?"#2E8B4F":"#0BA1E2";
       const div=document.createElement("div");
-      div.style.cssText=`display:flex;align-items:center;gap:12px;padding:11px 18px;cursor:pointer;border-bottom:${i<prows.length-1?"1px solid #f3f4f6":"none"};transition:background .1s`;
-      div.onmouseover=()=>div.style.background="#f0f7ff";div.onmouseout=()=>div.style.background="";
+      div.style.cssText=`display:flex;align-items:center;gap:12px;padding:11px 18px;cursor:pointer;border-bottom:${i<prows.length-1?"1px solid #F0F2F3":"none"};transition:background .1s`;
+      div.onmouseover=()=>div.style.background="#E6F5FC";div.onmouseout=()=>div.style.background="";
       div.innerHTML=`
         <div style="width:38px;height:38px;border-radius:8px;background:#0BA1E2;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">${escHtml(nr)}</div>
         <div style="flex:1;min-width:0">
-          <div style="font-size:13px;font-weight:600;color:#111827;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${row.gf_only?'<span title="Nur für Geschäftsführung sichtbar" style="margin-right:2px">🔒</span>':""}${row.data?.sperre?.aktiv?`<span title="Interner Sperrvermerk – Aufhebung nur durch ${escHtml(row.data.sperre.aufhebung||"–")}" style="background:#fff1f1;border:1px solid #fca5a5;color:#b3261e;border-radius:3px;padding:0 4px;font-size:10px;font-weight:700;margin-right:4px">🔒 INTERN</span>`:""}${escHtml(meta.proj||"Protokoll")}${typ?` <span style="font-size:10px;font-weight:500;color:#6b7280;background:#f3f4f6;border-radius:3px;padding:1px 5px">${escHtml(typ)}</span>`:""}</div>
-          <div style="font-size:11px;color:#9ca3af;margin-top:2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+          <div style="font-size:13px;font-weight:600;color:#232728;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${row.gf_only?'<span title="Nur für Geschäftsführung sichtbar" style="margin-right:2px">🔒</span>':""}${row.data?.sperre?.aktiv?`<span title="Interner Sperrvermerk – Aufhebung nur durch ${escHtml(row.data.sperre.aufhebung||"–")}" style="background:#fff1f1;border:1px solid #fca5a5;color:#b3261e;border-radius:3px;padding:0 4px;font-size:10px;font-weight:700;margin-right:4px">🔒 INTERN</span>`:""}${escHtml(meta.proj||"Protokoll")}${typ?` <span style="font-size:10px;font-weight:500;color:#6B7680;background:#F0F2F3;border-radius:3px;padding:1px 5px">${escHtml(typ)}</span>`:""}</div>
+          <div style="font-size:11px;color:#8C969E;margin-top:2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap">
             ${datum?`<span>${datum}</span>`:""}${autor?`<span>· ${escHtml(autor)}</span>`:""}
             <span style="background:${typeBg};color:${typeColor};border-radius:3px;padding:1px 5px;font-size:10px;font-weight:600">${typeLabel}</span>
             ${(nrCount[String(meta.nr||"").trim()]||0)>1&&!arch?'<span title="Diese Nummer gibt es in diesem Typ mehrfach" style="background:#fff7ed;color:#c2410c;border:1px solid #fdba74;border-radius:3px;padding:0 5px;font-size:10px;font-weight:700">⚠ Nr. doppelt</span>':""}
@@ -2321,13 +2331,13 @@ function renderCloudList(rows){
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
-          <select onchange="moveToOrdner('${row.id}',this.value);event.stopPropagation()" onclick="event.stopPropagation()" title="Ordner" style="font-size:10px;border:1px solid #e5e7eb;border-radius:4px;padding:2px 4px;color:#6b7280;background:#fff;cursor:pointer;max-width:110px">
+          <select onchange="moveToOrdner('${row.id}',this.value);event.stopPropagation()" onclick="event.stopPropagation()" title="Ordner" style="font-size:10px;border:1px solid #E1E1E1;border-radius:4px;padding:2px 4px;color:#6B7680;background:#fff;cursor:pointer;max-width:110px">
             <option value="">📁 Ordner …</option>
             ${ORDNER.map(o=>`<option value="${o.id}" ${meta.ordner_id===o.id?"selected":""}>${escHtml(o.name)}</option>`).join("")}
           </select>
-          <button title="Als nächstes Protokoll fortsetzen" onclick="event.stopPropagation();continueCloud('${row.id}')" style="background:none;border:none;cursor:pointer;font-size:13px;color:#d1d5db;padding:4px;border-radius:4px" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#d1d5db'">➕▶</button>
-          <button title="${arch?"Aus dem Archiv wiederherstellen":"In das Archiv verschieben"}" onclick="event.stopPropagation();abArchiveRow('${row.id}',${arch?"false":"true"})" style="background:none;border:none;cursor:pointer;font-size:13px;color:#d1d5db;padding:4px;border-radius:4px" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#d1d5db'">${arch?"↺":"🗄"}</button>
-          <button title="Löschen" onclick="event.stopPropagation();deleteCloud('${row.id}')" style="background:none;border:none;cursor:pointer;font-size:13px;color:#d1d5db;padding:4px;border-radius:4px" onmouseover="this.style.color='#dc2626'" onmouseout="this.style.color='#d1d5db'">🗑</button>
+          <button title="Als nächstes Protokoll fortsetzen" onclick="event.stopPropagation();continueCloud('${row.id}')" style="background:none;border:none;cursor:pointer;font-size:13px;color:#D3D7DA;padding:4px;border-radius:4px" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#D3D7DA'">➕▶</button>
+          <button title="${arch?"Aus dem Archiv wiederherstellen":"In das Archiv verschieben"}" onclick="event.stopPropagation();abArchiveRow('${row.id}',${arch?"false":"true"})" style="background:none;border:none;cursor:pointer;font-size:13px;color:#D3D7DA;padding:4px;border-radius:4px" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#D3D7DA'">${arch?"↺":"🗄"}</button>
+          <button title="Löschen" onclick="event.stopPropagation();deleteCloud('${row.id}')" style="background:none;border:none;cursor:pointer;font-size:13px;color:#D3D7DA;padding:4px;border-radius:4px" onmouseover="this.style.color='#C1443B'" onmouseout="this.style.color='#D3D7DA'">🗑</button>
           <span style="font-size:11px;color:#0BA1E2;font-weight:600;white-space:nowrap">Öffnen →</span>
         </div>`;
       div.onclick=()=>openCloud(row.id);
@@ -2339,7 +2349,7 @@ function renderCloudList(rows){
       if(archRows.length){
         const open=AB_OPEN.has(abKeyStr);
         const bar=document.createElement("div");
-        bar.style.cssText="padding:6px 18px 6px 28px;background:#fafafa;border-bottom:1px solid #f3f4f6;font-size:11px;color:#6b7280;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px";
+        bar.style.cssText="padding:6px 18px 6px 28px;background:#fafafa;border-bottom:1px solid #F0F2F3;font-size:11px;color:#6B7680;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px";
         bar.innerHTML=`<span>${open?"▾":"▸"}</span><span>🗄 ${archRows.length} ${archRows.length===1?"älteres Protokoll":"ältere Protokolle"} im Archiv</span>`;
         bar.onclick=()=>{if(AB_OPEN.has(abKeyStr))AB_OPEN.delete(abKeyStr);else AB_OPEN.add(abKeyStr);renderCloudList(window._cloudRows||rows);};
         list.appendChild(bar);
@@ -2355,8 +2365,8 @@ async function openCloud(id){
   const list=document.getElementById("cloud-list");
   const loadingDiv=document.createElement("div");
   loadingDiv.id="open-loading";
-  loadingDiv.style.cssText="position:fixed;inset:0;background:rgba(243,244,246,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px";
-  loadingDiv.innerHTML=`<div style="width:36px;height:36px;border:3px solid #e5e7eb;border-top-color:#0BA1E2;border-radius:50%;animation:spin 0.7s linear infinite"></div><div style="font-size:13px;color:#374151;font-family:inherit">Protokoll wird geladen …</div>`;
+  loadingDiv.style.cssText="position:fixed;inset:0;background:rgba(240,242,243,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px";
+  loadingDiv.innerHTML=`<div style="width:36px;height:36px;border:3px solid #E1E1E1;border-top-color:#0BA1E2;border-radius:50%;animation:spin 0.7s linear infinite"></div><div style="font-size:13px;color:#3A4349;font-family:inherit">Protokoll wird geladen …</div>`;
   document.body.appendChild(loadingDiv);
   try{
     const row=await sbGet(id);
@@ -2377,8 +2387,8 @@ async function openCloud(id){
 
 async function continueCloud(id){
   const loadingDiv=document.createElement("div");
-  loadingDiv.style.cssText="position:fixed;inset:0;background:rgba(243,244,246,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px";
-  loadingDiv.innerHTML=`<div style="width:36px;height:36px;border:3px solid #e5e7eb;border-top-color:#0BA1E2;border-radius:50%;animation:spin 0.7s linear infinite"></div><div style="font-size:13px;color:#374151;font-family:inherit">Protokoll wird vorbereitet …</div>`;
+  loadingDiv.style.cssText="position:fixed;inset:0;background:rgba(240,242,243,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px";
+  loadingDiv.innerHTML=`<div style="width:36px;height:36px;border:3px solid #E1E1E1;border-top-color:#0BA1E2;border-radius:50%;animation:spin 0.7s linear infinite"></div><div style="font-size:13px;color:#3A4349;font-family:inherit">Protokoll wird vorbereitet …</div>`;
   document.body.appendChild(loadingDiv);
   const row=await sbGet(id).finally(()=>loadingDiv.remove());
   if(!row){alert("Protokoll konnte nicht geladen werden.");return;}
@@ -2761,7 +2771,7 @@ function renderSidebar(){
     const item=document.createElement("div");item.className="sec-item";item.dataset.key=sec.key;item.draggable=true;
     const btn=document.createElement("button");
     btn.className="sec-btn"+(isActive?" active":"")+(count===0?" sec-empty":"");
-    btn.innerHTML=`<span class="drag-handle">⠿</span><span style="flex:1;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-left:4px">${sec.label}</span><span class="sec-actions"><button class="sec-act-btn" onclick="event.stopPropagation();deleteSection('${sec.key}')">🗑</button></span>`+(count>0?`<span class="sec-badge">${count}</span>`:`<span style="font-size:10px;color:#d1d5db;margin-left:4px">—</span>`);
+    btn.innerHTML=`<span class="drag-handle">⠿</span><span style="flex:1;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-left:4px">${sec.label}</span><span class="sec-actions"><button class="sec-act-btn" onclick="event.stopPropagation();deleteSection('${sec.key}')">🗑</button></span>`+(count>0?`<span class="sec-badge">${count}</span>`:`<span style="font-size:10px;color:#D3D7DA;margin-left:4px">—</span>`);
     btn.onclick=()=>{
       // Sidebar dient nur zur Navigation – springt zum Abschnitt, filtert nicht mehr
       activeSection=sec.key;
@@ -2817,15 +2827,15 @@ function renderProtoInfo(container,rows){
 
   const STATUS_COLORS={
     Aufgabe:["#0e7490","#ecfeff","#67e8f9"],
-    offen:["#dc2626","#fff1f1","#fca5a5"],
-    erledigt:["#16a34a","#f0fdf4","#86efac"],
-    Info:["#2563eb","#eff6ff","#93c5fd"],
-    läuft:["#d97706","#fffbeb","#fcd34d"],
+    offen:["#C1443B","#fff1f1","#fca5a5"],
+    erledigt:["#2E8B4F","#f0fdf4","#86efac"],
+    Info:["#0079A3","#E6F5FC","#85D0F0"],
+    läuft:["#C98A12","#fffbeb","#fcd34d"],
     Festlegung:["#7c3aed","#f5f3ff","#c4b5fd"],
   };
 
   const card=document.createElement("div");
-  card.style.cssText="background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)";
+  card.style.cssText="background:#fff;border:1px solid #E1E1E1;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)";
 
   // ── Blue header bar ──
   const hdr=document.createElement("div");
@@ -2836,16 +2846,16 @@ function renderProtoInfo(container,rows){
 
   // ── Info grid ──
   const grid=document.createElement("div");
-  grid.style.cssText="display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #e5e7eb";
+  grid.style.cssText="display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #E1E1E1";
   const fields=[
     ["📋 Projekt",proj],["🗂 Besprechungsart",art],
     ["📅 Datum",datum],["✍️ Protokollführer",autor],
   ];
   fields.forEach(([lbl,val],i)=>{
     const cell=document.createElement("div");
-    cell.style.cssText=`padding:10px 16px;border-right:${i%2===0?"1px solid #e5e7eb":"none"};border-bottom:${i<2?"1px solid #e5e7eb":"none"};background:${i%2===0?"#f9fafb":"#fff"}`;
-    cell.innerHTML=`<div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">${lbl}</div>
-      <div style="font-size:12px;color:#111827;font-weight:600;line-height:1.4">${escHtml(val)||'<span style="color:#d1d5db;font-style:italic;font-weight:400">—</span>'}</div>`;
+    cell.style.cssText=`padding:10px 16px;border-right:${i%2===0?"1px solid #E1E1E1":"none"};border-bottom:${i<2?"1px solid #E1E1E1":"none"};background:${i%2===0?"#F7F8F8":"#fff"}`;
+    cell.innerHTML=`<div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">${lbl}</div>
+      <div style="font-size:12px;color:#232728;font-weight:600;line-height:1.4">${escHtml(val)||'<span style="color:#D3D7DA;font-style:italic;font-weight:400">—</span>'}</div>`;
     grid.appendChild(cell);
   });
   card.appendChild(grid);
@@ -2853,17 +2863,17 @@ function renderProtoInfo(container,rows){
   // ── Teilnehmer ──
   if(tn){
     const tnBlock=document.createElement("div");
-    tnBlock.style.cssText="padding:12px 16px;border-bottom:1px solid #e5e7eb";
+    tnBlock.style.cssText="padding:12px 16px;border-bottom:1px solid #E1E1E1";
     const lines=tn.split("\n").filter(l=>l.trim());
-    tnBlock.innerHTML=`<div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">👥 Teilnehmer</div>
+    tnBlock.innerHTML=`<div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">👥 Teilnehmer</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px">${lines.map(l=>{
         const parts=l.split(/[–-]/);
         const name=(parts[0]||"").trim();
         const org=(parts[1]||"").trim();
         const initials=name.split(/[\s,]+/).filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join("");
-        return `<div style="display:flex;align-items:center;gap:6px;background:#f0f7ff;border:1px solid #bfdbfe;border-radius:6px;padding:4px 10px 4px 6px">
+        return `<div style="display:flex;align-items:center;gap:6px;background:#E6F5FC;border:1px solid #B5E2F6;border-radius:6px;padding:4px 10px 4px 6px">
           <div style="width:24px;height:24px;border-radius:50%;background:#0BA1E2;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">${initials}</div>
-          <div><div style="font-size:11px;font-weight:600;color:#111827;line-height:1.2">${escHtml(name)}</div>${org?`<div style="font-size:10px;color:#6b7280">${escHtml(org)}</div>`:""}</div>
+          <div><div style="font-size:11px;font-weight:600;color:#232728;line-height:1.2">${escHtml(name)}</div>${org?`<div style="font-size:10px;color:#6B7680">${escHtml(org)}</div>`:""}</div>
         </div>`;}).join("")}</div>`;
     card.appendChild(tnBlock);
   }
@@ -2871,20 +2881,20 @@ function renderProtoInfo(container,rows){
   // ── Teilnehmer (strukturiert, projektweit über Ordner) ──
   const tnList=getTeilnehmer();
   const tnBlock2=document.createElement("div");
-  tnBlock2.style.cssText="padding:12px 16px;border-bottom:1px solid #e5e7eb";
+  tnBlock2.style.cssText="padding:12px 16px;border-bottom:1px solid #E1E1E1";
   if(tnList.length){
-    tnBlock2.innerHTML=`<div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">👥 Teilnehmer (Projekt)</div>
+    tnBlock2.innerHTML=`<div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">👥 Teilnehmer (Projekt)</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px">${tnList.map(t=>{
         const initials=(t.name||"").split(/[\s,]+/).filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join("");
         const isAnwesend=!!(t.id&&TN_ANWESEND[t.id]);
-        return `<div style="display:flex;align-items:center;gap:6px;background:${isAnwesend?"#f0fdf4":"#f0f7ff"};border:1px solid ${isAnwesend?"#86efac":"#bfdbfe"};border-radius:6px;padding:4px 10px 4px 6px">
-          <div style="width:24px;height:24px;border-radius:50%;background:${isAnwesend?"#16a34a":"#0BA1E2"};color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">${initials}</div>
-          <div><div style="font-size:11px;font-weight:600;color:#111827;line-height:1.2">${escHtml(t.name)}${isAnwesend?' <span title="Anwesend" style="color:#16a34a">✓</span>':""}${t.verteiler?' <span title="Verteiler" style="color:#0BA1E2">✉</span>':""}</div>${t.firma?`<div style="font-size:10px;color:#6b7280">${escHtml(t.firma)}</div>`:""}</div>
+        return `<div style="display:flex;align-items:center;gap:6px;background:${isAnwesend?"#f0fdf4":"#E6F5FC"};border:1px solid ${isAnwesend?"#86efac":"#B5E2F6"};border-radius:6px;padding:4px 10px 4px 6px">
+          <div style="width:24px;height:24px;border-radius:50%;background:${isAnwesend?"#2E8B4F":"#0BA1E2"};color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">${initials}</div>
+          <div><div style="font-size:11px;font-weight:600;color:#232728;line-height:1.2">${escHtml(t.name)}${isAnwesend?' <span title="Anwesend" style="color:#2E8B4F">✓</span>':""}${t.verteiler?' <span title="Verteiler" style="color:#0BA1E2">✉</span>':""}</div>${t.firma?`<div style="font-size:10px;color:#6B7680">${escHtml(t.firma)}</div>`:""}</div>
         </div>`;}).join("")}</div>
-      <button onclick="openTeilnehmerModal()" style="margin-top:8px;background:#fff;border:1px solid #d1d5db;color:#374151;border-radius:5px;padding:3px 10px;font-size:10px;cursor:pointer;font-family:inherit">✏️ Teilnehmer verwalten</button>`;
+      <button onclick="openTeilnehmerModal()" style="margin-top:8px;background:#fff;border:1px solid #D3D7DA;color:#3A4349;border-radius:5px;padding:3px 10px;font-size:10px;cursor:pointer;font-family:inherit">✏️ Teilnehmer verwalten</button>`;
   } else {
-    tnBlock2.innerHTML=`<div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">👥 Teilnehmer (Projekt)</div>
-      <button onclick="openTeilnehmerModal()" style="background:#fff;border:1px solid #d1d5db;color:#374151;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit">+ Teilnehmer hinzufügen</button>`;
+    tnBlock2.innerHTML=`<div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">👥 Teilnehmer (Projekt)</div>
+      <button onclick="openTeilnehmerModal()" style="background:#fff;border:1px solid #D3D7DA;color:#3A4349;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit">+ Teilnehmer hinzufügen</button>`;
   }
   card.appendChild(tnBlock2);
 
@@ -2892,40 +2902,40 @@ function renderProtoInfo(container,rows){
   const vtList2=tnList.filter(t=>t.verteiler);
   if(vtList2.length){
     const vtBlock2=document.createElement("div");
-    vtBlock2.style.cssText="padding:10px 16px;border-bottom:1px solid #e5e7eb;background:#f9fafb";
-    vtBlock2.innerHTML=`<div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">📨 Verteiler (Projekt)</div>
-      <div style="display:flex;flex-wrap:wrap;gap:4px">${vtList2.map(t=>`<span style="font-size:11px;background:#fff;border:1px solid #e5e7eb;border-radius:4px;padding:2px 8px;color:#374151">${escHtml(teilnehmerLabel(t))}</span>`).join("")}</div>`;
+    vtBlock2.style.cssText="padding:10px 16px;border-bottom:1px solid #E1E1E1;background:#F7F8F8";
+    vtBlock2.innerHTML=`<div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">📨 Verteiler (Projekt)</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px">${vtList2.map(t=>`<span style="font-size:11px;background:#fff;border:1px solid #E1E1E1;border-radius:4px;padding:2px 8px;color:#3A4349">${escHtml(teilnehmerLabel(t))}</span>`).join("")}</div>`;
     card.appendChild(vtBlock2);
   }
 
   // ── Verteiler ──
   if(vt){
     const vtBlock=document.createElement("div");
-    vtBlock.style.cssText="padding:10px 16px;border-bottom:1px solid #e5e7eb;background:#f9fafb";
+    vtBlock.style.cssText="padding:10px 16px;border-bottom:1px solid #E1E1E1;background:#F7F8F8";
     const vlines=vt.split("\n").filter(l=>l.trim());
-    vtBlock.innerHTML=`<div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">📨 Verteiler</div>
-      <div style="display:flex;flex-wrap:wrap;gap:4px">${vlines.map(l=>`<span style="font-size:11px;background:#fff;border:1px solid #e5e7eb;border-radius:4px;padding:2px 8px;color:#374151">${escHtml(l.trim())}</span>`).join("")}</div>`;
+    vtBlock.innerHTML=`<div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">📨 Verteiler</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px">${vlines.map(l=>`<span style="font-size:11px;background:#fff;border:1px solid #E1E1E1;border-radius:4px;padding:2px 8px;color:#3A4349">${escHtml(l.trim())}</span>`).join("")}</div>`;
     card.appendChild(vtBlock);
   }
 
   // ── Legende ──
   const leg=document.createElement("div");
-  leg.style.cssText="padding:12px 16px;background:#f9fafb";
-  leg.innerHTML=`<div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Legende</div>
+  leg.style.cssText="padding:12px 16px;background:#F7F8F8";
+  leg.innerHTML=`<div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Legende</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px">
       ${Object.entries(STATUS_COLORS).map(([s,[tc,bg,bc]])=>`
         <div style="display:flex;align-items:center;gap:5px">
           <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${bg};border:1px solid ${bc}"></span>
           <span style="font-size:11px;font-weight:700;color:${tc}">${s}</span>
-          <span style="font-size:10px;color:#9ca3af">${{Aufgabe:"→ Aufgabe mit Termin",offen:"→ Handlungsbedarf (ggf. mit Nachfrist)",erledigt:"→ Abgeschlossen",Info:"→ Zur Kenntnisnahme",läuft:"→ In Bearbeitung",Festlegung:"→ Verbindlich beschlossen"}[s]}</span>
+          <span style="font-size:10px;color:#8C969E">${{Aufgabe:"→ Aufgabe mit Termin",offen:"→ Handlungsbedarf (ggf. mit Nachfrist)",erledigt:"→ Abgeschlossen",Info:"→ Zur Kenntnisnahme",läuft:"→ In Bearbeitung",Festlegung:"→ Verbindlich beschlossen"}[s]}</span>
         </div>`).join("")}
     </div>`;
   card.appendChild(leg);
 
   // ── Edit button ──
   const editBtn=document.createElement("div");
-  editBtn.style.cssText="padding:8px 16px;border-top:1px solid #e5e7eb;text-align:right";
-  editBtn.innerHTML=`<button onclick="showProtoInfoEdit()" style="background:#fff;border:1px solid #d1d5db;color:#374151;border-radius:5px;padding:4px 12px;font-size:11px;cursor:pointer;font-family:inherit">✏️ Bearbeiten</button>`;
+  editBtn.style.cssText="padding:8px 16px;border-top:1px solid #E1E1E1;text-align:right";
+  editBtn.innerHTML=`<button onclick="showProtoInfoEdit()" style="background:#fff;border:1px solid #D3D7DA;color:#3A4349;border-radius:5px;padding:4px 12px;font-size:11px;cursor:pointer;font-family:inherit">✏️ Bearbeiten</button>`;
   card.appendChild(editBtn);
 
   container.appendChild(card);
@@ -2953,7 +2963,7 @@ function showProtoInfoEdit(){
           <div class="field"><label>Titel / Bezeichnung</label><input value="${escHtml(row.titel)}" oninput="updateRow(${row.id},'titel',this.value)">${themaSelectHtml(row)}</div>
           <div class="field"><label>Status</label><select onchange="updateRow(${row.id},'status',this.value)">${statusOpts}</select></div>
         </div>
-        <div class="field"><label>Inhalt</label><textarea rows="${Math.max(3,(row.inhalt||"").split('\n').length)}" style="width:100%;border:1px solid #d1d5db;border-radius:5px;padding:6px 8px;font-size:12px;font-family:inherit;outline:none;resize:vertical" oninput="updateRow(${row.id},'inhalt',this.value)">${escHtml(row.inhalt)}</textarea></div>
+        <div class="field"><label>Inhalt</label><textarea rows="${Math.max(3,(row.inhalt||"").split('\n').length)}" style="width:100%;border:1px solid #D3D7DA;border-radius:5px;padding:6px 8px;font-size:12px;font-family:inherit;outline:none;resize:vertical" oninput="updateRow(${row.id},'inhalt',this.value)">${escHtml(row.inhalt)}</textarea></div>
         <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:8px">
           <button class="btn-delete" style="margin-top:0;float:none" onclick="deleteRow(${row.id})">Löschen</button>
         </div>
@@ -2968,7 +2978,7 @@ function showProtoInfoEdit(){
   container.appendChild(back);
   // Add new entry
   const addBtn=document.createElement("button");
-  addBtn.style.cssText="margin-top:6px;width:100%;background:transparent;border:1px dashed #d1d5db;color:#6b7280;border-radius:6px;padding:9px;font-size:12px;font-family:inherit;cursor:pointer";
+  addBtn.style.cssText="margin-top:6px;width:100%;background:transparent;border:1px dashed #D3D7DA;color:#6B7680;border-radius:6px;padding:9px;font-size:12px;font-family:inherit;cursor:pointer";
   addBtn.textContent="+ Neues Feld hinzufügen";
   addBtn.onclick=()=>{addRow();showProtoInfoEdit();};
   container.appendChild(addBtn);
@@ -2995,7 +3005,7 @@ function renderStandardCards(container, rows, sec){
     const isNew=row.createdDate===TODAY;
     const isExpanded=expandedId===row.id;
     const rowTitle=(row.titel||"").trim();
-    const bg=isNew?"#f0f7ff":(i%2===0?"#fff":"#f9fafb");
+    const bg=isNew?"#E6F5FC":(i%2===0?"#fff":"#F7F8F8");
 
     // ── Sammelüberschrift: nur beim ERSTEN Auftreten (Aufgabe 3) ──
     if(rowTitle && !seenTitles.has(rowTitle)){
@@ -3003,13 +3013,13 @@ function renderStandardCards(container, rows, sec){
       lastGrpTitle=rowTitle;
       underHeading=true;
       const gh=document.createElement("div");
-      gh.style.cssText="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 12px;background:#e0f2fe;border:1px solid #e5e7eb;border-top:none;border-left:3px solid #0BA1E2";
+      gh.style.cssText="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 12px;background:#E6F5FC;border:1px solid #E1E1E1;border-top:none;border-left:3px solid #0BA1E2";
       const _lastInGrp_std=rows.filter(r=>(r.titel||"").trim()===rowTitle).slice(-1)[0];
       const _escapedTitle_std=rowTitle.replace(/\\/g,"\\\\").replace(/'/g,"\\'");
       const _histKey_std=jsStr(sec.label+"||"+rowTitle);
       const _histOpen_std=historyOpenKeys.has(sec.label+"||"+rowTitle);
       const _histCnt_std=_historyErledigt?getHistoryFor(sec.label,rowTitle).length:null;
-      gh.innerHTML=`<span style="font-size:11px;font-weight:700;color:#0369a1;letter-spacing:.2px">${escHtml(rowTitle)}</span><span style="display:flex;gap:6px;align-items:center"><button onclick="event.stopPropagation();toggleHistory('${_histKey_std}')" style="background:${_histOpen_std?"#0369a1":"#fff"};border:1px solid #0369a1;cursor:pointer;color:${_histOpen_std?"#fff":"#0369a1"};font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;line-height:1.6" title="Erledigte Punkte zu diesem Thema aus früheren Protokollen">&#128337; Verlauf${_histCnt_std!==null?` (${_histCnt_std})`:""}</button><button onclick="event.stopPropagation();addRow(${_lastInGrp_std?.id??'null'},'${_escapedTitle_std}','${sec.key}')" style="background:#0BA1E2;border:none;cursor:pointer;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;line-height:1.6" title="Neuen Punkt in dieser Gruppe einfügen">＋ Punkt</button></span>`;
+      gh.innerHTML=`<span style="font-size:11px;font-weight:700;color:#0079A3;letter-spacing:.2px">${escHtml(rowTitle)}</span><span style="display:flex;gap:6px;align-items:center"><button onclick="event.stopPropagation();toggleHistory('${_histKey_std}')" style="background:${_histOpen_std?"#0079A3":"#fff"};border:1px solid #0079A3;cursor:pointer;color:${_histOpen_std?"#fff":"#0079A3"};font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;line-height:1.6" title="Erledigte Punkte zu diesem Thema aus früheren Protokollen">&#128337; Verlauf${_histCnt_std!==null?` (${_histCnt_std})`:""}</button><button onclick="event.stopPropagation();addRow(${_lastInGrp_std?.id??'null'},'${_escapedTitle_std}','${sec.key}')" style="background:#0BA1E2;border:none;cursor:pointer;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;line-height:1.6" title="Neuen Punkt in dieser Gruppe einfügen">＋ Punkt</button></span>`;
       container.appendChild(gh);
       if(_histOpen_std)container.appendChild(renderHistoryPanel(sec.label,rowTitle));
     } else if(!rowTitle){
@@ -3022,9 +3032,9 @@ function renderStandardCards(container, rows, sec){
     const nextTitle=(nextRow?.titel||"").trim();
     const isLastUnderHeading=underHeading && (!nextRow || !seenTitles.has(nextTitle)||nextTitle!==rowTitle);
     const wrap=document.createElement("div");
-    const indentStyle=underHeading?"border-left:3px solid #bfdbfe;margin-left:12px;":"";
+    const indentStyle=underHeading?"border-left:3px solid #B5E2F6;margin-left:12px;":"";
     const bottomStyle=isLastUnderHeading?"margin-bottom:6px;":"";
-    wrap.style.cssText=`border:1px solid #e5e7eb;border-top:none;${indentStyle}${bottomStyle}${i===rows.length-1?"border-radius:0 0 8px 8px":""}`;
+    wrap.style.cssText=`border:1px solid #E1E1E1;border-top:none;${indentStyle}${bottomStyle}${i===rows.length-1?"border-radius:0 0 8px 8px":""}`;
 
     // ── Kompakte Übersichtszeile: immer sichtbar, Klick öffnet/schließt die Bearbeitung ──
     const summary=document.createElement("div");
@@ -3036,15 +3046,15 @@ function renderStandardCards(container, rows, sec){
     const hasConflict=row._rid&&conflictRowIds.has(row._rid);
     summary.innerHTML=`
       <div style="padding:7px 4px;text-align:center">${isNew?'<span style="font-size:7px;background:#0BA1E2;color:#fff;border-radius:3px;padding:1px 3px">NEU</span>':""}${hasConflict?'<span title="Gleichzeitig von einem anderen Nutzer geändert" style="font-size:11px">&#9888;&#65039;</span>':""}</div>
-      <div style="padding:7px 6px;font-size:11px;color:#6b7280;text-align:center">${escHtml(row.lfd||"")||(i+1)}</div>
+      <div style="padding:7px 6px;font-size:11px;color:#6B7680;text-align:center">${escHtml(row.lfd||"")||(i+1)}</div>
       <div style="padding:7px 8px;min-width:0;overflow:hidden">
-        <div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;color:#111827">${previewTxt?escHtml(previewTxt):'<span style="color:#d1d5db;font-style:italic">kein Inhalt</span>'} <span class="badge-status ${statusClass(row.status)}" style="font-size:9px;margin-left:4px">${row.status}</span>${row.files&&row.files.length?` <span style="font-size:9px;color:#1d4ed8">&#128206;${row.files.length}</span>`:""}</div>
+        <div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;color:#232728">${previewTxt?escHtml(previewTxt):'<span style="color:#D3D7DA;font-style:italic">kein Inhalt</span>'} <span class="badge-status ${statusClass(row.status)}" style="font-size:9px;margin-left:4px">${row.status}</span>${row.files&&row.files.length?` <span style="font-size:9px;color:#0079A3">&#128206;${row.files.length}</span>`:""}</div>
         ${themaChipHtml(row)}${planChipHtml(row)}
-        ${meta2Txt?`<div class="strow-meta2" style="display:none;font-size:9px;color:#6b7280;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${meta2Txt}</div>`:""}
+        ${meta2Txt?`<div class="strow-meta2" style="display:none;font-size:9px;color:#6B7680;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${meta2Txt}</div>`:""}
       </div>
-      <div style="padding:7px 8px;font-size:10px;color:#374151;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${nachfristAktiv(row)?`<div style="text-decoration:line-through;color:#9ca3af" title="Original-Termin">${escHtml(terminShort(row.termin))}</div><div style="font-weight:700;color:${row.status==="erledigt"?"#15803d":nachfristLate(row)?"#b91c1c":"#b45309"}" title="Nachfrist">&rarr; ${escHtml(terminShort(row.nachfrist))}</div>`:escHtml(row.termin||"")}</div>
-      <div style="padding:7px 8px;font-size:10px;color:#374151;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escHtml(row.verantwortlich||"")}</div>
-      <div style="padding:7px 6px;text-align:center;color:#9ca3af;font-size:11px">${isExpanded?"▾":"▸"}</div>
+      <div style="padding:7px 8px;font-size:10px;color:#3A4349;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${nachfristAktiv(row)?`<div style="text-decoration:line-through;color:#8C969E" title="Original-Termin">${escHtml(terminShort(row.termin))}</div><div style="font-weight:700;color:${row.status==="erledigt"?"#15803d":nachfristLate(row)?"#b91c1c":"#b45309"}" title="Nachfrist">&rarr; ${escHtml(terminShort(row.nachfrist))}</div>`:escHtml(row.termin||"")}</div>
+      <div style="padding:7px 8px;font-size:10px;color:#3A4349;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escHtml(row.verantwortlich||"")}</div>
+      <div style="padding:7px 6px;text-align:center;color:#8C969E;font-size:11px">${isExpanded?"▾":"▸"}</div>
     `;
     wrap.appendChild(summary);
 
@@ -3053,12 +3063,12 @@ function renderStandardCards(container, rows, sec){
       const statusOpts=STATUS_OPTS.map(s=>`<option${row.status===s?" selected":""}>${s}</option>`).join("");
 
       const moveEl=document.createElement("div");
-      moveEl.style.cssText="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px 3px;border-right:1px solid #e5e7eb;flex-shrink:0;background:#f9fafb";
+      moveEl.style.cssText="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:4px 3px;border-right:1px solid #E1E1E1;flex-shrink:0;background:#F7F8F8";
       const secOpts=SECTIONS.filter(s=>s.key!==sec.key).map(s=>`<option value="${s.key}">${escHtml(s.label.slice(0,30))}</option>`).join("");
-      moveEl.innerHTML=`<button onclick="event.stopPropagation();moveRow(${row.id},-1)" style="background:none;border:none;cursor:pointer;color:#9ca3af;font-size:9px;padding:1px 2px;line-height:1;border-radius:2px" title="Nach oben">&#9650;</button><button onclick="event.stopPropagation();moveRow(${row.id},1)" style="background:none;border:none;cursor:pointer;color:#9ca3af;font-size:9px;padding:1px 2px;line-height:1;border-radius:2px" title="Nach unten">&#9660;</button>${SECTIONS.length>1?`<select title="In anderen Abschnitt verschieben" onchange="event.stopPropagation();moveRowToSection(${row.id},this.value);this.value=''" onclick="event.stopPropagation()" style="margin-top:2px;font-size:8px;border:1px solid #e5e7eb;border-radius:3px;padding:1px 2px;color:#9ca3af;background:#fff;cursor:pointer;max-width:28px;width:28px"><option value="">&#8618;</option>${secOpts}</select>`:""}`;
+      moveEl.innerHTML=`<button onclick="event.stopPropagation();moveRow(${row.id},-1)" style="background:none;border:none;cursor:pointer;color:#8C969E;font-size:9px;padding:1px 2px;line-height:1;border-radius:2px" title="Nach oben">&#9650;</button><button onclick="event.stopPropagation();moveRow(${row.id},1)" style="background:none;border:none;cursor:pointer;color:#8C969E;font-size:9px;padding:1px 2px;line-height:1;border-radius:2px" title="Nach unten">&#9660;</button>${SECTIONS.length>1?`<select title="In anderen Abschnitt verschieben" onchange="event.stopPropagation();moveRowToSection(${row.id},this.value);this.value=''" onclick="event.stopPropagation()" style="margin-top:2px;font-size:8px;border:1px solid #E1E1E1;border-radius:3px;padding:1px 2px;color:#8C969E;background:#fff;cursor:pointer;max-width:28px;width:28px"><option value="">&#8618;</option>${secOpts}</select>`:""}`;
 
       const form=document.createElement("div");
-      form.style.cssText=`flex:1;padding:6px 10px;background:#f9fafb;display:flex;flex-direction:column;gap:5px`;
+      form.style.cssText=`flex:1;padding:6px 10px;background:#F7F8F8;display:flex;flex-direction:column;gap:5px`;
       const addColor=row.inhalt_add?"#0BA1E2":"#c4c4c4";
       const prevNote=row.fromPrev?'<span style="font-size:9px;background:#f5f3ff;border:1px solid #c4b5fd;color:#7c3aed;border-radius:3px;padding:1px 5px;margin-left:4px">Bestand</span>':"";
       const conflictBanner=(row._rid&&conflictRowIds.has(row._rid))?`<div style="background:#fffbeb;border:1px solid #fcd34d;color:#92400e;border-radius:5px;padding:6px 10px;font-size:11px;display:flex;align-items:center;gap:6px">&#9888;&#65039; Ein anderer Nutzer hat diesen Punkt gleichzeitig geändert. Bitte Inhalt prüfen und bei Bedarf abstimmen.</div>`:"";
@@ -3066,51 +3076,51 @@ function renderStandardCards(container, rows, sec){
         ${conflictBanner}
         <div style="display:grid;grid-template-columns:68px 1fr 110px 145px 105px 36px;gap:8px;align-items:start">
           <div>
-            <div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Nr.</div>
-            <input value="${escHtml(row.lfd||"")}" placeholder="${i+1}" style="width:100%;border:1px solid #e5e7eb;border-radius:4px;padding:4px 6px;font-size:11px;font-family:inherit;outline:none;background:#fff" oninput="updateRow(${row.id},'lfd',this.value)">
+            <div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Nr.</div>
+            <input value="${escHtml(row.lfd||"")}" placeholder="${i+1}" style="width:100%;border:1px solid #E1E1E1;border-radius:4px;padding:4px 6px;font-size:11px;font-family:inherit;outline:none;background:#fff" oninput="updateRow(${row.id},'lfd',this.value)">
           </div>
           <div>
-            <div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Thema / Zwischenüberschrift</div>
-            <input value="${escHtml(row.titel||"")}" placeholder="Kurzbezeichnung …" style="width:100%;border:1px solid #e5e7eb;border-radius:4px;padding:4px 6px;font-size:11px;font-family:inherit;outline:none;background:#fff" oninput="updateRow(${row.id},'titel',this.value)">
+            <div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Thema / Zwischenüberschrift</div>
+            <input value="${escHtml(row.titel||"")}" placeholder="Kurzbezeichnung …" style="width:100%;border:1px solid #E1E1E1;border-radius:4px;padding:4px 6px;font-size:11px;font-family:inherit;outline:none;background:#fff" oninput="updateRow(${row.id},'titel',this.value)">
             ${themaSelectHtml(row)}
           </div>
           <div>
-            <div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Termin</div>
-            <input value="${escHtml(row.termin||"")}" placeholder="Tag anklicken …" readonly title="${nachfristAktiv(row)?"Original-Termin (gesperrt, solange eine Nachfrist gesetzt ist)":""}" style="width:100%;border:1px solid #e5e7eb;border-radius:4px;padding:4px 6px;font-size:11px;font-family:inherit;outline:none;background:${nachfristAktiv(row)?"#f3f4f6":"#fff"};${nachfristAktiv(row)?"text-decoration:line-through;color:#9ca3af;cursor:not-allowed":"cursor:pointer"}" ${nachfristAktiv(row)?"":`onclick="openTerminPicker(${row.id},this)"`}>
+            <div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Termin</div>
+            <input value="${escHtml(row.termin||"")}" placeholder="Tag anklicken …" readonly title="${nachfristAktiv(row)?"Original-Termin (gesperrt, solange eine Nachfrist gesetzt ist)":""}" style="width:100%;border:1px solid #E1E1E1;border-radius:4px;padding:4px 6px;font-size:11px;font-family:inherit;outline:none;background:${nachfristAktiv(row)?"#F0F2F3":"#fff"};${nachfristAktiv(row)?"text-decoration:line-through;color:#8C969E;cursor:not-allowed":"cursor:pointer"}" ${nachfristAktiv(row)?"":`onclick="openTerminPicker(${row.id},this)"`}>
           </div>
           <div>
-            <div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Verantwortlich</div>
-            <div class="vw-trigger${row.verantwortlich?"":" empty"}" style="font-size:11px;padding:4px 20px 4px 6px;border-color:#e5e7eb" onclick="openVerantwortlichPicker(${row.id},this)">${row.verantwortlich?escHtml(row.verantwortlich):"— auswählen —"}</div>
+            <div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Verantwortlich</div>
+            <div class="vw-trigger${row.verantwortlich?"":" empty"}" style="font-size:11px;padding:4px 20px 4px 6px;border-color:#E1E1E1" onclick="openVerantwortlichPicker(${row.id},this)">${row.verantwortlich?escHtml(row.verantwortlich):"— auswählen —"}</div>
           </div>
           <div>
-            <div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Status</div>
-            <select style="width:100%;border:1px solid #e5e7eb;border-radius:4px;padding:4px 6px;font-size:11px;font-family:inherit;outline:none;background:#fff" onchange="setStatus(${row.id},this.value)">${statusOpts}</select>
+            <div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Status</div>
+            <select style="width:100%;border:1px solid #E1E1E1;border-radius:4px;padding:4px 6px;font-size:11px;font-family:inherit;outline:none;background:#fff" onchange="setStatus(${row.id},this.value)">${statusOpts}</select>
           </div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:4px;padding-top:18px">
-            ${row.files&&row.files.length?`<span style="font-size:9px;color:#1d4ed8">&#128206;${row.files.length}</span>`:""}
+            ${row.files&&row.files.length?`<span style="font-size:9px;color:#0079A3">&#128206;${row.files.length}</span>`:""}
             <button onclick="deleteRow(${row.id})" style="background:none;border:none;cursor:pointer;color:#fca5a5;font-size:13px;padding:1px" title="Löschen">&#128465;</button>
           </div>
         </div>
         ${nachfristEditHtml(row)}
         <div>
-          <div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Besprechungspunkt${prevNote}</div>
-          <textarea style="width:100%;border:1px solid #e5e7eb;border-radius:4px;padding:5px 8px;font-size:12px;font-family:inherit;outline:none;resize:vertical;min-height:44px;line-height:1.5;background:#fff" placeholder="Inhalt des Besprechungspunkts …" oninput="updateRow(${row.id},'inhalt',this.value)">${escHtml(row.inhalt||"")}</textarea>
+          <div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Besprechungspunkt${prevNote}</div>
+          <textarea style="width:100%;border:1px solid #E1E1E1;border-radius:4px;padding:5px 8px;font-size:12px;font-family:inherit;outline:none;resize:vertical;min-height:44px;line-height:1.5;background:#fff" placeholder="Inhalt des Besprechungspunkts …" oninput="updateRow(${row.id},'inhalt',this.value)">${escHtml(row.inhalt||"")}</textarea>
         </div>
         <div>
           <div style="font-size:9px;font-weight:700;color:${addColor};text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">&#10022; Ergänzung (${row.inhalt_add_date||protoDatumDE()})</div>
-          <textarea style="width:100%;border:1px solid #bfdbfe;border-radius:4px;padding:5px 8px;font-size:12px;font-family:inherit;outline:none;resize:vertical;min-height:24px;line-height:1.5;color:#0BA1E2;background:#f0f7ff" placeholder="+ Ergänzung eintragen …" oninput="updateInhaltAdd(${row.id},this)">${escHtml(row.inhalt_add||"")}</textarea>
+          <textarea style="width:100%;border:1px solid #B5E2F6;border-radius:4px;padding:5px 8px;font-size:12px;font-family:inherit;outline:none;resize:vertical;min-height:24px;line-height:1.5;color:#0BA1E2;background:#E6F5FC" placeholder="+ Ergänzung eintragen …" oninput="updateInhaltAdd(${row.id},this)">${escHtml(row.inhalt_add||"")}</textarea>
         </div>
         <div>
-          <div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">&#128206; Datei-Anlagen</div>
+          <div style="font-size:9px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">&#128206; Datei-Anlagen</div>
           <div class="file-upload-area"><input type="file" multiple onchange="addFiles(${row.id},this.files)">&#128206; Dateien auswählen oder ablegen</div>
           <div class="file-list" id="file-list-${row.id}">${(row.files||[]).map((f,fi)=>`<div class="file-item"><span class="file-name">${f.url?`<a href="${f.url}" target="_blank" rel="noopener">${fileIcon(f.name)} ${escHtml(f.name)}</a>`:`${fileIcon(f.name)} ${escHtml(f.name)}`}</span><span class="file-size">${formatSize(f.size)}</span><button class="file-del" onclick="removeFile(${row.id},${fi})">&#10005;</button></div>`).join("")}</div>
         </div>
         <div style="display:flex;justify-content:flex-end;gap:6px">
-          ${isNew?`<button onclick="resetToBestand(${row.id})" style="background:#fff;border:1px solid #d1d5db;color:#374151;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit">&#8617; Als Bestand</button>`:`<button onclick="markAsNew(${row.id})" style="background:#fff;border:1px solid #0BA1E2;color:#0BA1E2;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit">&#10022; Als Neu</button>`}
+          ${isNew?`<button onclick="resetToBestand(${row.id})" style="background:#fff;border:1px solid #D3D7DA;color:#3A4349;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit">&#8617; Als Bestand</button>`:`<button onclick="markAsNew(${row.id})" style="background:#fff;border:1px solid #0BA1E2;color:#0BA1E2;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:inherit">&#10022; Als Neu</button>`}
         </div>`;
 
       const row_el=document.createElement("div");
-      row_el.style.cssText="display:flex;border-top:1px solid #e5e7eb;";
+      row_el.style.cssText="display:flex;border-top:1px solid #E1E1E1;";
       row_el.appendChild(moveEl);
       row_el.appendChild(form);
       wrap.appendChild(row_el);
@@ -3129,7 +3139,7 @@ function renderStandardCards(container, rows, sec){
   // Empty state
   if(!rows.length){
     const empty=document.createElement("div");
-    empty.style.cssText="border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;padding:20px;text-align:center;font-size:12px;color:#9ca3af;font-style:italic";
+    empty.style.cssText="border:1px solid #E1E1E1;border-top:none;border-radius:0 0 8px 8px;padding:20px;text-align:center;font-size:12px;color:#8C969E;font-style:italic";
     empty.textContent="Noch keine Einträge — füge den ersten Besprechungspunkt hinzu";
     container.appendChild(empty);
   }
@@ -3163,7 +3173,7 @@ function renderCards(){
       {const _vs=vorschlagEl(sec);if(_vs)container.appendChild(_vs);}
       if(secRows.length===0){
         const empty=document.createElement("div");
-        empty.style.cssText="border:1px solid #e5e7eb;border-top:none;border-radius:0 0 6px 6px;padding:14px;text-align:center;font-size:12px;color:#9ca3af;font-style:italic;margin-bottom:4px";
+        empty.style.cssText="border:1px solid #E1E1E1;border-top:none;border-radius:0 0 6px 6px;padding:14px;text-align:center;font-size:12px;color:#8C969E;font-style:italic;margin-bottom:4px";
         empty.textContent="Noch keine Einträge";
         container.appendChild(empty);
       } else {
@@ -3197,7 +3207,7 @@ function renderCards(){
     {const _vs=vorschlagEl(sec);if(_vs)container.appendChild(_vs);}
     if(!rows.length){
       const empty=document.createElement("div");
-      empty.style.cssText="border:1px solid #e5e7eb;border-radius:6px;padding:14px;text-align:center;font-size:12px;color:#9ca3af;font-style:italic;margin-bottom:4px";
+      empty.style.cssText="border:1px solid #E1E1E1;border-radius:6px;padding:14px;text-align:center;font-size:12px;color:#8C969E;font-style:italic;margin-bottom:4px";
       empty.textContent="Noch keine Einträge";
       container.appendChild(empty);
       return;
@@ -3221,7 +3231,7 @@ function renderProfiCards(container,rows,sec){
       const _histKey_pro=jsStr(sec.label+"||"+rowTitle);
       const _histOpen_pro=historyOpenKeys.has(sec.label+"||"+rowTitle);
       const _histCnt_pro=_historyErledigt?getHistoryFor(sec.label,rowTitle).length:null;
-      gh.innerHTML=`<span>${escHtml(rowTitle)}</span><span style="display:flex;gap:6px;align-items:center"><button onclick="event.stopPropagation();toggleHistory('${_histKey_pro}')" style="background:${_histOpen_pro?"#374151":"#fff"};border:1px solid #9ca3af;cursor:pointer;color:${_histOpen_pro?"#fff":"#374151"};font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;line-height:1.6" title="Erledigte Punkte zu diesem Thema aus früheren Protokollen">&#128337; Verlauf${_histCnt_pro!==null?` (${_histCnt_pro})`:""}</button><button onclick="event.stopPropagation();addRow(${_lastInGrp_pro?.id??'null'},'${_escapedTitle_pro}','${sec.key}')" style="background:#0BA1E2;border:none;cursor:pointer;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;line-height:1.6" title="Neuen Punkt in dieser Gruppe einfügen">＋ Punkt</button></span>`;
+      gh.innerHTML=`<span>${escHtml(rowTitle)}</span><span style="display:flex;gap:6px;align-items:center"><button onclick="event.stopPropagation();toggleHistory('${_histKey_pro}')" style="background:${_histOpen_pro?"#3A4349":"#fff"};border:1px solid #8C969E;cursor:pointer;color:${_histOpen_pro?"#fff":"#3A4349"};font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;line-height:1.6" title="Erledigte Punkte zu diesem Thema aus früheren Protokollen">&#128337; Verlauf${_histCnt_pro!==null?` (${_histCnt_pro})`:""}</button><button onclick="event.stopPropagation();addRow(${_lastInGrp_pro?.id??'null'},'${_escapedTitle_pro}','${sec.key}')" style="background:#0BA1E2;border:none;cursor:pointer;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;line-height:1.6" title="Neuen Punkt in dieser Gruppe einfügen">＋ Punkt</button></span>`;
       container.appendChild(gh);
       if(_histOpen_pro)container.appendChild(renderHistoryPanel(sec.label,rowTitle));
     } else if(!rowTitle){ profiUnderHeading=false; lastGrp=null; }
@@ -3244,10 +3254,10 @@ function renderProfiCards(container,rows,sec){
     const conflictBannerPro=hasConflictPro?`<div style="background:#fffbeb;border:1px solid #fcd34d;color:#92400e;border-radius:5px;padding:6px 10px;font-size:11px;display:flex;align-items:center;gap:6px;margin-bottom:8px">&#9888;&#65039; Ein anderer Nutzer hat diesen Punkt gleichzeitig geändert. Bitte Inhalt prüfen und bei Bedarf abstimmen.</div>`:"";
     card.innerHTML=`
       <div style="display:flex;align-items:stretch">
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px 5px;background:#f9fafb;border-right:1px solid #e5e7eb;flex-shrink:0;border-radius:8px 0 0 0" class="move-btns">
-          <button onclick="moveRow(${row.id},-1)" style="background:none;border:none;cursor:pointer;color:#d1d5db;font-size:10px;padding:2px 4px;line-height:1;border-radius:2px" title="Nach oben" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#d1d5db'">↑</button>
-          <button onclick="moveRow(${row.id},1)" style="background:none;border:none;cursor:pointer;color:#d1d5db;font-size:10px;padding:2px 4px;line-height:1;border-radius:2px" title="Nach unten" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#d1d5db'">↓</button>
-          ${SECTIONS.length>1?`<select title="In anderen Abschnitt verschieben" onchange="moveRowToSection(${row.id},this.value);this.value=''" onclick="event.stopPropagation()" style="margin-top:2px;font-size:9px;border:1px solid #e5e7eb;border-radius:3px;padding:1px 2px;color:#d1d5db;background:#f9fafb;cursor:pointer;width:26px" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#d1d5db'"><option value="">↪</option>${SECTIONS.filter(s=>s.key!==sec.key).map(s=>`<option value="${s.key}">${escHtml(s.label.slice(0,30))}</option>`).join("")}</select>`:""}
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px 5px;background:#F7F8F8;border-right:1px solid #E1E1E1;flex-shrink:0;border-radius:8px 0 0 0" class="move-btns">
+          <button onclick="moveRow(${row.id},-1)" style="background:none;border:none;cursor:pointer;color:#D3D7DA;font-size:10px;padding:2px 4px;line-height:1;border-radius:2px" title="Nach oben" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#D3D7DA'">↑</button>
+          <button onclick="moveRow(${row.id},1)" style="background:none;border:none;cursor:pointer;color:#D3D7DA;font-size:10px;padding:2px 4px;line-height:1;border-radius:2px" title="Nach unten" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#D3D7DA'">↓</button>
+          ${SECTIONS.length>1?`<select title="In anderen Abschnitt verschieben" onchange="moveRowToSection(${row.id},this.value);this.value=''" onclick="event.stopPropagation()" style="margin-top:2px;font-size:9px;border:1px solid #E1E1E1;border-radius:3px;padding:1px 2px;color:#D3D7DA;background:#F7F8F8;cursor:pointer;width:26px" onmouseover="this.style.color='#0BA1E2'" onmouseout="this.style.color='#D3D7DA'"><option value="">↪</option>${SECTIONS.filter(s=>s.key!==sec.key).map(s=>`<option value="${s.key}">${escHtml(s.label.slice(0,30))}</option>`).join("")}</select>`:""}
         </div>
         <div class="card-header" onclick="toggleCard(${row.id})" style="flex:1;min-width:0">
           <div class="badges"><span class="badge-status ${statusClass(row.status)}">${row.status}</span>${isNew?'<span class="badge-new">✦ NEU</span>':""}${prevNote}${row.files&&row.files.length?`<span class="file-badge">📎 ${row.files.length}</span>`:""}${hasConflictPro?'<span title="Gleichzeitig von einem anderen Nutzer geändert" style="font-size:11px">&#9888;&#65039;</span>':""}</div>
@@ -3279,7 +3289,7 @@ function renderProfiCards(container,rows,sec){
         </div>
         <div class="grid-3">
           <div class="field"><label>Verantwortlich</label><div class="vw-trigger${row.verantwortlich?"":" empty"}" onclick="openVerantwortlichPicker(${row.id},this)">${row.verantwortlich?escHtml(row.verantwortlich):"— auswählen —"}</div></div>
-          <div class="field"><label>Termin / Deadline${nachfristAktiv(row)?' <span style="font-weight:400;color:#9ca3af">· Original</span>':""}</label><input value="${escHtml(row.termin)}" placeholder="Tag anklicken …" readonly ${nachfristAktiv(row)?'title="Original-Termin (gesperrt, solange eine Nachfrist gesetzt ist)" style="cursor:not-allowed;background:#f3f4f6;text-decoration:line-through;color:#9ca3af"':`style="cursor:pointer" onclick="openTerminPicker(${row.id},this)"`}></div>
+          <div class="field"><label>Termin / Deadline${nachfristAktiv(row)?' <span style="font-weight:400;color:#8C969E">· Original</span>':""}</label><input value="${escHtml(row.termin)}" placeholder="Tag anklicken …" readonly ${nachfristAktiv(row)?'title="Original-Termin (gesperrt, solange eine Nachfrist gesetzt ist)" style="cursor:not-allowed;background:#F0F2F3;text-decoration:line-through;color:#8C969E"':`style="cursor:pointer" onclick="openTerminPicker(${row.id},this)"`}></div>
           <div class="field"><label>Anlage / Dateireferenz</label><input value="${escHtml(row.anlage||"")}" placeholder="Dateiname.pdf" oninput="updateRow(${row.id},'anlage',this.value)"></div>
         </div>
         ${nachfristEditHtml(row)}
@@ -3361,11 +3371,11 @@ function nachfristEditHtml(row){
       <input value="${escHtml(row.nachfrist||"")}" placeholder="Neuen Termin anklicken …" readonly style="width:100%;border:1px solid ${bd};border-radius:4px;padding:5px 7px;font-size:11px;font-family:inherit;outline:none;background:#fff;cursor:pointer" onclick="openTerminPicker(${row.id},this,'nachfrist')">
     </div>
     <div style="display:flex;gap:4px;align-items:center">
-      <button type="button" onclick="setNachfristQuick(${row.id},7)" style="border:1px solid #d1d5db;background:#fff;border-radius:5px;padding:4px 8px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">+7 Tage</button>
-      <button type="button" onclick="setNachfristQuick(${row.id},14)" style="border:1px solid #d1d5db;background:#fff;border-radius:5px;padding:4px 8px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">+14 Tage</button>
-      ${has?`<button type="button" onclick="clearNachfrist(${row.id})" title="Nachfrist entfernen" style="border:1px solid #d1d5db;background:#fff;border-radius:5px;padding:4px 8px;font-size:11px;cursor:pointer;color:#6b7280;font-family:inherit">&times;</button>`:""}
+      <button type="button" onclick="setNachfristQuick(${row.id},7)" style="border:1px solid #D3D7DA;background:#fff;border-radius:5px;padding:4px 8px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">+7 Tage</button>
+      <button type="button" onclick="setNachfristQuick(${row.id},14)" style="border:1px solid #D3D7DA;background:#fff;border-radius:5px;padding:4px 8px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">+14 Tage</button>
+      ${has?`<button type="button" onclick="clearNachfrist(${row.id})" title="Nachfrist entfernen" style="border:1px solid #D3D7DA;background:#fff;border-radius:5px;padding:4px 8px;font-size:11px;cursor:pointer;color:#6B7680;font-family:inherit">&times;</button>`:""}
     </div>
-    <div style="font-size:11px;color:#6b7280;flex:1;min-width:140px">${has
+    <div style="font-size:11px;color:#6B7680;flex:1;min-width:140px">${has
       ?`Original-Termin <b style="text-decoration:line-through">${escHtml(terminShort(row.termin)||"–")}</b> bleibt erhalten${delta!==null&&delta>0?` &middot; <b style="color:${col}">+${delta} Tage</b>`:""}`
       :`${over?`<b style="color:#b91c1c">Termin seit ${over} Tag${over===1?"":"en"} überschritten.</b> `:""}Der Original-Termin bleibt erhalten.`}</div>
   </div>`;
@@ -3413,24 +3423,24 @@ function renderTerminCalendar(){
   const daysInMonth=new Date(year,month+1,0).getDate();
   const todayStr=new Date().toDateString();
   let html=`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-    <button type="button" onclick="event.stopPropagation();terminPickerNav(-1)" style="background:none;border:none;cursor:pointer;font-size:13px;color:#374151;padding:2px 6px">‹</button>
-    <span style="font-size:12px;font-weight:700;color:#111827">${MONATE_DE[month]} ${year}</span>
-    <button type="button" onclick="event.stopPropagation();terminPickerNav(1)" style="background:none;border:none;cursor:pointer;font-size:13px;color:#374151;padding:2px 6px">›</button>
+    <button type="button" onclick="event.stopPropagation();terminPickerNav(-1)" style="background:none;border:none;cursor:pointer;font-size:13px;color:#3A4349;padding:2px 6px">‹</button>
+    <span style="font-size:12px;font-weight:700;color:#232728">${MONATE_DE[month]} ${year}</span>
+    <button type="button" onclick="event.stopPropagation();terminPickerNav(1)" style="background:none;border:none;cursor:pointer;font-size:13px;color:#3A4349;padding:2px 6px">›</button>
   </div>
-  <div style="display:grid;grid-template-columns:26px repeat(7,1fr);gap:2px;font-size:9px;font-weight:700;color:#9ca3af;text-align:center;margin-bottom:2px">
+  <div style="display:grid;grid-template-columns:26px repeat(7,1fr);gap:2px;font-size:9px;font-weight:700;color:#8C969E;text-align:center;margin-bottom:2px">
     <span>KW</span>${WOCHENTAGE_KURZ.map(w=>`<span>${w}</span>`).join("")}
   </div>`;
   let dayCounter=1-startOffset;
   while(dayCounter<=daysInMonth){
     const weekDate=new Date(year,month,Math.max(dayCounter,1));
     html+=`<div style="display:grid;grid-template-columns:26px repeat(7,1fr);gap:2px;margin-bottom:2px">`;
-    html+=`<span style="font-size:9px;color:#9ca3af;display:flex;align-items:center;justify-content:center">${isoWeekNumber(weekDate)}</span>`;
+    html+=`<span style="font-size:9px;color:#8C969E;display:flex;align-items:center;justify-content:center">${isoWeekNumber(weekDate)}</span>`;
     for(let i=0;i<7;i++){
       const d=dayCounter+i;
       if(d<1||d>daysInMonth){html+=`<span></span>`;continue;}
       const dateObj=new Date(year,month,d);
       const isToday=dateObj.toDateString()===todayStr;
-      html+=`<button type="button" onclick="pickTerminDate(${year},${month},${d})" style="background:${isToday?"#e0f2fe":"none"};border:${isToday?"1px solid #0BA1E2":"1px solid transparent"};border-radius:4px;cursor:pointer;font-size:11px;padding:3px 0;color:#111827;font-family:inherit">${d}</button>`;
+      html+=`<button type="button" onclick="pickTerminDate(${year},${month},${d})" style="background:${isToday?"#E6F5FC":"none"};border:${isToday?"1px solid #0BA1E2":"1px solid transparent"};border-radius:4px;cursor:pointer;font-size:11px;padding:3px 0;color:#232728;font-family:inherit">${d}</button>`;
     }
     html+=`</div>`;
     dayCounter+=7;
@@ -3573,7 +3583,7 @@ async function addFiles(rowId,fileList){
       renderSidebar();debouncedSave();
     }catch(e){
       console.warn("Upload fehlgeschlagen:",e);
-      if(item)item.innerHTML=`<span class="file-name" style="color:#dc2626">${fileIcon(file.name)} ${escHtml(file.name)} – Upload fehlgeschlagen</span>`;
+      if(item)item.innerHTML=`<span class="file-name" style="color:#C1443B">${fileIcon(file.name)} ${escHtml(file.name)} – Upload fehlgeschlagen</span>`;
       showToast("⚠ Upload fehlgeschlagen: "+file.name);
     }
   }
@@ -3630,7 +3640,7 @@ function printPDF(opts){
       return `<span style="white-space:pre-wrap">${e2(text)}</span>`;
     };
 
-    const SP2={Aufgabe:{tc:"#0e7490",bg:"#ecfeff",bc:"#67e8f9"},offen:{tc:"#dc2626",bg:"#fff1f1",bc:"#fca5a5"},erledigt:{tc:"#16a34a",bg:"#f0fdf4",bc:"#86efac"},Info:{tc:"#2563eb",bg:"#eff6ff",bc:"#93c5fd"},läuft:{tc:"#d97706",bg:"#fffbeb",bc:"#fcd34d"},Festlegung:{tc:"#7c3aed",bg:"#f5f3ff",bc:"#c4b5fd"}};
+    const SP2={Aufgabe:{tc:"#0e7490",bg:"#ecfeff",bc:"#67e8f9"},offen:{tc:"#C1443B",bg:"#fff1f1",bc:"#fca5a5"},erledigt:{tc:"#2E8B4F",bg:"#f0fdf4",bc:"#86efac"},Info:{tc:"#0079A3",bg:"#E6F5FC",bc:"#85D0F0"},läuft:{tc:"#C98A12",bg:"#fffbeb",bc:"#fcd34d"},Festlegung:{tc:"#7c3aed",bg:"#f5f3ff",bc:"#c4b5fd"}};
     let tblRows="";
     SECTIONS.forEach(sec=>{
       const sRows=(DATA[sec.key]||[]).filter(r=>(r.inhalt||r.titel||r.inhalt_add).trim());
@@ -3647,9 +3657,9 @@ function printPDF(opts){
         } else if(!rt){ lastTitel=""; }
         const isNew=row.createdDate===TODAY;
         const bp=`<span style="white-space:pre-wrap">${e2(row.inhalt||"")}</span>`;
-        const add=row.inhalt_add?`<div style="color:#0BA1E2;border-top:1px dashed #bfdbfe;margin-top:3px;padding-top:3px;font-size:9pt"><strong style="font-size:8pt;letter-spacing:.5px;text-transform:uppercase">&#10022; Erg&auml;nzung (${e2(row.inhalt_add_date||protoDatumDE())})</strong><br>${e2(row.inhalt_add)}</div>`:"";
-        const anlRef=[...(row.files||[]).map(f=>e2(f.name)),...(row.anlage||"").split("\n").filter(s=>s.trim()).map(s=>e2(s.trim()))].filter((v,i,a)=>a.indexOf(v)===i).map(n=>`<div style="margin-top:2px;font-size:9pt;color:#374151;padding-left:4px;border-left:2px solid #e5e7eb">&#128196; ${n}</div>`).join("");
-        const sv=SP2[row.status]||{tc:"#374151",bg:"#fff",bc:"#e5e7eb"};
+        const add=row.inhalt_add?`<div style="color:#0BA1E2;border-top:1px dashed #B5E2F6;margin-top:3px;padding-top:3px;font-size:9pt"><strong style="font-size:8pt;letter-spacing:.5px;text-transform:uppercase">&#10022; Erg&auml;nzung (${e2(row.inhalt_add_date||protoDatumDE())})</strong><br>${e2(row.inhalt_add)}</div>`:"";
+        const anlRef=[...(row.files||[]).map(f=>e2(f.name)),...(row.anlage||"").split("\n").filter(s=>s.trim()).map(s=>e2(s.trim()))].filter((v,i,a)=>a.indexOf(v)===i).map(n=>`<div style="margin-top:2px;font-size:9pt;color:#3A4349;padding-left:4px;border-left:2px solid #E1E1E1">&#128196; ${n}</div>`).join("");
+        const sv=SP2[row.status]||{tc:"#3A4349",bg:"#fff",bc:"#E1E1E1"};
         const sClassMap={Aufgabe:"b-a",offen:"b-o",erledigt:"b-e",Info:"b-i","läuft":"b-l",Festlegung:"b-f"};
         const sClass=sClassMap[row.status]||"b-i";
         const sLabelMap={Aufgabe:"Aufgabe",offen:"offen",erledigt:"erledigt",Info:"Info","läuft":"läuft",Festlegung:"Festlg."};
@@ -3658,12 +3668,12 @@ function printPDF(opts){
         const nextSRow=sRows[ri+1];
         const nextRt=(nextSRow?.titel||"").trim();
         const isLastInGroup=under&&(!nextSRow||nextRt!==rt);
-        const rowBg=isNew?"#dbeafe":under?"#f8fbff":"#fff";
-        const contentColor=isNew?"color:#1d4ed8;":"";
+        const rowBg=isNew?"#CCECF9":under?"#F3FAFD":"#fff";
+        const contentColor=isNew?"color:#0079A3;":"";
         // Rahmen: Gruppe bekommt linken/rechten blauen Rand, letzter Punkt unteren Abschluss
-        const bl=under?"border-left:3px solid #0BA1E2;border-right:1px solid #bfdbfe;":"";
-        const bb=isLastInGroup?"border-bottom:2px solid #0BA1E2;":"border-bottom:1px solid #e5e7eb;";
-        const bt=under?"border-top:1px solid #e5e7eb;":"border-top:1px solid #e5e7eb;";
+        const bl=under?"border-left:3px solid #0BA1E2;border-right:1px solid #B5E2F6;":"";
+        const bb=isLastInGroup?"border-bottom:2px solid #0BA1E2;":"border-bottom:1px solid #E1E1E1;";
+        const bt=under?"border-top:1px solid #E1E1E1;":"border-top:1px solid #E1E1E1;";
         tblRows+=`<div class="pt-row${ri%2?' alt':''}${isNew?' nw':''}">
   <div class="ptc ptc-nr">${newBadge}${e2(row.lfd||"")}</div>
   <div class="ptc ptc-body"><div class="pt-inhalt">${bp}</div>${add}${unterPrintHtml(row,"9pt")}${anlRef}</div>
@@ -3682,12 +3692,12 @@ function printPDF(opts){
 
     const tocItems=SECTIONS.filter(s=>!s.label.includes('Protokollinformation')).map(s=>{
       const cnt=(DATA[s.key]||[]).filter(r=>(r.inhalt||r.titel||r.inhalt_add||'').trim()).length;
-      return cnt?`<span style="font-size:8pt;color:#1a1a1a;padding:2pt 8pt;background:#fff;border:0.5pt solid #b8d8f0;border-radius:3px;font-weight:600;display:inline-block">${e2(s.label)}<span style="color:#0BA1E2;font-weight:400;margin-left:4pt;font-size:7.5pt">${cnt} Pkt.</span></span>`:'';
+      return cnt?`<span style="font-size:8pt;color:#232728;padding:2pt 8pt;background:#fff;border:0.5pt solid #b8d8f0;border-radius:3px;font-weight:600;display:inline-block">${e2(s.label)}<span style="color:#0BA1E2;font-weight:400;margin-left:4pt;font-size:7.5pt">${cnt} Pkt.</span></span>`:'';
     }).filter(Boolean).join(' ');
-    const pg=`<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><title>Protokoll ${nr}</title>
+    const pg=`<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><title>Protokoll ${nr}</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.5pt;color:#1a1a1a;background:#fff}
+body{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:9.5pt;color:#232728;background:#fff}
 @page{size:A4 portrait;margin:12mm 14mm}
 @media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{margin:0}table{page-break-inside:auto}tr,div.pt-row{page-break-inside:avoid}}
 .hdr1{display:flex;align-items:stretch;border-bottom:0.5pt solid #e0e0e0}
@@ -3700,27 +3710,27 @@ body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.5pt;color:#1a1a1a;backg
 .firma-box{flex:1;border:0.5pt dashed #bbb;padding:6pt 8pt;font-size:8pt;color:#555;line-height:1.7;min-height:55pt}
 .contact-box{flex:1;font-size:7.5pt;line-height:1.7}
 .cb-blue{color:#0BA1E2;font-weight:700;font-size:8pt;margin-bottom:2pt}
-.cb-name{font-weight:700;font-size:8.5pt;color:#1a1a1a}
-.cb-sub{font-size:8pt;color:#1a1a1a;margin-bottom:3pt}
+.cb-name{font-weight:700;font-size:8.5pt;color:#232728}
+.cb-sub{font-size:8pt;color:#232728;margin-bottom:3pt}
 .cb-detail{font-size:7.5pt;color:#555}
 .ref-row{display:flex;border-top:0.5pt solid #ddd;border-bottom:0.5pt solid #ddd}
 .ref-cell{flex:1;padding:4pt 14pt;border-right:0.5pt solid #ddd}
 .ref-cell:last-child{border-right:none}
 .ref-lbl{font-size:7pt;color:#888;margin-bottom:1pt;text-transform:uppercase;letter-spacing:0.4pt}
-.ref-val{font-size:8.5pt;color:#1a1a1a;font-weight:600}
+.ref-val{font-size:8.5pt;color:#232728;font-weight:600}
 .betreff{padding:7pt 14pt 3pt}
 .bt-row{display:flex;align-items:baseline;gap:8pt;margin-bottom:2pt}
 .bt-lbl{font-weight:700;font-size:8.5pt;min-width:65pt}
 .bt-val{font-weight:700;font-size:8.5pt}
-.toc-wrap{padding:5pt 14pt;background:#f7fbff;border-bottom:0.5pt solid #d0e8f8}
+.toc-wrap{padding:5pt 14pt;background:#F3FAFD;border-bottom:0.5pt solid #d0e8f8}
 .toc-lbl{font-size:7pt;text-transform:uppercase;letter-spacing:0.8pt;color:#0BA1E2;font-weight:700;margin-bottom:4pt}
 .toc-items{display:flex;flex-wrap:wrap;gap:3pt 5pt}
-.tn-wrap{padding:5pt 14pt;background:#f7fbff;border-bottom:0.5pt solid #d0e8f8;display:flex;flex-wrap:wrap;gap:4pt 6pt;align-items:center}
+.tn-wrap{padding:5pt 14pt;background:#F3FAFD;border-bottom:0.5pt solid #d0e8f8;display:flex;flex-wrap:wrap;gap:4pt 6pt;align-items:center}
 .tn-lbl{font-size:7pt;text-transform:uppercase;letter-spacing:0.8pt;color:#0BA1E2;font-weight:700;margin-right:6pt}
-.tn-chip{display:inline-flex;align-items:center;gap:4pt;background:#fff;border:0.5pt solid #bfdbfe;border-radius:10px;padding:2pt 7pt 2pt 3pt;font-size:8pt}
+.tn-chip{display:inline-flex;align-items:center;gap:4pt;background:#fff;border:0.5pt solid #B5E2F6;border-radius:10px;padding:2pt 7pt 2pt 3pt;font-size:8pt}
 .tn-av{width:14pt;height:14pt;border-radius:50%;background:#0BA1E2;color:#fff;font-size:6.5pt;font-weight:700;display:flex;align-items:center;justify-content:center}
-.tn-nm{font-weight:600;color:#1a1a1a}
-.tn-fm{color:#6b7280;font-size:7.5pt}
+.tn-nm{font-weight:600;color:#232728}
+.tn-fm{color:#6B7680;font-size:7.5pt}
 .sec-hdr{background:#0BA1E2;color:#fff;padding:4pt 14pt;font-size:8.5pt;font-weight:700;letter-spacing:0.5pt;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
 .sec-hdr-r{font-weight:400;font-size:7.5pt;text-transform:none;letter-spacing:0;opacity:.85}
 .col-hdr{display:flex;background:#f0f0ee;border-bottom:0.5pt solid #ccc;padding:3pt 0}
@@ -3738,7 +3748,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.5pt;color:#1a1a1a;backg
 .ptc-t{min-width:58pt;max-width:58pt;color:#333;font-size:8pt;padding-top:6pt}
 .ptc-v{min-width:70pt;max-width:70pt;color:#555;font-size:7.5pt;line-height:1.3;padding-top:6pt}
 .ptc-s{min-width:50pt;max-width:50pt;padding-top:5pt}
-.pt-title{font-size:8.5pt;font-weight:700;color:#1a1a1a;margin-bottom:2pt;line-height:1.3}
+.pt-title{font-size:8.5pt;font-weight:700;color:#232728;margin-bottom:2pt;line-height:1.3}
 .pt-inhalt{font-size:8.5pt;color:#333;line-height:1.4;white-space:pre-wrap}
 .pt-add{margin-top:4pt;padding:3pt 6pt;background:#EBF5FC;border-left:2pt solid #0BA1E2;font-size:7.5pt;color:#0a4f7a;line-height:1.35}
 .pt-add-lbl{font-size:6.5pt;font-weight:700;text-transform:uppercase;letter-spacing:0.4pt;color:#0BA1E2;margin-bottom:1pt}
@@ -3750,7 +3760,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.5pt;color:#1a1a1a;backg
 .b-l{background:#e2d9f3;color:#432874}
 .b-f{background:#fde8d8;color:#7a2e0a}
 .new-bdg{display:inline-block;background:#0BA1E2;color:#fff;font-size:7pt;font-weight:700;padding:1pt 4pt;border-radius:2px;margin-right:3pt}
-.grp-hdr{background:#e0f2fe;border-left:3pt solid #0BA1E2;padding:4pt 14pt;font-size:8.5pt;font-weight:700;color:#1e40af}
+.grp-hdr{background:#E6F5FC;border-left:3pt solid #0BA1E2;padding:4pt 14pt;font-size:8.5pt;font-weight:700;color:#0079A3}
 </style></head><body>
 
 <div class="hdr1">
@@ -3768,8 +3778,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;font-size:9.5pt;color:#1a1a1a;backg
   <div class="toc-items">${tocItems}</div>
 </div>
 
-${(tnGlobal2.length&&!HIDE_TN_PRINT)?`<div class="tn-wrap"><span class="tn-lbl">Teilnehmer</span>${tnGlobal2.map(t=>{const ini=(t.name||"").split(/[\s,]+/).filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join("");const anw=!!(t.id&&TN_ANWESEND[t.id]);return `<span class="tn-chip"${anw?' style="border-color:#86efac;background:#f0fdf4"':""}><span class="tn-av"${anw?' style="background:#16a34a"':""}>${e2(ini)}</span><span class="tn-nm">${e2(t.name)}</span>${t.firma?`<span class="tn-fm">&middot; ${e2(t.firma)}</span>`:""}${anw?'<span style="color:#16a34a;font-weight:700">&#10003;</span>':""}${t.verteiler?'<span style="color:#0BA1E2" title="Verteiler">&#9993;</span>':""}</span>`;}).join("")}</div>`:""}
-${tnGlobal2.filter(t=>t.verteiler).length?`<div class="tn-wrap" style="background:#f9fafb"><span class="tn-lbl">Verteiler</span>${tnGlobal2.filter(t=>t.verteiler).map(t=>`<span class="tn-chip">${e2(teilnehmerLabel(t))}</span>`).join("")}</div>`:""}
+${(tnGlobal2.length&&!HIDE_TN_PRINT)?`<div class="tn-wrap"><span class="tn-lbl">Teilnehmer</span>${tnGlobal2.map(t=>{const ini=(t.name||"").split(/[\s,]+/).filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join("");const anw=!!(t.id&&TN_ANWESEND[t.id]);return `<span class="tn-chip"${anw?' style="border-color:#86efac;background:#f0fdf4"':""}><span class="tn-av"${anw?' style="background:#2E8B4F"':""}>${e2(ini)}</span><span class="tn-nm">${e2(t.name)}</span>${t.firma?`<span class="tn-fm">&middot; ${e2(t.firma)}</span>`:""}${anw?'<span style="color:#2E8B4F;font-weight:700">&#10003;</span>':""}${t.verteiler?'<span style="color:#0BA1E2" title="Verteiler">&#9993;</span>':""}</span>`;}).join("")}</div>`:""}
+${tnGlobal2.filter(t=>t.verteiler).length?`<div class="tn-wrap" style="background:#F7F8F8"><span class="tn-lbl">Verteiler</span>${tnGlobal2.filter(t=>t.verteiler).map(t=>`<span class="tn-chip">${e2(teilnehmerLabel(t))}</span>`).join("")}</div>`:""}
 
 ${TP_OPT.pos==="vor"?tpAuszugHtml():""}
 ${tblRows}
@@ -3780,14 +3790,14 @@ ${TP_OPT.pos==="nach"?tpAuszugHtml():""}
     let anlHtml="";
     if(anlStd.length){anlHtml=anlStd.map((f,i)=>`<div style="display:flex;border-bottom:0.5px solid #eee;padding:3pt 14pt;background:${i%2?"#fafaf8":"#fff"}"><span style="min-width:16pt;font-size:7.5pt;color:#888">${i+1}</span><span style="flex:1;font-size:8pt">&#128196; ${e2(f.name)}</span><span style="min-width:90pt;font-size:7.5pt;color:#555">${e2(f.sec)}</span><span style="min-width:70pt;font-size:7.5pt;color:#555">${e2(f.verant)}</span></div>`).join("");}
     const anlWrap=anlHtml?`<div style="margin-top:8pt;padding:6pt 14pt;border-top:0.5pt solid #ddd;background:#fafaf8"><div style="font-size:7pt;font-weight:700;text-transform:uppercase;letter-spacing:.5pt;color:#888;margin-bottom:4pt">Anlagen</div>${anlHtml}</div>`:"";
-    const pgEnd=anlWrap+`<div style="border-top:1pt solid #0BA1E2;padding:5pt 14pt;display:flex;justify-content:space-between;align-items:center;background:#f7fbff"><div style="font-size:7pt;color:#888;line-height:1.5">Widerspr&uuml;che sp&auml;testens zur n&auml;chsten BB anmelden &middot; Festlegungen gelten als anerkannt.<br>aufgestellt: ${e2(pf2||autor)} &middot; INNOTECH Leipzig GmbH</div><div style="text-align:right"><div style="font-size:8pt;font-weight:700;color:#0BA1E2;letter-spacing:1pt">INNOTECH</div><div style="font-size:7pt;color:#888">Protokoll Nr. ${e2(nr)} &middot; ${e2(dat2||datum)}</div></div></div></body></html>`;
+    const pgEnd=anlWrap+`<div style="border-top:1pt solid #0BA1E2;padding:5pt 14pt;display:flex;justify-content:space-between;align-items:center;background:#F3FAFD"><div style="font-size:7pt;color:#888;line-height:1.5">Widerspr&uuml;che sp&auml;testens zur n&auml;chsten BB anmelden &middot; Festlegungen gelten als anerkannt.<br>aufgestellt: ${e2(pf2||autor)} &middot; INNOTECH Leipzig GmbH</div><div style="text-align:right"><div style="font-size:8pt;font-weight:700;color:#0BA1E2;letter-spacing:1pt">INNOTECH</div><div style="font-size:7pt;color:#888">Protokoll Nr. ${e2(nr)} &middot; ${e2(dat2||datum)}</div></div></div></body></html>`;
     win.document.write(sperrWrap(pg+pgEnd));win.document.close();win.onload=()=>{win.focus();win.print();};
     return;
   }
 
   /* ══ PROFI: Karten ══ */
-  const SP={Aufgabe:{tc:"#0e7490",bg:"#ecfeff",bc:"#67e8f9",d:"Aufgabe mit Termin"},offen:{tc:"#dc2626",bg:"#fff1f1",bc:"#fca5a5",d:"Handlungsbedarf"},erledigt:{tc:"#16a34a",bg:"#f0fdf4",bc:"#86efac",d:"Abgeschlossen"},Info:{tc:"#2563eb",bg:"#eff6ff",bc:"#93c5fd",d:"Zur Kenntnisnahme"},läuft:{tc:"#d97706",bg:"#fffbeb",bc:"#fcd34d",d:"In Bearbeitung"},Festlegung:{tc:"#7c3aed",bg:"#f5f3ff",bc:"#c4b5fd",d:"Verbindlich"}};
-  let html=`<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><title>Protokoll ${nr}</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#111827;font-size:11px}@page{size:A4 portrait;margin:15mm 12mm}@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.nb{break-inside:avoid}}.hdr{border-bottom:2px solid #0BA1E2;padding-bottom:8px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}.hdr-logo{height:30px;width:auto;flex-shrink:0}.hdr h1{font-size:13px;font-weight:700}.hdr p{font-size:10px;color:#6b7280;margin-top:3px}.sh{background:#0BA1E2;color:#fff;font-size:11px;font-weight:700;padding:5px 10px;border-radius:5px 5px 0 0;margin-top:12px}.cd{border:1px solid #e5e7eb;border-left:4px solid #d1d5db;margin-bottom:3px;padding:6px 10px;break-inside:avoid}.cd.nw{border-color:#93c5fd!important;border-left-color:#0BA1E2!important;background:#f0f7ff!important}.bl-Aufgabe{border-left-color:#0e7490!important}.bl-offen{border-left-color:#dc2626!important}.bl-erledigt{border-left-color:#16a34a!important}.bl-Info{border-left-color:#2563eb!important}.bl-läuft{border-left-color:#d97706!important}.bl-Festlegung{border-left-color:#7c3aed!important}.bg{display:inline-block;border-radius:3px;padding:1px 6px;font-size:9px;font-weight:700;margin-right:4px}.s-Aufgabe{color:#0e7490;background:#ecfeff;border:1px solid #67e8f9}.s-offen{color:#dc2626;background:#fff1f1;border:1px solid #fca5a5}.s-erledigt{color:#16a34a;background:#f0fdf4;border:1px solid #86efac}.s-Info{color:#2563eb;background:#eff6ff;border:1px solid #93c5fd}.s-läuft{color:#d97706;background:#fffbeb;border:1px solid #fcd34d}.s-Festlegung{color:#7c3aed;background:#f5f3ff;border:1px solid #c4b5fd}.cb{font-size:10px;color:#374151;line-height:1.55;white-space:pre-wrap}.ca{color:#0BA1E2;font-size:10px;border-top:1px dashed #0BA1E2;margin-top:4px;padding-top:3px;white-space:pre-wrap}.cm{display:flex;gap:10px;margin-top:5px;font-size:9px;color:#6b7280}.gh{display:flex;align-items:center;gap:6px;margin:10px 0 3px;padding-bottom:4px;border-bottom:2px solid #0BA1E2;break-after:avoid}.gh::before{content:'';display:block;width:4px;height:13px;background:#0BA1E2;border-radius:2px}.gh span{font-size:11px;font-weight:700;color:#0BA1E2}.pi-card{border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;margin-bottom:14px;break-inside:avoid}.pi-hdr{background:#0BA1E2;padding:10px 16px;display:flex;justify-content:space-between}.pi-hdr-t{color:#fff;font-weight:700;font-size:12px}.pi-hdr-d{color:rgba(255,255,255,.85);font-size:10px}.pi-g{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #e5e7eb}.pi-c{padding:9px 14px;border-right:1px solid #e5e7eb}.pi-c:nth-child(even){border-right:none;background:#fff}.pi-c:nth-child(odd){background:#f9fafb}.pi-c:nth-child(1),.pi-c:nth-child(2){border-bottom:1px solid #e5e7eb}.pi-l{font-size:8px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}.pi-v{font-size:11px;color:#111827;font-weight:600;line-height:1.4}.pi-b{padding:10px 14px;border-bottom:1px solid #e5e7eb}.pi-bl{font-size:8px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}.pi-cs{display:flex;flex-wrap:wrap;gap:5px}.pi-ch{display:flex;align-items:center;gap:5px;background:#f0f7ff;border:1px solid #bfdbfe;border-radius:5px;padding:3px 8px 3px 5px}.pi-av{width:20px;height:20px;border-radius:50%;background:#0BA1E2;color:#fff;font-size:8px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.pi-cn{font-size:10px;font-weight:600;color:#111827}.pi-co{font-size:9px;color:#6b7280}.pi-tg{font-size:10px;background:#fff;border:1px solid #e5e7eb;border-radius:3px;padding:2px 7px;color:#374151}.pi-leg{padding:10px 14px;background:#f9fafb}.pi-ll{font-size:8px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}.pi-li{display:flex;flex-wrap:wrap;gap:10px}.pi-litem{display:flex;align-items:center;gap:4px}.pi-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}.pi-ls{font-size:10px;font-weight:700}.pi-ld{font-size:9px;color:#9ca3af}.at{width:100%;border-collapse:collapse;font-size:10px;margin-top:12px}.at th{background:#0BA1E2;color:#fff;padding:5px 8px;text-align:left}.at td{padding:4px 8px;border-bottom:1px solid #e5e7eb}.at tr:nth-child(even) td{background:#f9fafb}</style></head><body>
+  const SP={Aufgabe:{tc:"#0e7490",bg:"#ecfeff",bc:"#67e8f9",d:"Aufgabe mit Termin"},offen:{tc:"#C1443B",bg:"#fff1f1",bc:"#fca5a5",d:"Handlungsbedarf"},erledigt:{tc:"#2E8B4F",bg:"#f0fdf4",bc:"#86efac",d:"Abgeschlossen"},Info:{tc:"#0079A3",bg:"#E6F5FC",bc:"#85D0F0",d:"Zur Kenntnisnahme"},läuft:{tc:"#C98A12",bg:"#fffbeb",bc:"#fcd34d",d:"In Bearbeitung"},Festlegung:{tc:"#7c3aed",bg:"#f5f3ff",bc:"#c4b5fd",d:"Verbindlich"}};
+  let html=`<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><title>Protokoll ${nr}</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Open Sans',Helvetica,Arial,sans-serif;background:#fff;color:#232728;font-size:11px}@page{size:A4 portrait;margin:15mm 12mm}@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.nb{break-inside:avoid}}.hdr{border-bottom:2px solid #0BA1E2;padding-bottom:8px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}.hdr-logo{height:30px;width:auto;flex-shrink:0}.hdr h1{font-size:13px;font-weight:700}.hdr p{font-size:10px;color:#6B7680;margin-top:3px}.sh{background:#0BA1E2;color:#fff;font-size:11px;font-weight:700;padding:5px 10px;border-radius:5px 5px 0 0;margin-top:12px}.cd{border:1px solid #E1E1E1;border-left:4px solid #D3D7DA;margin-bottom:3px;padding:6px 10px;break-inside:avoid}.cd.nw{border-color:#85D0F0!important;border-left-color:#0BA1E2!important;background:#E6F5FC!important}.bl-Aufgabe{border-left-color:#0e7490!important}.bl-offen{border-left-color:#C1443B!important}.bl-erledigt{border-left-color:#2E8B4F!important}.bl-Info{border-left-color:#0079A3!important}.bl-läuft{border-left-color:#C98A12!important}.bl-Festlegung{border-left-color:#7c3aed!important}.bg{display:inline-block;border-radius:3px;padding:1px 6px;font-size:9px;font-weight:700;margin-right:4px}.s-Aufgabe{color:#0e7490;background:#ecfeff;border:1px solid #67e8f9}.s-offen{color:#C1443B;background:#fff1f1;border:1px solid #fca5a5}.s-erledigt{color:#2E8B4F;background:#f0fdf4;border:1px solid #86efac}.s-Info{color:#0079A3;background:#E6F5FC;border:1px solid #85D0F0}.s-läuft{color:#C98A12;background:#fffbeb;border:1px solid #fcd34d}.s-Festlegung{color:#7c3aed;background:#f5f3ff;border:1px solid #c4b5fd}.cb{font-size:10px;color:#3A4349;line-height:1.55;white-space:pre-wrap}.ca{color:#0BA1E2;font-size:10px;border-top:1px dashed #0BA1E2;margin-top:4px;padding-top:3px;white-space:pre-wrap}.cm{display:flex;gap:10px;margin-top:5px;font-size:9px;color:#6B7680}.gh{display:flex;align-items:center;gap:6px;margin:10px 0 3px;padding-bottom:4px;border-bottom:2px solid #0BA1E2;break-after:avoid}.gh::before{content:'';display:block;width:4px;height:13px;background:#0BA1E2;border-radius:2px}.gh span{font-size:11px;font-weight:700;color:#0BA1E2}.pi-card{border:1px solid #E1E1E1;border-radius:8px;overflow:hidden;margin-bottom:14px;break-inside:avoid}.pi-hdr{background:#0BA1E2;padding:10px 16px;display:flex;justify-content:space-between}.pi-hdr-t{color:#fff;font-weight:700;font-size:12px}.pi-hdr-d{color:rgba(255,255,255,.85);font-size:10px}.pi-g{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E1E1E1}.pi-c{padding:9px 14px;border-right:1px solid #E1E1E1}.pi-c:nth-child(even){border-right:none;background:#fff}.pi-c:nth-child(odd){background:#F7F8F8}.pi-c:nth-child(1),.pi-c:nth-child(2){border-bottom:1px solid #E1E1E1}.pi-l{font-size:8px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}.pi-v{font-size:11px;color:#232728;font-weight:600;line-height:1.4}.pi-b{padding:10px 14px;border-bottom:1px solid #E1E1E1}.pi-bl{font-size:8px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}.pi-cs{display:flex;flex-wrap:wrap;gap:5px}.pi-ch{display:flex;align-items:center;gap:5px;background:#E6F5FC;border:1px solid #B5E2F6;border-radius:5px;padding:3px 8px 3px 5px}.pi-av{width:20px;height:20px;border-radius:50%;background:#0BA1E2;color:#fff;font-size:8px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.pi-cn{font-size:10px;font-weight:600;color:#232728}.pi-co{font-size:9px;color:#6B7680}.pi-tg{font-size:10px;background:#fff;border:1px solid #E1E1E1;border-radius:3px;padding:2px 7px;color:#3A4349}.pi-leg{padding:10px 14px;background:#F7F8F8}.pi-ll{font-size:8px;font-weight:700;color:#8C969E;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}.pi-li{display:flex;flex-wrap:wrap;gap:10px}.pi-litem{display:flex;align-items:center;gap:4px}.pi-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}.pi-ls{font-size:10px;font-weight:700}.pi-ld{font-size:9px;color:#8C969E}.at{width:100%;border-collapse:collapse;font-size:10px;margin-top:12px}.at th{background:#0BA1E2;color:#fff;padding:5px 8px;text-align:left}.at td{padding:4px 8px;border-bottom:1px solid #E1E1E1}.at tr:nth-child(even) td{background:#F7F8F8}</style></head><body>
 <div class="hdr"><div><h1>Protokoll ${nr} &ndash; ${e2(proj)}</h1><p>Datum: ${datum} | N&auml;chste BB: ${next} | Protokollf&uuml;hrer: ${e2(autor)}</p></div><img class="hdr-logo" src="${LOGO_DATA}" alt="INNOTECH Leipzig GmbH"></div>`;
 
   // Protokollinformation-Karte: immer anzeigen (unabhängig davon, ob Zeilen existieren) – Teilnehmer aus globaler Projektliste
@@ -3805,10 +3815,10 @@ ${TP_OPT.pos==="nach"?tpAuszugHtml():""}
     const tn=get("Teilnehmer"),vt=get("Verteiler");
     const tnLegacy=tn.split("\n").filter(l=>l.trim()),vtL=vt.split("\n").filter(l=>l.trim());
     html+=`<div class="pi-card"><div class="pi-hdr"><div class="pi-hdr-t">Protokollinformation</div><div class="pi-hdr-d">${e2(dat)}</div></div><div class="pi-g"><div class="pi-c"><div class="pi-l">Projekt</div><div class="pi-v">${e2(pj)||"&mdash;"}</div></div><div class="pi-c"><div class="pi-l">Besprechungsart</div><div class="pi-v">${e2(art)||"&mdash;"}</div></div><div class="pi-c"><div class="pi-l">Datum</div><div class="pi-v">${e2(dat)||"&mdash;"}</div></div><div class="pi-c"><div class="pi-l">Protokollf&uuml;hrer</div><div class="pi-v">${e2(pf)||"&mdash;"}</div></div></div>`;
-    if(tnGlobal.length){if(!HIDE_TN_PRINT)html+=`<div class="pi-b"><div class="pi-bl">Teilnehmer</div><div class="pi-cs">${tnGlobal.map(t=>{const ini=(t.name||"").split(/[\s,]+/).filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join("");const anw=!!(t.id&&TN_ANWESEND[t.id]);return`<div class="pi-ch"${anw?' style="background:#f0fdf4;border-color:#86efac"':""}><div class="pi-av"${anw?' style="background:#16a34a"':""}>${e2(ini)}</div><div><div class="pi-cn">${e2(t.name)}${anw?' <span style="color:#16a34a">&#10003;</span>':""}${t.verteiler?' <span style="color:#0BA1E2" title="Verteiler">&#9993;</span>':""}</div>${t.firma?`<div class="pi-co">${e2(t.firma)}</div>`:""}</div></div>`;}).join("")}</div></div>`;}
-      if(tnGlobal.filter(t=>t.verteiler).length){html+=`<div class="pi-b" style="background:#f9fafb"><div class="pi-bl">Verteiler</div><div class="pi-cs">${tnGlobal.filter(t=>t.verteiler).map(t=>`<span class="pi-tg">${e2(teilnehmerLabel(t))}</span>`).join("")}</div></div>`;}
+    if(tnGlobal.length){if(!HIDE_TN_PRINT)html+=`<div class="pi-b"><div class="pi-bl">Teilnehmer</div><div class="pi-cs">${tnGlobal.map(t=>{const ini=(t.name||"").split(/[\s,]+/).filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join("");const anw=!!(t.id&&TN_ANWESEND[t.id]);return`<div class="pi-ch"${anw?' style="background:#f0fdf4;border-color:#86efac"':""}><div class="pi-av"${anw?' style="background:#2E8B4F"':""}>${e2(ini)}</div><div><div class="pi-cn">${e2(t.name)}${anw?' <span style="color:#2E8B4F">&#10003;</span>':""}${t.verteiler?' <span style="color:#0BA1E2" title="Verteiler">&#9993;</span>':""}</div>${t.firma?`<div class="pi-co">${e2(t.firma)}</div>`:""}</div></div>`;}).join("")}</div></div>`;}
+      if(tnGlobal.filter(t=>t.verteiler).length){html+=`<div class="pi-b" style="background:#F7F8F8"><div class="pi-bl">Verteiler</div><div class="pi-cs">${tnGlobal.filter(t=>t.verteiler).map(t=>`<span class="pi-tg">${e2(teilnehmerLabel(t))}</span>`).join("")}</div></div>`;}
     else if(tnLegacy.length&&!HIDE_TN_PRINT){html+=`<div class="pi-b"><div class="pi-bl">Teilnehmer</div><div class="pi-cs">${tnLegacy.map(l=>{const p=l.split(/[–-]/);const nm=(p[0]||"").trim();const og=(p[1]||"").trim();const ini=nm.split(/[\s,]+/).filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join("");return`<div class="pi-ch"><div class="pi-av">${ini}</div><div><div class="pi-cn">${e2(nm)}</div>${og?`<div class="pi-co">${e2(og)}</div>`:""}</div></div>`;}).join("")}</div></div>`;}
-    if(vtL.length){html+=`<div class="pi-b" style="background:#f9fafb"><div class="pi-bl">Verteiler</div><div class="pi-cs">${vtL.map(l=>`<span class="pi-tg">${e2(l.trim())}</span>`).join("")}</div></div>`;}
+    if(vtL.length){html+=`<div class="pi-b" style="background:#F7F8F8"><div class="pi-bl">Verteiler</div><div class="pi-cs">${vtL.map(l=>`<span class="pi-tg">${e2(l.trim())}</span>`).join("")}</div></div>`;}
     html+=`<div class="pi-leg"><div class="pi-ll">Legende</div><div class="pi-li">${Object.entries(SP).map(([s,v])=>`<div class="pi-litem"><div class="pi-dot" style="background:${v.bg};border:1px solid ${v.bc}"></div><span class="pi-ls" style="color:${v.tc}">${s}</span><span class="pi-ld">&rarr; ${v.d}</span></div>`).join("")}</div></div></div>`;
   }
 
@@ -3828,7 +3838,7 @@ ${TP_OPT.pos==="nach"?tpAuszugHtml():""}
   if(TP_OPT.pos==="nach")html+=tpAuszugHtml();
   const anlFiles=[];SECTIONS.forEach(sec=>{(DATA[sec.key]||[]).forEach(row=>{const refs=[...(row.files||[]).map(f=>f.name),...(row.anlage||"").split("\n").filter(s=>s.trim())];[...new Set(refs)].forEach(name=>anlFiles.push({name,sec:sec.label,titel:row.titel||"&mdash;",verant:row.verantwortlich||"&mdash;"}));});});
   if(anlFiles.length){html+=`<h2 style="font-size:12px;font-weight:700;margin-top:16px;margin-bottom:6px">Anlagen</h2><table class="at"><thead><tr><th>#</th><th>Dateiname</th><th>Beschreibung</th><th>Abschnitt</th><th>Verantwortlich</th></tr></thead><tbody>${anlFiles.map((f,i)=>`<tr><td>${i+1}</td><td>&#128196; ${e2(f.name)}</td><td>${e2(f.titel)}</td><td>${e2(f.sec)}</td><td>${e2(f.verant)}</td></tr>`).join("")}</tbody></table>`;}
-  html+=`<p style="margin-top:20px;font-size:10px;color:#6b7280">Leipzig, den ${new Date().toLocaleDateString('de-DE')} &middot; aufgestellt: INNOTECH Leipzig GmbH &middot; ${e2(autor)}</p></body></html>`;
+  html+=`<p style="margin-top:20px;font-size:10px;color:#6B7680">Leipzig, den ${new Date().toLocaleDateString('de-DE')} &middot; aufgestellt: INNOTECH Leipzig GmbH &middot; ${e2(autor)}</p></body></html>`;
   win.document.write(sperrWrap(html));win.document.close();win.onload=()=>{win.focus();win.print();};
 }
 
@@ -3994,7 +4004,7 @@ function abTaHtml(m){
   const old=TP_OPT;TP_OPT={...TP_OPT,on:true};let b;
   try{b=tpAuszugHtml();}finally{TP_OPT=old;}
   const e=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-  return `<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><style>*{box-sizing:border-box}body{margin:0;padding:6pt 0;font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;background:#fff}h2{font-size:12pt;margin:6pt 14pt 2pt;color:#111}p.s{font-size:8pt;color:#666;margin:0 14pt 6pt}</style></head><body><h2>Terminauszug – ${e(m.proj||"")}</h2><p class="s">zum Protokoll Nr. ${e(m.nr||"")} · ${e(m.typ||"")} · ${e(m.datum?new Date(m.datum).toLocaleDateString("de-DE"):"")}</p>${b}</body></html>`;
+  return `<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"><style>*{box-sizing:border-box}body{margin:0;padding:6pt 0;font-family:'Open Sans',Helvetica,Arial,sans-serif;color:#232728;background:#fff}h2{font-size:12pt;margin:6pt 14pt 2pt;color:#111}p.s{font-size:8pt;color:#666;margin:0 14pt 6pt}</style></head><body><h2>Terminauszug – ${e(m.proj||"")}</h2><p class="s">zum Protokoll Nr. ${e(m.nr||"")} · ${e(m.typ||"")} · ${e(m.datum?new Date(m.datum).toLocaleDateString("de-DE"):"")}</p>${b}</body></html>`;
 }
 
 /* ── Dateien eines Protokolls ── */
@@ -4034,9 +4044,9 @@ async function openAblage(){
   $("ab-pfad").textContent=pfad;
   // Dateien
   let files=[];try{files=abFileList();}catch(e){console.warn(e);}
-  $("ab-files").innerHTML=files.map(f=>`<div style="display:flex;gap:8px;padding:2px 0"><span style="color:#16a34a">✓</span><span style="flex:1">${escHtml(f.label)}</span><span style="font-family:Consolas,monospace;font-size:10.5px;color:#9ca3af">${escHtml(f.name.replace(/^.*?_Nr[^_.]*/,"…"))}</span></div>`).join("")+
+  $("ab-files").innerHTML=files.map(f=>`<div style="display:flex;gap:8px;padding:2px 0"><span style="color:#2E8B4F">✓</span><span style="flex:1">${escHtml(f.label)}</span><span style="font-family:Consolas,monospace;font-size:10.5px;color:#8C969E">${escHtml(f.name.replace(/^.*?_Nr[^_.]*/,"…"))}</span></div>`).join("")+
     (terminplan?"":`<div style="font-size:11px;color:#b45309;margin-top:4px">Terminauszug entfällt: Für dieses Projekt ist im Dashboard noch kein Terminplan hinterlegt.</div>`)+
-    (abHasAnlagen()?"":`<div style="font-size:11px;color:#9ca3af;margin-top:2px">Kein ZIP: dieses Protokoll hat keine Datei-Anlagen.</div>`);
+    (abHasAnlagen()?"":`<div style="font-size:11px;color:#8C969E;margin-top:2px">Kein ZIP: dieses Protokoll hat keine Datei-Anlagen.</div>`);
   // Ablage-Ordner
   if(!abSupported()){$("ab-root").textContent="Dieser Browser kann keinen Ordner beschreiben – die Dateien werden einzeln heruntergeladen (Edge oder Chrome am PC verwenden für die Ordner-Ablage).";$("ab-pick").style.display="none";}
   else{
@@ -4068,7 +4078,7 @@ async function abGo(){
   const $=id=>document.getElementById(id);
   const m=AB.meta;if(!m)return;
   const log=$("ab-log");log.style.display="block";log.innerHTML="";
-  const L=(t,c)=>{const d=document.createElement("div");d.style.color=c||"#374151";d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;};
+  const L=(t,c)=>{const d=document.createElement("div");d.style.color=c||"#3A4349";d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;};
   AB.busy=true;$("ab-go").disabled=true;$("ab-pick").disabled=true;
   let root=null,mode="ordner";
   try{
@@ -4100,7 +4110,7 @@ async function abGo(){
         if(mode==="ordner")await abWrite(folder,f.name,blob);
         else{saveBlob(blob,f.name);await new Promise(r=>setTimeout(r,450));}
         okN++;L("✓ "+f.label+" ("+Math.max(1,Math.round(blob.size/1024))+" KB)","#15803d");
-      }catch(e){fails.push(f.label);L("✗ "+f.label+": "+(e&&e.message||e),"#dc2626");}
+      }catch(e){fails.push(f.label);L("✗ "+f.label+": "+(e&&e.message||e),"#C1443B");}
     }
     // 4) Archivieren
     const doArch=$("ab-arch").checked;
@@ -4127,7 +4137,7 @@ async function abGo(){
     $("ab-go").style.display="none";
     loadCloudList();
   }catch(e){
-    console.error(e);L("Fehler: "+(e&&e.message||e),"#dc2626");$("ab-go").disabled=false;
+    console.error(e);L("Fehler: "+(e&&e.message||e),"#C1443B");$("ab-go").disabled=false;
   }finally{
     AB.busy=false;$("ab-pick").disabled=false;$("ab-close").textContent="Schließen";
   }
